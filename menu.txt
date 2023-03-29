@@ -57,3 +57,12 @@ Dolci
 tiramisu 12
 torta della nonna 9
 gelato 2
+
+
+Bevande:
+Acqua naturale--- 1 euro
+Acqua frizzante---1 euro
+Sprite---3 euro
+Coca cola---3 euro
+Vino (da chiedere al cameriere)---da 15 a 300 euro
+Super alcolici (da chiedere al cameriere)
