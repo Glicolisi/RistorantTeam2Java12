@@ -1,68 +1,45 @@
+MENU TEAM 2 JAVA
 
-ANTIPASTI
+ANTIPASTI:
 
-Caprese 5€
-Tagliere di salumi e formaggi 10€
-Fritture di verdure miste 6€
-Anelli di cipolla 5€
-Antipasto della casa 7€
-I SECONDI PIATTI DI PESCE
-IL PESCE SPADA ALLA GRIGLIA € 13
-LA GRIGLIATA DI SCAMPI E GAMBERI € 16
-LA GRIGLIATA MISTA DI PESCE € 16
-I CALAMARETTI FRITTI € 12
-I GAMBERETTI FRITTI € 12
-IL FRITTO MISTO € 12
-IL BRANZINO AL SALE O AL FORNO € 16
-L'ORATA AL FORNO O AL CARTOCCIO € 16
-LA TAGLIATA DI TONNO ROSSO ALLA SICILIANA € 18
-L'IMPEPATA DI COZZE € 12
-IL SAUTE DI VONGOLE € 14
-GLI SCAMPI REALI ALLA GRIGLIA (1 KG) € 35
-LA GRIGLIATA REALE DI PESCE (CROSTACEI E PESCE 4 KG) X 4 PERSONE € 100
-N.B. PER IL PESCATO DEL GIORNO (ROMBI RICCIOLE OMBRINE ECC.), IL PREZZO VARIA A SECONDA DEL MERCATO.
-
-PRIMI PIATTI
-
-Lasagne alla Bolognese 12 €
-Bucatini alla amatriciana 11 €
-Tortellini con panna 14 €
-Pennette alla vodka 10 €
-Trofie al pesto genovese 10 €
-Spaghetti cacio e pepe 9 €
+_Caprese 5€
+_Tagliere di salumi e formaggi 10€
+_Fritture di verdure miste 6€
+_Anelli di cipolla 5€
+_Antipasto della casa 7€
 
 
-I SECONDI PIATTI DI CARNE
-LA COSTATA DI ANGUS IRLANDESE (600 GR.) € 20
-LE LUMACHE ALLA BOURGUIGNON (12 ) € 15
-LE LUMACHE AI FUNGHI PORCINI € 14
-LA COSTOLETTA DI VITELLO ALLA MILANESE € 13
-L'ENTRECOTE DI MANZO ALLA GRIGLIA € 13
-LA PAILLARD DI VITELLO ALLA GRIGLIA € 10
-IL CARPACCIO DI FILETTO CON RUCOLA E SCAGLIE DI PARMIGIANO € 12
-IL FILETTO DI MANZO ALLA TARTARA € 13
-IL FILETTO DI MANZO AI FINFERLI € 18
-IL FILETTO DI MANZO AL PEPE VERDE € 16
-IL FILETTO DI MANZO ALLA GRIGLIA € 15
-IL FILETTO DI MANZO AI FUNGHI PORCINI € 18
-IL FILETTO DI MANZO AL TARTUFO € 18
-IL FILETTO DI MANZO ALLA MANNY € 16
-LA TAGLIATA DI MANZO CON RUCOLA E PARMIGIANO € 15
-IL NODINO DI VITELLO ALLA GRIGLIA € 13
-LA GRIGLIATA MISTA DI CARNE € 14
+PRIMI PIATTI:
+
+_Lasagne alla Bolognese 12 €
+_Bucatini alla amatriciana 11 €
+_Tortellini con panna 14 €
+_Pennette alla vodka 10 €
+_Trofie al pesto genovese 10 €
 
 
-Dolci
+SECONDI PIATTI:
 
-tiramisu 12
-torta della nonna 9
-gelato 2
+_Carpaccio di filetto con rucola e scaglie di parmigiano € 12
+_Grigliata di scampi e gamberi € 16
+_Impepata di cozze € 12
+_Filetto di manzo alla tartara € 13
+_Nodino di vitello alla griglia € 13
 
 
-Bevande:
-Acqua naturale--- 1 euro
-Acqua frizzante---1 euro
-Sprite---3 euro
-Coca cola---3 euro
-Vino (da chiedere al cameriere)---da 15 a 300 euro
-Super alcolici (da chiedere al cameriere)
+DOLCI
+
+_Tiramisu € 12
+_Torta della nonna € 9
+_Gelato € 2
+_Panna cotta € 5
+_Macedonia di frutta € 7
+
+
+BEVANDE:
+
+_Acqua naturale € 1
+_Acqua frizzante € 1
+_Sprite € 3
+_Coca cola € 3
+_Vino (da chiedere al cameriere) da € 15 a € 300
