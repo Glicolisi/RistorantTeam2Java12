@@ -1,6 +1,3 @@
-//package RistoranteTeam2Project.src;
-//import RistoranteTeam2Project.src.Models.PrimiPiatti;
-//import RistoranteTeam2Project.src.Models.SecondiPiatti;
 
 import Models.Bevande;
 import Models.PrimiPiatti;

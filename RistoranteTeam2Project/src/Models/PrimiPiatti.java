@@ -1,4 +1,4 @@
-//package RistoranteTeam2Project.src.Models;
+
 package Models;
 import java.util.*;
 
@@ -44,7 +44,7 @@ public class PrimiPiatti {
 
     public static void print_Menu(){
 
-        System.out.println("I Primi Piatti sono:");
+        System.out.println(" Primi Piatti :");
 
         for(Map.Entry<String,Double> primi : getPrimiPiatti().entrySet()){
 
