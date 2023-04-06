@@ -1,5 +1,6 @@
 
 import Models.Bevande;
+import Models.Dolci;
 import Models.PrimiPiatti;
 import Models.SecondiPiatti;
 import org.w3c.dom.ls.LSOutput;
@@ -40,6 +41,13 @@ public class Main {
         Bevande bevanda5 = new Bevande("Vino", 0d);
         Bevande.printBevande();
 
+        System.out.println("\n");
 
+        Dolci dolci1 = new Dolci("Tiramisù",12.5);
+        Dolci dolci2 = new Dolci("Torta della nonna",9.0);
+        Dolci dolci3 = new Dolci("Gelato",2.0);
+        Dolci dolci4 = new Dolci("Panna Cotta",5.0);
+        Dolci dolci5 = new Dolci("Macedonia di frutta",7.0);
+        Dolci.printDolci();
     }
 }
