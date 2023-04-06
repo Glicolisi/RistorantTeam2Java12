@@ -21,6 +21,7 @@ public class Main {
 
         System.out.println("\n");
 
+        
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0);
@@ -28,7 +29,7 @@ public class Main {
         SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0);
         SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0);
 
-        System.out.println(SecondiPiatti.secondiPiatti);
+        SecondiPiatti.printSecondi();
 
         System.out.println("\n");
 

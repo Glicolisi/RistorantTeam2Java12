@@ -7,12 +7,12 @@ import java.util.Map;
 public class SecondiPiatti {
     private String nomeSecondo;
     private double prezzoSecondo;
-   public static Map<String,Double> secondiPiatti = new HashMap<>();
+    public static Map<String, Double> secondiPiatti = new HashMap<>();
 
     public SecondiPiatti(String nomeSecondo, double prezzoSecondo) {
         this.nomeSecondo = nomeSecondo;
         this.prezzoSecondo = prezzoSecondo;
-        secondiPiatti.put(nomeSecondo,prezzoSecondo);
+        secondiPiatti.put(nomeSecondo, prezzoSecondo);
     }
 
     public String getNomeSecondo() {
@@ -31,5 +31,12 @@ public class SecondiPiatti {
         this.prezzoSecondo = prezzoSecondo;
     }
 
+    public static void printSecondi() {
+        System.out.println("Secondi Piatti :");
 
+        for (Map.Entry<String, Double> secondi : secondiPiatti.entrySet()) {
+            System.out.println(secondi.getKey() + " = " + secondi.getValue() + " Euro");
+        }
     }
+}
+
