@@ -1,4 +1,5 @@
 
+import Models.Antipasti;
 import Models.Bevande;
 import Models.Dolci;
 import Models.PrimiPiatti;
@@ -12,6 +13,15 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+
+        Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
+        Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00);
+        Antipasti antipasto3 = new Antipasti("Frittura di verdure miste", 6.00);
+        Antipasti antipasto4 = new Antipasti("Anelli di cipolla", 5.00);
+        Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00);
+        Antipasti.printMenuAntipasti();
+
+        System.out.println("\n");
 
         PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0);
         PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0);
@@ -43,11 +53,13 @@ public class Main {
 
         System.out.println("\n");
 
+
         Dolci dolci1 = new Dolci("Tiramisù",12.5);
         Dolci dolci2 = new Dolci("Torta della nonna",9.0);
         Dolci dolci3 = new Dolci("Gelato",2.0);
         Dolci dolci4 = new Dolci("Panna Cotta",5.0);
         Dolci dolci5 = new Dolci("Macedonia di frutta",7.0);
         Dolci.printDolci();
+
     }
 }

@@ -44,7 +44,7 @@ public class PrimiPiatti {
 
     public static void print_Menu(){
 
-        System.out.println(" Primi Piatti :");
+        System.out.println(" Primi Piatti :" + "\n");
 
         for(Map.Entry<String,Double> primi : getPrimiPiatti().entrySet()){
 
