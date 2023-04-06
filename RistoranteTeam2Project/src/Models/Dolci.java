@@ -31,7 +31,7 @@ public class Dolci {
     }
 
     public static void printDolci() {
-        System.out.println("Dolci :");
+        System.out.println("Dolci :" + "\n");
 
         for (Map.Entry<String, Double> secondi : dolci.entrySet()) {
             System.out.println(secondi.getKey() + " = " + secondi.getValue() + " Euro");
