@@ -32,7 +32,7 @@ public class SecondiPiatti {
     }
 
     public static void printSecondi() {
-        System.out.println("Secondi Piatti :");
+        System.out.println("Secondi Piatti :" + "\n");
 
         for (Map.Entry<String, Double> secondi : secondiPiatti.entrySet()) {
             System.out.println(secondi.getKey() + " = " + secondi.getValue() + " Euro");

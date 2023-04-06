@@ -42,7 +42,7 @@ public class Bevande {
 
     public static void printBevande() {
 
-        System.out.println("Bevande:");
+        System.out.println("Bevande:" + "\n");
 
         for (Map.Entry<String, Double> bevande : getBevande().entrySet()) {
 

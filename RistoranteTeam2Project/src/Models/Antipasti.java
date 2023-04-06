@@ -1,4 +1,4 @@
-package RistorantTeam2Java12.RistoranteTeam2Project.src.Models;
+package Models;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,10 +44,10 @@ public class Antipasti {
     }
 
     public static void printMenuAntipasti(){
-        System.out.println("ANTIPASTI"+ "\n");
+        System.out.println("Antipasti :"+ "\n");
 
         for (Map.Entry<String, Double> antipasti : getAntipasti().entrySet()){
-            System.out.println(antipasti.getKey() + " " + antipasti.getValue() + " Euro");
+            System.out.println(antipasti.getKey() + " = " + antipasti.getValue() + " Euro");
         }
     }
 }
