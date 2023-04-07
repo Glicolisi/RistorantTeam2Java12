@@ -4,58 +4,37 @@ import java.util.Map;
 public class Bevande {
 
 
-    private String nomeBevanda;
-    private Double prezzoBevanda;
-    //TODO rimuovere ovunque e sistemare il tutto
-    private static Map<String, Double> bevande = new HashMap<>();
-
-    public Bevande(String nomeBevanda, Double prezzoBevanda) {
-        this.nomeBevanda = nomeBevanda;
-        this.prezzoBevanda = prezzoBevanda;
-        bevande.put(nomeBevanda, prezzoBevanda);
-    }
-
-    public String getNomeBevanda() {
-        return nomeBevanda;
-    }
-
-    public Double getPrezzoBevanda() {
-        return prezzoBevanda;
-    }
-
-    public static Map<String, Double> getBevande() {
-        return bevande;
-    }
-
-    public void setNomeBevanda(String nomeBevanda) {
-        this.nomeBevanda = nomeBevanda;
-    }
-
-    public void setPrezzoPrimo(Double prezzoBevanda) {
-        this.prezzoBevanda = prezzoBevanda;
-    }
-
-    public static void setBevande(Map<String, Double> bevande) {
-        Bevande.bevande = bevande;
-    }
-
-    //TODO su tutte le classi sistemare
-    public static void printBevande() {
-
-        System.out.println("Bevande:" + "\n");
-
-        for (Map.Entry<String, Double> bevande : getBevande().entrySet()) {
+    private String nome;
+    private Double prezzo;
 
 
-            System.out.println(bevande.getKey() + " = " + bevande.getValue() + " Euro");
-            if (bevande.getKey() == "Vino") {
-                System.out.println("Chiedere al cameriere la carta dei vini");
-            }
 
-        }
+    public Bevande(String nome, Double prezzo) {
+        this.nome = nome;
+        this.prezzo = prezzo;
 
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Double getPrezzo() {
+        return prezzo;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPrezzo(Double prezzo) {
+        this.prezzo = prezzo;
+    }
+
 }
+
+
+
 
 
 
