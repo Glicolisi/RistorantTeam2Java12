@@ -1,5 +1,3 @@
-
-package Models;
 import java.util.*;
 
 public class PrimiPiatti {
@@ -7,12 +5,12 @@ public class PrimiPiatti {
 
     private String nomePrimo;
     private Double prezzoPrimo;
-    private static Map<String,Double> primiPiatti = new HashMap<>();
+    private static Map<String,Double> primiPiatti;
 
     public PrimiPiatti(String nomePrimo, Double prezzoPrimo) {
         this.nomePrimo = nomePrimo;
         this.prezzoPrimo = prezzoPrimo;
-        primiPiatti.put(nomePrimo,prezzoPrimo);
+        this.primiPiatti = new HashMap<>();
     }
 
     public PrimiPiatti() {

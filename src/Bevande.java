@@ -1,5 +1,3 @@
-package Models;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +6,7 @@ public class Bevande {
 
     private String nomeBevanda;
     private Double prezzoBevanda;
+    //TODO rimuovere ovunque e sistemare il tutto
     private static Map<String, Double> bevande = new HashMap<>();
 
     public Bevande(String nomeBevanda, Double prezzoBevanda) {
@@ -40,6 +39,7 @@ public class Bevande {
         Bevande.bevande = bevande;
     }
 
+    //TODO su tutte le classi sistemare
     public static void printBevande() {
 
         System.out.println("Bevande:" + "\n");
