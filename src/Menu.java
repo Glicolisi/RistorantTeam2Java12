@@ -58,6 +58,7 @@ public class Menu {
 
     //TODO ognuno di voi inserirà la propria lista
     public void printAntipasti() {
+        System.out.println(UtilityColor.BLUE_UNDERLINED + "Antipasti: ");
         for (Antipasti antipasti : antipastiList) {
             antipasti.printMenuAntipasti();
         }
