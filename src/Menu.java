@@ -6,11 +6,13 @@ public class Menu {
     private String tipo;
 
     private static ArrayList<Antipasti> antipastiList;
+    private ArrayList<SecondiPiatti> secondiPiattiList;
 
     public Menu(String nome, String tipo) {
         this.nome = nome;
         this.tipo = tipo;
         this.antipastiList = new ArrayList<>();
+        this.secondiPiattiList= new ArrayList<>();
     }
 
     public String getNome() {
@@ -37,38 +39,22 @@ public class Menu {
         antipastiList.add(antipasti);
     }
 
+    public void addSecondo(SecondiPiatti secondiPiatti) {secondiPiattiList.add(secondiPiatti);}
+
+    public void removeSecondo(SecondiPiatti secondiPiatti) { secondiPiattiList.remove(secondiPiatti);}
+
     //TODO ognuno di voi inserirà la propria lista
-    public  void printAntipasti() {
-        for (Antipasti antipasti: antipastiList) {
+    public void printAntipasti() {
+        for (Antipasti antipasti : antipastiList) {
             antipasti.printMenuAntipasti();
+        }
+    }
+        public void printSecondi() {
+            for (SecondiPiatti secondiPiatti : secondiPiattiList) {
+                secondiPiatti.printMenuSecondi();
+
+            }
+
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

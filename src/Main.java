@@ -33,12 +33,19 @@ public class Main {
 
 
 
-
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0);
         SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0);
         SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0);
         SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0);
+
+        menu.addSecondo(secondo1);
+        menu.addSecondo(secondo2);
+        menu.addSecondo(secondo3);
+        menu.addSecondo(secondo4);
+        menu.addSecondo(secondo5);
+
+        menu.printSecondi();
 
 
 
