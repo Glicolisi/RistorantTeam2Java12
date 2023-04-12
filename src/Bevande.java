@@ -30,7 +30,11 @@ public class Bevande {
     public void setPrezzo(Double prezzo) {
         this.prezzo = prezzo;
     }
+    public  void printMenuBevande(){
+        System.out.println(UtilityColor.PURPLE + UtilityColor.PURPLE+ nome +" "+ prezzo);
 
+
+    }
 }
 
 
