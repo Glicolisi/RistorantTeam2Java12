@@ -30,6 +30,13 @@ public class Main {
         PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0);
         PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0);
 
+        menu.addPrimo(primo1);
+        menu.addPrimo(primo2);
+        menu.addPrimo(primo3);
+        menu.addPrimo(primo4);
+        menu.addPrimo(primo5);
+
+        menu.printPrimi();
 
 
 

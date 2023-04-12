@@ -26,7 +26,7 @@ public class Antipasti {
     }
 
     public  void printMenuAntipasti(){
-        System.out.println(UtilityColor.ANSI_BLUE_BACKGROUND + "Antipasti :"+UtilityColor.ANSI_BLUE_BACKGROUND+ "\n"+ nome + prezzoAntipasti);
+        System.out.println(  "Antipasti :"+ "\n"+ nome + prezzoAntipasti);
 
     }
 }
