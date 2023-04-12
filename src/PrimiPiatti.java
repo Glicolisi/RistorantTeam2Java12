@@ -3,54 +3,51 @@ import java.util.*;
 public class PrimiPiatti {
 
 
-    private String nomePrimo;
-    private Double prezzoPrimo;
-    private static Map<String,Double> primiPiatti;
+    private String nome;
+    private Double prezzo;
 
-    public PrimiPiatti(String nomePrimo, Double prezzoPrimo) {
-        this.nomePrimo = nomePrimo;
-        this.prezzoPrimo = prezzoPrimo;
-        this.primiPiatti = new HashMap<>();
+    public PrimiPiatti(String nome, Double prezzo) {
+        this.nome = nome;
+        this.prezzo = prezzo;
     }
 
-    public PrimiPiatti() {
+    public String getNome() {
+        return nome;
     }
 
-    public String getNomePrimo() {
-        return nomePrimo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setNomePrimo(String nomePrimo) {
-        this.nomePrimo = nomePrimo;
+    public Double getPrezzo() {
+        return prezzo;
     }
 
-    public Double getPrezzoPrimo() {
-        return prezzoPrimo;
+    public void setPrezzo(Double prezzo) {
+        this.prezzo = prezzo;
     }
 
-    public void setPrezzoPrimo(Double prezzoPrimo) {
-        this.prezzoPrimo = prezzoPrimo;
-    }
+    public  void printMenuPrimipiatti(){
 
-    public static Map<String, Double> getPrimiPiatti() {
-        return primiPiatti;
-    }
-
-    public void setPrimiPiatti(Map<String, Double> primiPiatti) {
-        this.primiPiatti = primiPiatti;
-    }
-
-    public static void print_Menu(){
-
-        System.out.println(" Primi Piatti :" + "\n");
-
-        for(Map.Entry<String,Double> primi : getPrimiPiatti().entrySet()){
-
-
-            System.out.println(primi.getKey()+" = "+primi.getValue()+" Euro");
-
-
-        }
+        System.out.println(nome+": "+prezzo+" euro");
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
