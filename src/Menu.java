@@ -85,6 +85,8 @@ public class Menu {
     }
 
     public void printPrimi() {
+        System.out.print("\033[0m");
+
         System.out.println("Primi piatti: ");
         for (PrimiPiatti primiPiatti : primiPiattiList) {
             primiPiatti.printMenuPrimipiatti();
@@ -92,13 +94,13 @@ public class Menu {
         }
 
     }
+    public void printSecondi() {
 
-
-        public void printSecondi() {
+        System.out.println(UtilityColor.CYAN_BOLD+"\nSecondi piatti:");
             for (SecondiPiatti secondiPiatti : secondiPiattiList) {
                 secondiPiatti.printMenuSecondi();
-
             }
+        System.out.print("\n");
 
         }
 

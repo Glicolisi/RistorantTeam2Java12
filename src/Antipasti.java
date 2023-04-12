@@ -26,6 +26,7 @@ public class Antipasti {
     }
 
     public  void printMenuAntipasti(){
+
         System.out.println(  "Antipasti :"+ "\n"+ nome + prezzoAntipasti);
 
     }

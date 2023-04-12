@@ -28,7 +28,6 @@ public class PrimiPiatti {
     }
 
     public  void printMenuPrimipiatti(){
-
         System.out.println(nome+": "+prezzo+" euro");
 
     }

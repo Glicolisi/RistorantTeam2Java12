@@ -28,7 +28,8 @@ public class SecondiPiatti {
     }
 
     public void printMenuSecondi(){
-        System.out.println(UtilityColor.ANSI_CYAN_BACKGROUND + "Secondi :"+UtilityColor.ANSI_BLUE_BACKGROUND+ "\n"+ nome + prezzo);
+
+        System.out.println(UtilityColor.CYAN_BOLD +nome +" "+" "+prezzo+" euro" );
 
     }
 
