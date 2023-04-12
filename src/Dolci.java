@@ -9,7 +9,7 @@ public class Dolci {
     public Dolci(String nomeDolci, double prezzoDolci) {
         this.nomeDolci = nomeDolci;
         this.prezzoDolce = prezzoDolci;
-        dolci.put(nomeDolci, prezzoDolci);
+
     }
 
     public String getNomeDolci() {
@@ -28,12 +28,10 @@ public class Dolci {
         this.prezzoDolce = prezzoDolce;
     }
 
-    public static void printDolci() {
-        System.out.println("Dolci :" + "\n");
+    public  void printMenuDolci(){
 
-        for (Map.Entry<String, Double> secondi : dolci.entrySet()) {
-            System.out.println(secondi.getKey() + " = " + secondi.getValue() + " Euro");
-        }
+        System.out.println(  "Dolce :"+ nomeDolci +"-"+ prezzoDolce+"€");
+
     }
 }
 

@@ -62,6 +62,13 @@ public class Main {
         Dolci dolci3 = new Dolci("Gelato", 2.0);
         Dolci dolci4 = new Dolci("Panna Cotta", 5.0);
         Dolci dolci5 = new Dolci("Macedonia di frutta", 7.0);
+        menu.addDolce(dolci1);
+        menu.addDolce(dolci2);
+        menu.addDolce(dolci3);
+        menu.addDolce(dolci4);
+        menu.addDolce(dolci5);
+
+        menu.printDolci();
 
 
         Bevande bevanda1 = new Bevande("Acqua naturale", 1d);
