@@ -6,13 +6,21 @@ public class Menu {
     private String tipo;
 
     private static ArrayList<Antipasti> antipastiList;
+
     protected ArrayList<Bevande> bevandeList;
+
+    private ArrayList<SecondiPiatti> secondiPiattiList;
+
 
     public Menu(String nome, String tipo) {
         this.nome = nome;
         this.tipo = tipo;
         this.antipastiList = new ArrayList<>();
+
         this.bevandeList= new ArrayList<>();
+
+        this.secondiPiattiList= new ArrayList<>();
+
     }
 
     public String getNome() {
@@ -39,8 +47,14 @@ public class Menu {
         antipastiList.add(antipasti);
     }
 
+
     public void addBevanda(Bevande bevande) {bevandeList.add(bevande);};
     public void removeBevanda(Bevande bevande){bevandeList.remove(bevande);}
+
+    public void addSecondo(SecondiPiatti secondiPiatti) {secondiPiattiList.add(secondiPiatti);}
+
+    public void removeSecondo(SecondiPiatti secondiPiatti) { secondiPiattiList.remove(secondiPiatti);}
+
 
     //TODO ognuno di voi inserirà la propria lista
     public void printAntipasti() {
@@ -48,6 +62,7 @@ public class Menu {
             antipasti.printMenuAntipasti();
         }
     }
+
 
     public void printBevande() {
         for (Bevande bevande : bevandeList) {
@@ -57,4 +72,15 @@ public class Menu {
     }
 
 
-}
+
+
+        public void printSecondi() {
+            for (SecondiPiatti secondiPiatti : secondiPiattiList) {
+                secondiPiatti.printMenuSecondi();
+
+            }
+
+        }
+
+    }
+

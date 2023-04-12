@@ -2,38 +2,35 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SecondiPiatti {
-    private String nomeSecondo;
-    private double prezzoSecondo;
-    public static Map<String, Double> secondiPiatti = new HashMap<>();
+    private String nome;
+    private double prezzo;
 
-    public SecondiPiatti(String nomeSecondo, double prezzoSecondo) {
-        this.nomeSecondo = nomeSecondo;
-        this.prezzoSecondo = prezzoSecondo;
-        secondiPiatti.put(nomeSecondo, prezzoSecondo);
+
+    public SecondiPiatti(String nome, double prezzo) {
+        this.nome = nome;
+        this.prezzo = prezzo;
     }
 
-    public String getNomeSecondo() {
-        return nomeSecondo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeSecondo(String nomeSecondo) {
-        this.nomeSecondo = nomeSecondo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public double getPrezzoSecondo() {
-        return prezzoSecondo;
+    public double getPrezzo() {
+        return prezzo;
     }
 
-    public void setPrezzoSecondo(double prezzoSecondo) {
-        this.prezzoSecondo = prezzoSecondo;
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
     }
 
-    public static void printSecondi() {
-        System.out.println("Secondi Piatti :" + "\n");
+    public void printMenuSecondi(){
+        System.out.println(UtilityColor.ANSI_CYAN_BACKGROUND + "Secondi :"+UtilityColor.ANSI_BLUE_BACKGROUND+ "\n"+ nome + prezzo);
 
-        for (Map.Entry<String, Double> secondi : secondiPiatti.entrySet()) {
-            System.out.println(secondi.getKey() + " = " + secondi.getValue() + " Euro");
-        }
     }
+
 }
 
