@@ -44,8 +44,9 @@ public class Menu {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public String setTipo(String tipo) {
         this.tipo = tipo;
+        return tipo;
     }
 
     public void addAntipasto(Antipasti antipasti) {

@@ -1,11 +1,27 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-        Menu menu = new Menu("cheneso", "carne");
-        Menu menu2 = new Menu("cheneso", "carne");
+        Menu menu = new Menu("Menu' carnivoro", "carnivoro");
+        Menu menu2 = new Menu("Menu' vegetariano", "vegetariano");
+        System.out.println("Per favore scriva che tipo di menu' vuole vedere: carnivoro o vegetariano?");
+        String sceltaMenu = input.nextLine().toLowerCase().trim();
+
+
+        if (sceltaMenu.equals("carnivoro") || sceltaMenu.equals("vegetariano")) {
+            switch (sceltaMenu) {
+                case "carnivoro" -> System.out.println("Ecco a lei il menu' carnivoro");
+                case "vegetariano" -> System.out.println("Ecco a lei il menu' vegetariano");
+            }
+        } else {
+            System.out.println(UtilityColor.ANSI_RED_BACKGROUND + "Il menu' richiesto non esiste :(");
+            System.exit(0);
+        }
 
         Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
         Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00);
@@ -14,7 +30,6 @@ public class Main {
         Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00);
 
 
-        //TODO per tutte le classi dare un occhio a questo esempio
         menu.addAntipasto(antipasto1);
         menu.addAntipasto(antipasto2);
         menu2.addAntipasto(antipasto3);
@@ -39,8 +54,6 @@ public class Main {
         menu.printPrimi();
 
 
-
-
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0);
         SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0);
@@ -54,7 +67,6 @@ public class Main {
         menu.addSecondo(secondo5);
 
         menu.printSecondi();
-
 
 
         Dolci dolci1 = new Dolci("Tiramisù", 12.5);
@@ -82,7 +94,7 @@ public class Main {
         menu.addBevanda(bevanda4);
         menu.addBevanda(bevanda5);
 
-        System.out.println(UtilityColor.PURPLE+"Bevande: ");
+        System.out.println(UtilityColor.PURPLE + "Bevande: ");
         menu.printBevande();
 
 
