@@ -92,7 +92,7 @@ public class Menu {
     public void printPrimi() {
         System.out.print("\033[0m");
 
-        System.out.println("Primi piatti: ");
+        System.out.println(UtilityColor.GREEN+"Primi piatti: ");
         for (PrimiPiatti primiPiatti : primiPiattiList) {
             primiPiatti.printMenuPrimipiatti();
 
