@@ -77,6 +77,7 @@ public class Menu {
         for (Antipasti antipasti : antipastiList) {
             antipasti.printMenuAntipasti();
         }
+        System.out.print("\n");
     }
 
 
@@ -95,7 +96,7 @@ public class Menu {
             primiPiatti.printMenuPrimipiatti();
 
         }
-
+        System.out.print("\n");
     }
     public void printSecondi() {
 
