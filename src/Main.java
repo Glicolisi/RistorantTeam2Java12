@@ -9,11 +9,13 @@ public class Main {
 
         Menu menu = new Menu("Menu' carnivoro", "carnivoro");
         Menu menu2 = new Menu("Menu' vegetariano", "vegetariano");
-        System.out.println("Per favore scriva che tipo di menu' vuole vedere: carnivoro o vegetariano?");
+        System.out.println("Per favore scriva che tipo di menu' vuole vedere: ");
+        System.out.println("_"+menu.getTipo());
+        System.out.println("_"+menu2.getTipo());
         String sceltaMenu = input.nextLine().toLowerCase().trim();
 
 
-        if (sceltaMenu.equals("carnivoro") || sceltaMenu.equals("vegetariano")) {
+        if (sceltaMenu.equals(menu.getTipo()) || sceltaMenu.equals(menu2.getTipo())) {
             switch (sceltaMenu) {
                 case "carnivoro" -> System.out.println("Ecco a lei il menu' carnivoro");
                 case "vegetariano" -> System.out.println("Ecco a lei il menu' vegetariano");
