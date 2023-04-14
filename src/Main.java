@@ -31,7 +31,7 @@ public class Main {
         Antipasti antipasto4 = new Antipasti("Anelli di cipolla", 5.00);
         Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00);
 
-
+        //TODO: correggere qui gli antipasti
         menu.addAntipasto(antipasto1);
         menu.addAntipasto(antipasto2);
         menu2.addAntipasto(antipasto3);
