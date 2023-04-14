@@ -30,7 +30,7 @@ public class Dolci {
 
     public  void printMenuDolci(){
 
-        System.out.println(  "Dolce :"+ nomeDolci +"-"+ prezzoDolce+"€");
+        System.out.println(  nomeDolci  +" "+  prezzoDolce +" euro");
 
     }
 }
