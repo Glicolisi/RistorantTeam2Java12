@@ -31,7 +31,7 @@ public class Bevande {
         this.prezzo = prezzo;
     }
     public  void printMenuBevande(){
-        System.out.println(UtilityColor.PURPLE + UtilityColor.PURPLE+ nome +" "+ prezzo);
+        System.out.println(UtilityColor.PURPLE + UtilityColor.PURPLE+ nome +" "+ prezzo+ " euro");
 
 
     }
