@@ -1,5 +1,7 @@
 public class Antipasti {
 
+    //TODO se facciamo la classe padre dobbiamo inserire dei field aggiuntivi ad esempio isKmZero
+
     private  String nome;
 
     private  double prezzo;

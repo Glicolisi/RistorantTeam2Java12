@@ -4,6 +4,8 @@ import java.util.Map;
 public class Dolci {
     private String nomeDolci;
     private double prezzoDolce;
+
+    //TODO da eliminare
     public static Map<String, Double> dolci = new HashMap<>();
 
     public Dolci(String nomeDolci, double prezzoDolci) {
