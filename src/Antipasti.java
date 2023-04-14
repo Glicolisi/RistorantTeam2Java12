@@ -1,16 +1,12 @@
-import java.util.Map;
-
 public class Antipasti {
 
     private  String nome;
 
-    //TODO non mettere mai il nome delle classe dopo
-    private  double prezzoAntipasti;
+    private  double prezzo;
 
-    //TODO attenzione ai nomi e sistemiamo il tutto
-    public Antipasti(String nome, double prezzoAntipasti) {
+    public Antipasti(String nome, double prezzo) {
         this.nome = nome;
-        this.prezzoAntipasti = prezzoAntipasti;
+        this.prezzo = prezzo;
     }
 
     public String getNome() {//
@@ -22,11 +18,12 @@ public class Antipasti {
     }
 
     public double getPrezzoAntipasti() {//
-        return prezzoAntipasti;
+        return prezzo;
     }
 
     public  void printMenuAntipasti(){
-        System.out.println(UtilityColor.ANSI_BLUE_BACKGROUND + "Antipasti :"+UtilityColor.ANSI_BLUE_BACKGROUND+ "\n"+ nome + prezzoAntipasti);
+        System.out.println(UtilityColor.BLUE+ "\n"+ nome + " " + prezzo);
 
+//        UtilityColor.BLUE + "Antipasti :" +
     }
 }
