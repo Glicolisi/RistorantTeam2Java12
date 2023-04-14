@@ -1,11 +1,29 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-        Menu menu = new Menu("cheneso", "carne");
-        Menu menu2 = new Menu("cheneso", "carne");
+        Menu menu = new Menu("Menu' carnivoro", "carnivoro");
+        Menu menu2 = new Menu("Menu' vegetariano", "vegetariano");
+        System.out.println("Per favore scriva che tipo di menu' vuole vedere: ");
+        System.out.println("_"+menu.getTipo());
+        System.out.println("_"+menu2.getTipo());
+        String sceltaMenu = input.nextLine().toLowerCase().trim();
+
+
+        if (sceltaMenu.equals(menu.getTipo()) || sceltaMenu.equals(menu2.getTipo())) {
+            switch (sceltaMenu) {
+                case "carnivoro" -> System.out.println("Ecco a lei il menu' carnivoro");
+                case "vegetariano" -> System.out.println("Ecco a lei il menu' vegetariano");
+            }
+        } else {
+            System.out.println(UtilityColor.ANSI_RED_BACKGROUND + "Il menu' richiesto non esiste :(");
+            System.exit(0);
+        }
 
         Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
         Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00);
@@ -14,7 +32,6 @@ public class Main {
         Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00);
 
 
-        //TODO per tutte le classi dare un occhio a questo esempio
         menu.addAntipasto(antipasto1);
         menu.addAntipasto(antipasto2);
         menu2.addAntipasto(antipasto3);
@@ -30,8 +47,13 @@ public class Main {
         PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0);
         PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0);
 
+        menu.addPrimo(primo1);
+        menu.addPrimo(primo2);
+        menu.addPrimo(primo3);
+        menu.addPrimo(primo4);
+        menu.addPrimo(primo5);
 
-
+        menu.printPrimi();
 
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
@@ -54,6 +76,18 @@ public class Main {
         Dolci dolci3 = new Dolci("Gelato", 2.0);
         Dolci dolci4 = new Dolci("Panna Cotta", 5.0);
         Dolci dolci5 = new Dolci("Macedonia di frutta", 7.0);
+        menu.addDolce(dolci1);
+        menu.addDolce(dolci2);
+        menu.addDolce(dolci3);
+        menu.addDolce(dolci4);
+        menu.addDolce(dolci5);
+        menu2.addDolce(dolci1);
+        menu2.addDolce(dolci2);
+        menu2.addDolce(dolci3);
+        menu2.addDolce(dolci4);
+        menu2.addDolce(dolci5);
+
+        menu.printDolci();
 
 
         Bevande bevanda1 = new Bevande("Acqua naturale", 1d);
@@ -67,7 +101,7 @@ public class Main {
         menu.addBevanda(bevanda4);
         menu.addBevanda(bevanda5);
 
-        System.out.println(UtilityColor.PURPLE+"Bevande: ");
+        System.out.println(UtilityColor.PURPLE + "Bevande: ");
         menu.printBevande();
 
 
