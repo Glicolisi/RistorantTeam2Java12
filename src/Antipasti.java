@@ -22,7 +22,7 @@ public class Antipasti {
     }
 
     public  void printMenuAntipasti(){
-        System.out.println(UtilityColor.BLUE+ "\n"+ nome + " " + prezzo);
+        System.out.println(UtilityColor.BLUE+ nome + " " + prezzo + " euro");
 
 //        UtilityColor.BLUE + "Antipasti :" +
     }
