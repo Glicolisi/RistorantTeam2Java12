@@ -28,7 +28,7 @@ public class PrimiPiatti {
     }
 
     public  void printMenuPrimipiatti(){
-        System.out.println(nome+": "+prezzo+" euro");
+        System.out.println(UtilityColor.GREEN+nome+": "+prezzo+" euro");
 
     }
 
