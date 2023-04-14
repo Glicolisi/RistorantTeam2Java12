@@ -81,11 +81,7 @@ public class Main {
         menu.addDolce(dolci3);
         menu.addDolce(dolci4);
         menu.addDolce(dolci5);
-        menu2.addDolce(dolci1);
-        menu2.addDolce(dolci2);
-        menu2.addDolce(dolci3);
-        menu2.addDolce(dolci4);
-        menu2.addDolce(dolci5);
+
 
         menu.printDolci();
 
