@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+       /* Scanner input = new Scanner(System.in);
 
         Menu menu = new Menu("Menu' carnivoro", "carnivoro");
         Menu menu2 = new Menu("Menu' vegetariano", "vegetariano");
@@ -23,7 +23,8 @@ public class Main {
         } else {
             System.out.println(UtilityColor.ANSI_RED_BACKGROUND + "Il menu' richiesto non esiste :(");
             System.exit(0);
-        }
+        }*/
+        Menu menu = new Menu("Menu' carnivoro", "carnivoro");
 
         Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
         Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00);
