@@ -93,7 +93,7 @@ public class Menu {
 
     public void printPrimi() {
 
-        System.out.println(UtilityColor.GREEN_UNDERLINED+"Primi piatti: ");
+        System.out.println(Utility.GREEN_UNDERLINED.getFormat()+"Primi piatti: ");
         for (PrimiPiatti primiPiatti : primiPiattiList) {
             primiPiatti.printInfo(Utility.GREEN.getFormat());
 
