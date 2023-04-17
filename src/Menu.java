@@ -95,7 +95,7 @@ public class Menu {
 
         System.out.println(UtilityColor.GREEN_UNDERLINED+"Primi piatti: ");
         for (PrimiPiatti primiPiatti : primiPiattiList) {
-            primiPiatti.printMenuPrimipiatti();
+            primiPiatti.printInfo(Utility.GREEN.getFormat());
 
         }
         System.out.print("\n");
