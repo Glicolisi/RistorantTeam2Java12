@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.OptionalDouble;
 
 public class Menu {
 
@@ -100,15 +101,7 @@ public class Menu {
         }
         System.out.print("\n");
     }
-    public void printSecondi() {
 
-        System.out.println(UtilityColor.CYAN_BOLD+"Secondi piatti:");
-            for (SecondiPiatti secondiPiatti : secondiPiattiList) {
-                secondiPiatti.printMenuSecondi();
-            }
-        System.out.print("\n");
-
-        }
 
         public void printDolci() {
             System.out.println(UtilityColor.YELLOW_BOLD+"\nDolci:");
@@ -116,6 +109,36 @@ public class Menu {
                 dolciPiatti.printMenuDolci();
             }
             System.out.println("\n");
+        }
+        public void prezzoMedioMenu(Menu menu){
+        double mediaAntipasti=0.0;
+        double mediaPrimi=0.0;
+        double mediaSecondi=0.0;
+        double mediaDolci=0.0;
+
+        for (Antipasti antipasti : antipastiList) {
+                mediaAntipasti += antipasti.getPrezzo();
+            }
+            mediaAntipasti /= antipastiList.size();
+
+        for (PrimiPiatti primiPiatti : primiPiattiList) {
+                mediaPrimi += primiPiatti.getPrezzo();
+            }
+            mediaPrimi /= primiPiattiList.size();
+
+        for (SecondiPiatti secondiPiatti : secondiPiattiList) {
+                mediaSecondi += secondiPiatti.getPrezzo();
+            }
+            mediaSecondi /= secondiPiattiList.size();
+
+            for (Dolci dolci : dolciList) {
+                mediaDolci += dolci.getPrezzo();
+            }
+            mediaDolci /= dolciList.size();
+
+            double mediaMenu = (mediaAntipasti + mediaPrimi + mediaSecondi + mediaDolci)/4;
+
+            System.out.println("Il prezzo medio del Menu:"+ menu.getTipo()+" è:"+mediaMenu);
         }
 
     }

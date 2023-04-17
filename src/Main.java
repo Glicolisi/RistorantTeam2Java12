@@ -20,7 +20,6 @@ public class Main {
         menu.addAntipasto(antipasto3);
         menu.addAntipasto(antipasto4);
         menu.addAntipasto(antipasto5);
-
         menu.printAntipasti();
 
         PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0,"Pasta fresca, ragù di carne,besciamella");
@@ -39,22 +38,18 @@ public class Main {
 
 
 
-        /*SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00,"Carne,rucola,formaggio");
-=======
-        SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
->>>>>>> 30db1339d51b111e98a971233405b4dcd85bbe77
-        SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0);
-        SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0);
-        SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0);
-        SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0);*/
+        SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00,"carne,verdura,formaggio");
+        SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0,"pesce");
+        SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0,"pesce");
+        SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0,"carne");
+        SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0,"carne");
 
-        /*menu.addSecondo(secondo1);
+        menu.addSecondo(secondo1);
         menu.addSecondo(secondo2);
         menu.addSecondo(secondo3);
         menu.addSecondo(secondo4);
         menu.addSecondo(secondo5);
 
-        menu.printSecondi();*/
 
 
         Dolci dolci1 = new Dolci("Tiramisù", 12.5);
@@ -83,9 +78,9 @@ public class Main {
         menu.addBevanda(bevanda4);
         menu.addBevanda(bevanda5);
 
-        System.out.println(UtilityColor.PURPLE + "Bevande: ");
         menu.printBevande();
 
 
+        menu.prezzoMedioMenu(menu);
     }
 }
