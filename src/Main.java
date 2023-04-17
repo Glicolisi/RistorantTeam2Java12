@@ -41,19 +41,19 @@ public class Main {
         menu.printAntipasti();
 
 
-        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0);
-        PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0);
-        PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0);
-        PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0);
-        PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0);
+//        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0);
+//        PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0);
+//        PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0);
+//        PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0);
+//        PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0);
 
-        menu.addPrimo(primo1);
-        menu.addPrimo(primo2);
-        menu.addPrimo(primo3);
-        menu.addPrimo(primo4);
-        menu.addPrimo(primo5);
-
-        menu.printPrimi();
+//        menu.addPrimo(primo1);
+//        menu.addPrimo(primo2);
+//        menu.addPrimo(primo3);
+//        menu.addPrimo(primo4);
+//        menu.addPrimo(primo5);
+//
+//        menu.printPrimi();
 
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
@@ -71,11 +71,11 @@ public class Main {
         menu.printSecondi();
 
 
-        Dolci dolci1 = new Dolci("Tiramisù", 12.5);
-        Dolci dolci2 = new Dolci("Torta della nonna", 9.0);
-        Dolci dolci3 = new Dolci("Gelato", 2.0);
-        Dolci dolci4 = new Dolci("Panna Cotta", 5.0);
-        Dolci dolci5 = new Dolci("Macedonia di frutta", 7.0);
+        Dolci dolci1 = new Dolci("Tiramisù", 12.5,"Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro");
+        Dolci dolci2 = new Dolci("Torta della nonna", 9.0,"Burro,zucchero,uova,latte intero,farina,pinoli");
+        Dolci dolci3 = new Dolci("Gelato", 2.0,"La latte condesato, frutta fresca,vaniglia,scaglie di cioccolato ");
+        Dolci dolci4 = new Dolci("Panna Cotta", 5.0,"caffè,zucchero,baccello di vaniglia,panna fresco liquida");
+        Dolci dolci5 = new Dolci("Macedonia di frutta", 7.0,"Fragole,kiwi,uva,melone,pesca,succo di limone,zuccheron semolato");
         menu.addDolce(dolci1);
         menu.addDolce(dolci2);
         menu.addDolce(dolci3);
