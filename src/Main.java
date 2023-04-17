@@ -5,25 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       /* Scanner input = new Scanner(System.in);
 
-        Menu menu = new Menu("Menu' carnivoro", "carnivoro");
-        Menu menu2 = new Menu("Menu' vegetariano", "vegetariano");
-        System.out.println("Per favore scriva che tipo di menu' vuole vedere: ");
-        System.out.println("_"+menu.getTipo());
-        System.out.println("_"+menu2.getTipo());
-        String sceltaMenu = input.nextLine().toLowerCase().trim();
-
-
-        if (sceltaMenu.equals(menu.getTipo()) || sceltaMenu.equals(menu2.getTipo())) {
-            switch (sceltaMenu) {
-                case "carnivoro" -> System.out.println("Ecco a lei il menu' carnivoro");
-                case "vegetariano" -> System.out.println("Ecco a lei il menu' vegetariano");
-            }
-        } else {
-            System.out.println(UtilityColor.ANSI_RED_BACKGROUND + "Il menu' richiesto non esiste :(");
-            System.exit(0);
-        }*/
         Menu menu = new Menu("Menu' carnivoro", "carnivoro");
 
         Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
@@ -41,11 +23,19 @@ public class Main {
         menu.printAntipasti();
 
 
+
 //        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0);
 //        PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0);
 //        PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0);
 //        PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0);
 //        PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0);
+
+        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0,"Pasta fresca, ragù di carne,besciamella");
+        PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0,"Pasta fresca,pomodoro,guanciale,pecorino");
+        PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0,"Pasta fresca,carne macinata,panna");
+        PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0,"Pasta fresca,pomodoro,pancetta,vodka");
+        PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0,"Pasta fresca,basilico,pinoli,grana padano");
+
 
 //        menu.addPrimo(primo1);
 //        menu.addPrimo(primo2);
@@ -54,7 +44,6 @@ public class Main {
 //        menu.addPrimo(primo5);
 //
 //        menu.printPrimi();
-
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0);
