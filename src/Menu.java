@@ -17,6 +17,7 @@ public class Menu {
 
    private ArrayList<Dolci> dolciList;
 
+   //TODO stampiamo nome e tipo
     public Menu(String nome, String tipo) {
         this.nome = nome;
         this.tipo = tipo;
@@ -72,7 +73,8 @@ public class Menu {
     public void removeDolce(Dolci dolci){dolciList.remove(dolci);}
 
 
-    //TODO ognuno di voi inserirà la propria lista
+
+    //TOD
     public void printAntipasti() {
         System.out.println(UtilityColor.BLUE_UNDERLINED + "Antipasti: ");
         for (Antipasti antipasti : antipastiList) {

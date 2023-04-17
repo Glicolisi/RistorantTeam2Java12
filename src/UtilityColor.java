@@ -1,5 +1,10 @@
 public class UtilityColor {
 
+    //TODO se facciamo un enumerato abbiamo una anagrafica parlante nel senso
+    //che se inseriamo value come colore e descrizione come testo di quello che fa
+    //a colpo d'occhio sappiamo tutto
+
+
     public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
     public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
