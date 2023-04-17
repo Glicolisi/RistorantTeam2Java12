@@ -23,12 +23,11 @@ public class Main {
 
         menu.printAntipasti();
 
-
-        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0);
-        PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0);
-        PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0);
-        PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0);
-        PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0);
+        PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0,"Pasta fresca, ragù di carne,besciamella");
+        PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0,"Pasta fresca,pomodoro,guanciale,pecorino");
+        PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0,"Pasta fresca,carne macinata,panna");
+        PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0,"Pasta fresca,pomodoro,pancetta,vodka");
+        PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0,"Pasta fresca,basilico,pinoli,grana padano");
 
         menu.addPrimo(primo1);
         menu.addPrimo(primo2);
@@ -39,7 +38,11 @@ public class Main {
         menu.printPrimi();
 
 
+
         /*SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00,"Carne,rucola,formaggio");
+=======
+        SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00);
+>>>>>>> 30db1339d51b111e98a971233405b4dcd85bbe77
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0);
         SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0);
         SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0);
