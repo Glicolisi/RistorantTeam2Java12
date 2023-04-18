@@ -9,7 +9,7 @@ public class Main {
 
         Menu menu = new Menu("Menu' carnivoro", "carnivoro");
 
-        Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
+      /*  Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
         Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00);
         Antipasti antipasto3 = new Antipasti("Frittura di verdure miste", 6.00);
         Antipasti antipasto4 = new Antipasti("Anelli di cipolla", 5.00);
@@ -20,7 +20,7 @@ public class Main {
         menu.addAntipasto(antipasto3);
         menu.addAntipasto(antipasto4);
         menu.addAntipasto(antipasto5);
-        menu.printAntipasti();
+        menu.printAntipasti();*/
 
 
 
@@ -58,6 +58,7 @@ public class Main {
         menu.addSecondo(secondo3);
         menu.addSecondo(secondo4);
         menu.addSecondo(secondo5);
+        menu.printSecondi();
 
 
 
@@ -76,7 +77,7 @@ public class Main {
         menu.printDolci();
 
 
-        Bevande bevanda1 = new Bevande("Acqua naturale", 1d);
+        /*Bevande bevanda1 = new Bevande("Acqua naturale", 1d);
         Bevande bevanda2 = new Bevande("Acqua frizzante", 1d);
         Bevande bevanda3 = new Bevande("Sprite", 3d);
         Bevande bevanda4 = new Bevande("Coca cola", 3d);
@@ -88,7 +89,7 @@ public class Main {
         menu.addBevanda(bevanda5);
 
         menu.printBevande();
-
+*/
 
         menu.prezzoMedioMenu(menu);
     }

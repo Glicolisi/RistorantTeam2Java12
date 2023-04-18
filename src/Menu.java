@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.OptionalDouble;
+import java.util.*;
 
 public class Menu {
 
@@ -77,21 +74,21 @@ public class Menu {
 
     //TOD
     public void printAntipasti() {
-        System.out.println(UtilityColor.BLUE_UNDERLINED + "Antipasti: ");
+        System.out.println(Utility.BLUE_UNDERLINED + "Antipasti: ");
         for (Antipasti antipasti : antipastiList) {
-            antipasti.printMenuAntipasti();
+            antipasti.printInfo(Utility.BLUE.getFormat());
         }
         System.out.print("\n");
     }
 
 
-    public void printBevande() {
+   /* public void printBevande() {
         for (Bevande bevande : bevandeList) {
             bevande.printMenuBevande();
         }
 
     }
-
+*/
     public void printPrimi() {
 
         System.out.println(Utility.GREEN_UNDERLINED.getFormat()+"Primi piatti: ");
@@ -102,44 +99,54 @@ public class Menu {
         System.out.print("\n");
     }
 
+    public void printSecondi(){
+        System.out.println(Utility.CYAN_BOLD.getFormat()+"Secondi piatti: ");
+        for (SecondiPiatti secondiPiatti : secondiPiattiList) {
+            secondiPiatti.printInfo(Utility.CYAN_BOLD.getFormat());
+
+        }
+        System.out.println("\n");
+    }
+
+
+
 
         public void printDolci() {
-            System.out.println(UtilityColor.YELLOW_BOLD+"\nDolci:");
+            System.out.println(Utility.YELLOW_BOLD.getFormat()+"\nDolci:");
             for (Dolci dolciPiatti: dolciList){
                 dolciPiatti.printInfo(Utility.YELLOW.getFormat());
             }
             System.out.println("\n");
         }
-        public void prezzoMedioMenu(Menu menu){
-        double mediaAntipasti=0.0;
-        double mediaPrimi=0.0;
-        double mediaSecondi=0.0;
-        double mediaDolci=0.0;
 
-        for (Antipasti antipasti : antipastiList) {
-                mediaAntipasti += antipasti.getPrezzo();
+        public void prezzoMedioMenu(Menu menu) {
+           List<Portate> menuList = new ArrayList<>();
+            menuList.addAll(antipastiList);
+            menuList.addAll(primiPiattiList);
+            menuList.addAll(secondiPiattiList);
+            menuList.addAll(dolciList);
+            double mediaMenu = 0.0;
+
+            for (Portate portata : menuList) {
+                mediaMenu += portata.getPrezzo();
             }
-            mediaAntipasti /= antipastiList.size();
+            mediaMenu /= menuList.size();
 
-        for (PrimiPiatti primiPiatti : primiPiattiList) {
-                mediaPrimi += primiPiatti.getPrezzo();
+         // Oppure un altro metodo -> double mediaMenu = menuList.stream().mapToDouble(Portate::getPrezzo).sum()/menuList.size();
+
+           if (mediaMenu>=0 && mediaMenu<= 20){
+            System.out.println("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €");}
+            if (mediaMenu>20 && mediaMenu<=40){
+                System.out.println("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €€");}
+            if (mediaMenu>40){
+                System.out.println("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €€€");}
+
+
+
             }
-            mediaPrimi /= primiPiattiList.size();
 
-        for (SecondiPiatti secondiPiatti : secondiPiattiList) {
-                mediaSecondi += secondiPiatti.getPrezzo();
+
             }
-            mediaSecondi /= secondiPiattiList.size();
 
-            for (Dolci dolci : dolciList) {
-                mediaDolci += dolci.getPrezzo();
-            }
-            mediaDolci /= dolciList.size();
 
-            double mediaMenu = (mediaAntipasti + mediaPrimi + mediaSecondi + mediaDolci)/4;
-
-            System.out.println("Il prezzo medio del Menu:"+ menu.getTipo()+" è:"+mediaMenu);
-        }
-
-    }
 
