@@ -96,7 +96,7 @@ public class Menu {
 
     //TOD
     public void printAntipasti() {
-      //  System.out.println(UtilityColor.BLUE_UNDERLINED + "Antipasti: ");
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: ");
         for (Antipasti antipasti : antipastiList) {
             antipasti.printMenuAntipasti();
         }
@@ -125,7 +125,7 @@ public class Menu {
 
 
     public void printDolci() {
-       // System.out.println(UtilityColor.YELLOW_BOLD + "\nDolci:");
+        System.out.println(Utility.YELLOW_BOLD.getFormat() + "\nDolci:");
         for (Dolci dolciPiatti : dolciList) {
             dolciPiatti.printInfo(Utility.YELLOW.getFormat());
         }
