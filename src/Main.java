@@ -76,11 +76,12 @@ public class Main {
         menu.printDolci();
 
 
-        Bevande bevanda1 = new Bevande("Acqua naturale", 1d);
-        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d);
-        Bevande bevanda3 = new Bevande("Sprite", 3d);
-        Bevande bevanda4 = new Bevande("Coca cola", 3d);
-        Bevande bevanda5 = new Bevande("Vino", 100d);
+        Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua");
+        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine");
+        Bevande bevanda3 = new Bevande("Sprite", 3d,"Acqua, zucchero, anidride carbonica, acido citrico edulcoloranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime");
+        Bevande bevanda4 = new Bevande("Coca cola", 3d,"Acqua, anidride carbonica, zucchero, colorante caramello,aromi naturali, caffeina e acido fosforico");
+        Bevande bevanda5 = new Bevande("Vino", 100d,"Glicerolo,Acido tartarico,Acido malico,Acido lattico,Acido acetico,Zuccheri");
+
         menu.addBevanda(bevanda1);
         menu.addBevanda(bevanda2);
         menu.addBevanda(bevanda3);

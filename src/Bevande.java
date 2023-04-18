@@ -1,32 +1,14 @@
+import javax.sound.sampled.Port;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Bevande {
-    private String nome;
-    private Double prezzo;
+public class Bevande extends Portate {
 
-    public Bevande(String nome, Double prezzo) {
-        this.nome = nome;
-        this.prezzo = prezzo;
+    public Bevande(String nome, Double prezzo, String ingredienti) {
+        super(nome, prezzo, ingredienti);
     }
 
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
-    public Double getPrezzo() {
-        return prezzo;
-    }
-    public void setPrezzo(Double prezzo) {
-        this.prezzo = prezzo;
-    }
-
-    public void printMenuBevande() {
-        System.out.println(UtilityColor.PURPLE + UtilityColor.PURPLE + nome + " " + prezzo + " euro");
-    }
 }
 
 
