@@ -13,21 +13,21 @@ public class Menu {
 
     private ArrayList<SecondiPiatti> secondiPiattiList;
 
-   private ArrayList<Dolci> dolciList;
+    private ArrayList<Dolci> dolciList;
 
-   //TODO stampiamo nome e tipo
+    //TODO stampiamo nome e tipo
     public Menu(String nome, String tipo) {
         this.nome = nome;
         this.tipo = tipo;
         this.antipastiList = new ArrayList<>();
 
-        this.bevandeList= new ArrayList<>();
+        this.bevandeList = new ArrayList<>();
 
-        this.primiPiattiList=new ArrayList<>();
+        this.primiPiattiList = new ArrayList<>();
 
-        this.secondiPiattiList= new ArrayList<>();
+        this.secondiPiattiList = new ArrayList<>();
 
-        this.dolciList=new ArrayList<>();
+        this.dolciList = new ArrayList<>();
 
     }
 
@@ -52,29 +52,52 @@ public class Menu {
         antipastiList.add(antipasti);
     }
 
-    public void removeAntipasto(Antipasti antipasti) {antipastiList.remove(antipasti);}
+    public void removeAntipasto(Antipasti antipasti) {
+        antipastiList.remove(antipasti);
+    }
 
 
-    public void addBevanda(Bevande bevande) {bevandeList.add(bevande);}
-    public void removeBevanda(Bevande bevande){bevandeList.remove(bevande);}
-    public void addPrimo(PrimiPiatti primiPiatti){primiPiattiList.add(primiPiatti);}
-    public void removePrimo(PrimiPiatti primiPiatti){
+    public void addBevanda(Bevande bevande) {
+        bevandeList.add(bevande);
+    }
+
+    public void removeBevanda(Bevande bevande) {
+        bevandeList.remove(bevande);
+    }
+
+    public void addPrimo(PrimiPiatti primiPiatti) {
+        primiPiattiList.add(primiPiatti);
+    }
+
+    public void removePrimo(PrimiPiatti primiPiatti) {
         primiPiattiList.remove(primiPiatti);
     }
 
 
-    public void addSecondo(SecondiPiatti secondiPiatti) {secondiPiattiList.add(secondiPiatti);}
+    public void addSecondo(SecondiPiatti secondiPiatti) {
+        secondiPiattiList.add(secondiPiatti);
+    }
 
-    public void removeSecondo(SecondiPiatti secondiPiatti) { secondiPiattiList.remove(secondiPiatti);}
+    public void removeSecondo(SecondiPiatti secondiPiatti) {
+        secondiPiattiList.remove(secondiPiatti);
+    }
 
-    public void addDolce(Dolci dolci){dolciList.add(dolci);}
-    public void removeDolce(Dolci dolci){dolciList.remove(dolci);}
+    public void addDolce(Dolci dolci) {
+        dolciList.add(dolci);
+    }
 
+    public void removeDolce(Dolci dolci) {
+        dolciList.remove(dolci);
+    }
 
 
     //TOD
     public void printAntipasti() {
+
         System.out.println(Utility.BLUE_UNDERLINED + "Antipasti: ");
+
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: ");
+
         for (Antipasti antipasti : antipastiList) {
             antipasti.printInfo(Utility.BLUE.getFormat());
         }
@@ -82,16 +105,22 @@ public class Menu {
     }
 
 
-   /* public void printBevande() {
-        for (Bevande bevande : bevandeList) {
-            bevande.printMenuBevande();
-        }
 
+   /* public void printBevande() {
+
+    public void printBevande() {
+        System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande ");
+
+        for (Bevande bevande : bevandeList) {
+            bevande.printInfo(Utility.PURPLE.getFormat());
+
+        }
+        System.out.print("\n");
     }
 */
     public void printPrimi() {
 
-        System.out.println(Utility.GREEN_UNDERLINED.getFormat()+"Primi piatti: ");
+        System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: ");
         for (PrimiPiatti primiPiatti : primiPiattiList) {
             primiPiatti.printInfo(Utility.GREEN.getFormat());
 
@@ -107,6 +136,7 @@ public class Menu {
         }
         System.out.println("\n");
     }
+
 
 
 
@@ -147,6 +177,14 @@ public class Menu {
 
 
             }
+
+
+
+
+
+
+
+
 
 
 
