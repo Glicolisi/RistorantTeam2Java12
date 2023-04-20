@@ -1,37 +1,25 @@
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
-public class SecondiPiatti {
-    private String nome;
-    private double prezzo;
-
-
-    public SecondiPiatti(String nome, double prezzo) {
-        this.nome = nome;
-        this.prezzo = prezzo;
+public class SecondiPiatti extends Portate {
+    public SecondiPiatti(String nome, Double prezzo, String ingredienti) {
+        super(nome, prezzo, ingredienti);
     }
+    public static void contieneAllergeni(SecondiPiatti secondoPiatto){
+        String [] ingredientiToArray = secondoPiatto.getIngredienti().split(",");
+        System.out.println(Utility.RED_UNDERLINED.getFormat()+"La portata "+secondoPiatto.getNome());
 
-    public String getNome() {
-        return nome;
+        for (String s : Allergeni.allergeniList) {
+            for (String s1 : ingredientiToArray) {
+                if (s.equalsIgnoreCase(s1)){
+                    System.out.println("contiene l'allergene: "+s);
+        }
+            }
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
-    }
-
-    public void printMenuSecondi(){
-
-        System.out.println(UtilityColor.CYAN_BOLD +nome +" "+" "+prezzo+" euro" );
-
-    }
-
+        System.out.println("\n");
+}
 }
 

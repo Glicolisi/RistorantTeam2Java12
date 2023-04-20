@@ -19,6 +19,14 @@ public enum Utility {
      CYAN  ("\033[0;36m"),    // CYAN
      WHITE  ("\033[0;37m"),   // WHITE
 
+    BLACK_CAPITAL  ("\033[3;30m"),  // BLACK
+    RED_CAPITAL  ("\033[3;31m"),    // RED
+    GREEN_CAPITAL  ("\033[3;32m"),  // GREEN
+    YELLOW_CAPITAL  ("\033[3;33m"), // YELLOW
+    BLUE_CAPITAL  ("\033[2;34m"),   // BLUE
+    PURPLE_CAPITAL  ("\033[3;35m"), // PURPLE
+    CYAN_CAPITAL  ("\033[3;36m"),   // CYAN
+    WHITE_CAPITAL  ("\033[3;37m"),  // WHITE
 
     // Bold
     BLACK_BOLD  ("\033[1;30m"),  // BLACK
@@ -38,7 +46,11 @@ public enum Utility {
     BLUE_UNDERLINED  ("\033[4;34m"),   // BLUE
     PURPLE_UNDERLINED  ("\033[4;35m"), // PURPLE
     CYAN_UNDERLINED  ("\033[4;36m"),   // CYAN
-    WHITE_UNDERLINED  ("\033[4;37m");  // WHITE
+    WHITE_UNDERLINED  ("\033[4;37m"),  // WHITE
+
+    //Reset
+    ANSI_RESET ("\u001B[0m"); //Torna al formato predefinito
+
 
     private String format;
 
