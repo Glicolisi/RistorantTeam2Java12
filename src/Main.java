@@ -76,11 +76,7 @@ public class Main {
 
 
 
-        /*Bevande bevanda1 = new Bevande("Acqua naturale", 1d);
-        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d);
-        Bevande bevanda3 = new Bevande("Sprite", 3d);
-        Bevande bevanda4 = new Bevande("Coca cola", 3d);
-        Bevande bevanda5 = new Bevande("Vino", 100d);
+
 
         Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua");
         Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine");
@@ -96,7 +92,7 @@ public class Main {
         menu.addBevanda(bevanda5);
 
         menu.printBevande();
-*/
+
         menu.prezzoMedioMenu(menu);
         SecondiPiatti.contieneAllergeni(secondo2);
         SecondiPiatti.contieneAllergeni(secondo3);

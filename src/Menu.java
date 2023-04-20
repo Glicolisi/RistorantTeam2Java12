@@ -102,18 +102,16 @@ public class Menu {
 
 
 
-    /* public void printBevande() {
-
      public void printBevande() {
-         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande ");
+         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande "+ Utility.PURPLE.getFormat());
 
          for (Bevande bevande : bevandeList) {
-             bevande.printInfo(Utility.PURPLE.getFormat());
+             bevande.printInfo(Utility.PURPLE.getFormat(),Utility.PURPLE_CAPITAL.getFormat());
 
          }
          System.out.print("\n");
      }
- */
+
     public void printPrimi() {
 
         System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: " + Utility.GREEN.getFormat());
@@ -147,6 +145,7 @@ public class Menu {
         menuList.addAll(primiPiattiList);
         menuList.addAll(secondiPiattiList);
         menuList.addAll(dolciList);
+        menuList.addAll(bevandeList);
         double mediaMenu = 0.0;
 
         for (Portate portata : menuList) {
