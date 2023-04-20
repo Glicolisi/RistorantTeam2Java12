@@ -93,7 +93,7 @@ public class Menu {
 
     public void printAntipasti() {
 
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasi: "+ Utility.BLUE.getFormat());
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: "+ Utility.BLUE.getFormat());
         for (Antipasti antipasti : antipastiList) {
             antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
         }
@@ -118,6 +118,7 @@ public class Menu {
         for (PrimiPiatti primiPiatti : primiPiattiList) {
             primiPiatti.printInfo(Utility.GREEN.getFormat(), Utility.GREEN_CAPITAL.getFormat());
         }
+
         System.out.print("\n");
     }
 
