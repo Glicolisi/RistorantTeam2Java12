@@ -99,7 +99,7 @@ public class Menu {
         System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: ");
 
         for (Antipasti antipasti : antipastiList) {
-            antipasti.printInfo(Utility.BLUE.getFormat());
+            antipasti.printInfo(Utility.BLUE.getFormat(),Utility.BLUE_CAPITAL.getFormat());
         }
         System.out.print("\n");
     }
@@ -118,35 +118,31 @@ public class Menu {
         System.out.print("\n");
     }
 */
-    public void printPrimi() {
+   public void printPrimi() {
 
-        System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: "+Utility.GREEN.getFormat());
-        for (PrimiPiatti primiPiatti : primiPiattiList) {
-            primiPiatti.printInfo(Utility.GREEN.getFormat());
-        }
-        System.out.print("\n");
-    }
+       System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: "+Utility.GREEN.getFormat());
+       for (PrimiPiatti primiPiatti : primiPiattiList) {
+           primiPiatti.printInfo(Utility.GREEN.getFormat(),Utility.GREEN_CAPITAL.getFormat());
+       }
+       System.out.print("\n");
+   }
 
     public void printSecondi(){
         System.out.println(Utility.CYAN_UNDERLINED.getFormat()+"Secondi piatti: "+Utility.CYAN.getFormat());
         for (SecondiPiatti secondiPiatti : secondiPiattiList) {
-            secondiPiatti.printInfo(Utility.CYAN_BOLD.getFormat());
+            secondiPiatti.printInfo(Utility.CYAN.getFormat(),Utility.CYAN_CAPITAL.getFormat());
 
         }
         System.out.println("\n");
     }
 
-
-
-
-
     public void printDolci() {
         System.out.println(Utility.YELLOW_UNDERLINED.getFormat()+"Dolci:"+Utility.YELLOW.getFormat());
         for (Dolci dolciPiatti: dolciList){
-                dolciPiatti.printInfo(Utility.YELLOW.getFormat());
+            dolciPiatti.printInfo(Utility.YELLOW.getFormat(),Utility.YELLOW_CAPITAL.getFormat());
         }
         System.out.println("\n");
-        }
+    }
 
         public void prezzoMedioMenu(Menu menu) {
            List<Portate> menuList = new ArrayList<>();
