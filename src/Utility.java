@@ -23,7 +23,7 @@ public enum Utility {
     RED_CAPITAL  ("\033[3;31m"),    // RED
     GREEN_CAPITAL  ("\033[3;32m"),  // GREEN
     YELLOW_CAPITAL  ("\033[3;33m"), // YELLOW
-    BLUE_CAPITAL  ("\033[2;34m"),   // BLUE
+    BLUE_CAPITAL  ("\033[3;34m"),   // BLUE
     PURPLE_CAPITAL  ("\033[3;35m"), // PURPLE
     CYAN_CAPITAL  ("\033[3;36m"),   // CYAN
     WHITE_CAPITAL  ("\033[3;37m"),  // WHITE
