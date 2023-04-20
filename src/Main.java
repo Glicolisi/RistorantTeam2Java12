@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Menu menu = new Menu("Menu' carnivoro", "carnivoro");
+        Menu menu = new Menu("Menù del giorno", "onnivoro");
+        System.out.println(Utility.PURPLE_BOLD.getFormat() + menu.getNome()+"\n");
+
 
       /*  Antipasti antipasto1 = new Antipasti("Caprese", 5.00);
         Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00);
@@ -42,8 +44,8 @@ public class Main {
 
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00,"carne,verdura,formaggio");
-        SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0,"pesce");
-        SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0,"pesce");
+        SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0,"crostacei,pesce");
+        SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0,"molluschi");
         SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0,"carne");
         SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0,"carne");
 
@@ -93,7 +95,8 @@ public class Main {
 
         menu.printBevande();
 */
-
         menu.prezzoMedioMenu(menu);
+        SecondiPiatti.contieneAllergeni(secondo2);
+        SecondiPiatti.contieneAllergeni(secondo3);
     }
 }

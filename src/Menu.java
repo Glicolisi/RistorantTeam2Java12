@@ -165,11 +165,11 @@ public class Menu {
          // Oppure un altro metodo -> double mediaMenu = menuList.stream().mapToDouble(Portate::getPrezzo).sum()/menuList.size();
 
            if (mediaMenu>=0 && mediaMenu<= 20){
-            System.out.println("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €");}
+            System.out.println(Utility.PURPLE_BOLD.getFormat()+"Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €\n");}
             if (mediaMenu>20 && mediaMenu<=40){
-                System.out.println("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €€");}
+                System.out.println(Utility.PURPLE_BOLD.getFormat()+"Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €€\n");}
             if (mediaMenu>40){
-                System.out.println("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €€€");}
+                System.out.println(Utility.PURPLE_BOLD.getFormat()+"Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €€€\n");}
 
 
 
