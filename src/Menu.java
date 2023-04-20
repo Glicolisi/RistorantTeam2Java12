@@ -111,7 +111,7 @@ public class Menu {
         }
 
         public void printDolci() {
-            System.out.println(UtilityColor.YELLOW_BOLD+"\nDolci:");
+            System.out.println(Utility.YELLOW_BOLD+"\nDolci:");
             for (Dolci dolciPiatti: dolciList){
                 dolciPiatti.printInfo(Utility.YELLOW.getFormat());
             }
