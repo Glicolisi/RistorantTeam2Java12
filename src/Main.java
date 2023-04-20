@@ -58,6 +58,8 @@ public class Main {
         menu.addSecondo(secondo5);
         menu.printSecondi();
 
+        SecondiPiatti.contieneAllergeni(secondo2);
+        SecondiPiatti.contieneAllergeni(secondo3);
 
 
         Dolci dolci1 = new Dolci("Tiramisù", 12.5,"Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro");
@@ -73,8 +75,6 @@ public class Main {
 
 
         menu.printDolci();
-
-
 
 
 
@@ -94,7 +94,5 @@ public class Main {
         menu.printBevande();
 
         menu.prezzoMedioMenu(menu);
-        SecondiPiatti.contieneAllergeni(secondo2);
-        SecondiPiatti.contieneAllergeni(secondo3);
     }
 }
