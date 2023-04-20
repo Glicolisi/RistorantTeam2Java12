@@ -91,19 +91,14 @@ public class Menu {
     }
 
 
-    //TOD
     public void printAntipasti() {
 
-        System.out.println(Utility.BLUE_UNDERLINED + "Antipasti: ");
-
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: ");
-
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasi: "+ Utility.BLUE.getFormat());
         for (Antipasti antipasti : antipastiList) {
             antipasti.printInfo(Utility.BLUE.getFormat(),Utility.BLUE_CAPITAL.getFormat());
         }
         System.out.print("\n");
     }
-
 
 
    /* public void printBevande() {
