@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        // NOME DEL RISTORANTE
+        System.out.println("La Taverna dei Programmatori");
 
         Menu menu = new Menu("Menù del giorno", "onnivoro");
         System.out.println(Utility.PURPLE_BOLD.getFormat() + menu.getNome()+"\n");
