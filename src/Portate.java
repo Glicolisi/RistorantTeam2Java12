@@ -33,7 +33,7 @@ public class Portate {
         this.ingredienti = ingredienti;
     }
 
-    public  void printInfo(String coloreIngredienti,String colorePiatti){
+    public void printInfo(String coloreIngredienti,String colorePiatti){
         System.out.println(getNome()+": "+getPrezzo()+" euro");
 
         System.out.println(colorePiatti+"("+getIngredienti()+")"+coloreIngredienti);
