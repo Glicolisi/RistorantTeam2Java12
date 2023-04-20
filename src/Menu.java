@@ -120,16 +120,15 @@ public class Menu {
 */
     public void printPrimi() {
 
-        System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: ");
+        System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: "+Utility.GREEN.getFormat());
         for (PrimiPiatti primiPiatti : primiPiattiList) {
             primiPiatti.printInfo(Utility.GREEN.getFormat());
-
         }
         System.out.print("\n");
     }
 
     public void printSecondi(){
-        System.out.println(Utility.CYAN_BOLD.getFormat()+"Secondi piatti: ");
+        System.out.println(Utility.CYAN_UNDERLINED.getFormat()+"Secondi piatti: "+Utility.CYAN.getFormat());
         for (SecondiPiatti secondiPiatti : secondiPiattiList) {
             secondiPiatti.printInfo(Utility.CYAN_BOLD.getFormat());
 
@@ -141,12 +140,12 @@ public class Menu {
 
 
 
-        public void printDolci() {
-            System.out.println(Utility.YELLOW_BOLD.getFormat()+"\nDolci:");
-            for (Dolci dolciPiatti: dolciList){
+    public void printDolci() {
+        System.out.println(Utility.YELLOW_UNDERLINED.getFormat()+"Dolci:"+Utility.YELLOW.getFormat());
+        for (Dolci dolciPiatti: dolciList){
                 dolciPiatti.printInfo(Utility.YELLOW.getFormat());
-            }
-            System.out.println("\n");
+        }
+        System.out.println("\n");
         }
 
         public void prezzoMedioMenu(Menu menu) {
@@ -165,11 +164,12 @@ public class Menu {
          // Oppure un altro metodo -> double mediaMenu = menuList.stream().mapToDouble(Portate::getPrezzo).sum()/menuList.size();
 
            if (mediaMenu>=0 && mediaMenu<= 20){
-            System.out.println(Utility.PURPLE_BOLD.getFormat()+"Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €\n");}
+
+            System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €"));}
             if (mediaMenu>20 && mediaMenu<=40){
-                System.out.println(Utility.PURPLE_BOLD.getFormat()+"Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €€\n");}
+                System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €€"));}
             if (mediaMenu>40){
-                System.out.println(Utility.PURPLE_BOLD.getFormat()+"Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €€€\n");}
+                System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del Menu: "+ menu.getTipo()+" è: "+mediaMenu +" euro     €€€"));}
 
 
 
