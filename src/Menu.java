@@ -165,11 +165,11 @@ public class Menu {
 
            if (mediaMenu>=0 && mediaMenu<= 20){
 
-            System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del Menu: "+ menu.getNome()+" è: "+mediaMenu +" euro     €\n"));}
+            System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €\n"));}
             if (mediaMenu>20 && mediaMenu<=40){
-                System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del Menu: "+ menu.getNome()+" è: "+mediaMenu +" euro     €€\n"));}
+                System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €€\n"));}
             if (mediaMenu>40){
-                System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del Menu: "+ menu.getNome()+" è: "+mediaMenu +" euro     €€€\n"));}
+                System.out.println(Utility.ANSI_RESET.getFormat()+("Il prezzo medio del "+ menu.getNome()+" è: "+mediaMenu +" euro     €€€\n"));}
 
 
 
