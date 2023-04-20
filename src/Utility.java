@@ -38,7 +38,11 @@ public enum Utility {
     BLUE_UNDERLINED  ("\033[4;34m"),   // BLUE
     PURPLE_UNDERLINED  ("\033[4;35m"), // PURPLE
     CYAN_UNDERLINED  ("\033[4;36m"),   // CYAN
-    WHITE_UNDERLINED  ("\033[4;37m");  // WHITE
+    WHITE_UNDERLINED  ("\033[4;37m"),  // WHITE
+
+    //Reset
+    ANSI_RESET ("\u001B[0m"); //Torna al formato predefinito
+
 
     private String format;
 
