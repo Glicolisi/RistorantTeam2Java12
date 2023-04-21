@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         // NOME DEL RISTORANTE
-        System.out.println("La Taverna dei Programmatori");
+        System.out.println("La Taverna dei Programmatori\n");
 
         Menu menu = new Menu("Menù del giorno", "onnivoro");
         System.out.println(Utility.PURPLE_BOLD.getFormat() + menu.getNome()+"\n");
@@ -43,7 +43,9 @@ public class Main {
 
         menu.printPrimi();
 
-
+        primo1.disponibilitàStagionale(PrimiPiatti.Stagioni.ESTATE);
+        primo5.disponibilitàStagionale(PrimiPiatti.Stagioni.INVERNO);
+        primo2.disponibilitàStagionale(PrimiPiatti.Stagioni.FUORI_MENU);
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00,"carne,verdura,formaggio");
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0,"crostacei,pesce");
