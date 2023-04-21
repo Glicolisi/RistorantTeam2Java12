@@ -80,11 +80,11 @@ public class Main {
 
 
 
-        Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua");
-        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine");
-        Bevande bevanda3 = new Bevande("Sprite", 3d,"Acqua, zucchero, anidride carbonica, acido citrico edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime");
-        Bevande bevanda4 = new Bevande("Coca cola", 3d,"Acqua, anidride carbonica, zucchero, colorante caramello,aromi naturali, caffeina e acido fosforico");
-        Bevande bevanda5 = new Bevande("Vino", 100d,"Glicerolo,Acido tartarico,Acido malico,Acido lattico,Acido acetico,Zuccheri");
+        Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua",false);
+        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine",false);
+        Bevande bevanda3 = new Bevande("Sprite", 3d,"Acqua, zucchero, anidride carbonica, acido citrico edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime",false);
+        Bevande bevanda4 = new Bevande("Coca cola", 3d,"Acqua, anidride carbonica, zucchero, colorante caramello,aromi naturali, caffeina e acido fosforico",false);
+        Bevande bevanda5 = new Bevande("Vino", 100d,"Glicerolo,Acido tartarico,Acido malico,Acido lattico,Acido acetico,Zuccheri",true);
 
 
         menu.addBevanda(bevanda1);

@@ -93,7 +93,7 @@ public class Menu {
 
     public void printAntipasti() {
 
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: "+ Utility.BLUE.getFormat());
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
         for (Antipasti antipasti : antipastiList) {
             antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
             antipasti.provenienzeKmZero(antipasti.isKmZero());
@@ -102,16 +102,15 @@ public class Menu {
     }
 
 
+    public void printBevande() {
+        System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande " + Utility.PURPLE.getFormat());
 
-     public void printBevande() {
-         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande "+ Utility.PURPLE.getFormat());
-
-         for (Bevande bevande : bevandeList) {
-             bevande.printInfo(Utility.PURPLE.getFormat(),Utility.PURPLE_CAPITAL.getFormat());
-
-         }
-         System.out.print("\n");
-     }
+        for (Bevande bevande : bevandeList) {
+            bevande.printInfo(Utility.PURPLE.getFormat(), Utility.PURPLE_CAPITAL.getFormat());
+            bevande.checkAlchol(bevande.isAlcholic());
+        }
+        System.out.print("\n");
+    }
 
     public void printPrimi() {
 
