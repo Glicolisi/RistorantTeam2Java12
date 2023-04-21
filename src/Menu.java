@@ -93,7 +93,7 @@ public class Menu {
 
     public void printAntipasti() {
 
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: "+ Utility.BLUE.getFormat());
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
         for (Antipasti antipasti : antipastiList) {
             antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
             antipasti.provenienzeKmZero(antipasti.isKmZero());
@@ -102,6 +102,16 @@ public class Menu {
     }
 
 
+
+    public void printBevande() {
+        System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande " + Utility.PURPLE.getFormat());
+
+        for (Bevande bevande : bevandeList) {
+            bevande.printInfo(Utility.PURPLE.getFormat(), Utility.PURPLE_CAPITAL.getFormat());
+            bevande.checkAlchol(bevande.isAlcholic());
+        }
+        System.out.print("\n");
+    }
 
      public void printBevande() {
          System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande "+ Utility.PURPLE.getFormat());
@@ -112,6 +122,7 @@ public class Menu {
          }
          System.out.print("\n");
      }
+
 
     public void printPrimi() {
 
@@ -127,13 +138,15 @@ public class Menu {
         System.out.println(Utility.CYAN_UNDERLINED.getFormat() + "Secondi piatti: " + Utility.CYAN.getFormat());
         for (SecondiPiatti secondiPiatti : secondiPiattiList) {
             secondiPiatti.printInfo(Utility.CYAN.getFormat(), Utility.CYAN_CAPITAL.getFormat());
-
         }
         System.out.println("\n");
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e39a73880b6b234c4db1a19e94085812f162724e
     public void printDolci() {
         System.out.println(Utility.YELLOW_UNDERLINED.getFormat() + "Dolci:" + Utility.YELLOW.getFormat());
         for (Dolci dolciPiatti : dolciList) {
@@ -171,7 +184,6 @@ public class Menu {
 
 
     }
-
 
 }
 

@@ -62,7 +62,4 @@ public enum Utility {
         return format;
     }
 
-    public void setFormat(String format) {
-        this.format = format;
-    }
 }
