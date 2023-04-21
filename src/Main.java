@@ -88,6 +88,7 @@ public class Main {
         menu.addBevanda(bevanda4);
         menu.addBevanda(bevanda5);
 
+        menu.printBevande();
 
         menu.prezzoMedioMenu(menu);
     }

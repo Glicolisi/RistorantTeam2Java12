@@ -131,11 +131,7 @@ public class Menu {
         System.out.println("\n");
     }
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> e39a73880b6b234c4db1a19e94085812f162724e
     public void printDolci() {
         System.out.println(Utility.YELLOW_UNDERLINED.getFormat() + "Dolci:" + Utility.YELLOW.getFormat());
         for (Dolci dolciPiatti : dolciList) {
