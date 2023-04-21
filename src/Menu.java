@@ -102,6 +102,7 @@ public class Menu {
     }
 
 
+
     public void printBevande() {
         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande " + Utility.PURPLE.getFormat());
 
@@ -111,6 +112,17 @@ public class Menu {
         }
         System.out.print("\n");
     }
+
+     public void printBevande() {
+         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande "+ Utility.PURPLE.getFormat());
+
+         for (Bevande bevande : bevandeList) {
+             bevande.printInfo(Utility.PURPLE.getFormat(),Utility.PURPLE_CAPITAL.getFormat());
+
+         }
+         System.out.print("\n");
+     }
+
 
     public void printPrimi() {
 
@@ -126,11 +138,9 @@ public class Menu {
         System.out.println(Utility.CYAN_UNDERLINED.getFormat() + "Secondi piatti: " + Utility.CYAN.getFormat());
         for (SecondiPiatti secondiPiatti : secondiPiattiList) {
             secondiPiatti.printInfo(Utility.CYAN.getFormat(), Utility.CYAN_CAPITAL.getFormat());
-
         }
         System.out.println("\n");
     }
-
 
     public void printDolci() {
         System.out.println(Utility.YELLOW_UNDERLINED.getFormat() + "Dolci:" + Utility.YELLOW.getFormat());
@@ -169,7 +179,6 @@ public class Menu {
 
 
     }
-
 
 }
 

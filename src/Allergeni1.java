@@ -25,8 +25,4 @@ public enum Allergeni1 {
         return allergeni;
     }
 
-    public void setAllergeni(String allergeni) {
-        this.allergeni = allergeni;
-    }
-
 }
