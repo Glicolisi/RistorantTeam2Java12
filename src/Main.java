@@ -7,17 +7,17 @@ public class Main {
     public static void main(String[] args) {
 
         // NOME DEL RISTORANTE
-        System.out.println("La Taverna dei Programmatori");
+        System.out.println("La Taverna dei Programmatori\n");
 
         Menu menu = new Menu("Menù del giorno", "onnivoro");
         System.out.println(Utility.PURPLE_BOLD.getFormat() + menu.getNome()+"\n");
 
 
-        Antipasti antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro");
-        Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino");
-        Antipasti antipasto3 = new Antipasti("Frittura di verdure miste", 6.00, "Pastella, Cavolfiori, Zucchine, Melanzane, Carciofi");
-        Antipasti antipasto4 = new Antipasti("Anelli di cipolla", 5.00, "Pastella, Cipolla");
-        Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00, "Olive, Ricotta, Salame, Funghi sott'olio");
+        Antipasti antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", true);
+        Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", false);
+        Antipasti antipasto3 = new Antipasti("Frittura di verdure miste", 6.00, "Pastella, Cavolfiori, Zucchine, Melanzane, Carciofi", true);
+        Antipasti antipasto4 = new Antipasti("Anelli di cipolla", 5.00, "Pastella, Cipolla", false);
+        Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00, "Olive, Ricotta, Salame, Funghi sott'olio", true);
 
         menu.addAntipasto(antipasto1);
         menu.addAntipasto(antipasto2);
@@ -43,7 +43,9 @@ public class Main {
 
         menu.printPrimi();
 
-
+        primo1.disponibilitàStagionale(PrimiPiatti.Stagioni.ESTATE);
+        primo5.disponibilitàStagionale(PrimiPiatti.Stagioni.INVERNO);
+        primo2.disponibilitàStagionale(PrimiPiatti.Stagioni.FUORI_MENU);
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00,"carne,verdura,formaggio");
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0,"crostacei,pesce");
@@ -58,6 +60,8 @@ public class Main {
         menu.addSecondo(secondo5);
         menu.printSecondi();
 
+        SecondiPiatti.contieneAllergeni(secondo2);
+        SecondiPiatti.contieneAllergeni(secondo3);
 
 
         Dolci dolci1 = new Dolci("Tiramisù", 12.5,"Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro");
@@ -76,12 +80,6 @@ public class Main {
 
 
 
-        /*Bevande bevanda1 = new Bevande("Acqua naturale", 1d);
-        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d);
-        Bevande bevanda3 = new Bevande("Sprite", 3d);
-        Bevande bevanda4 = new Bevande("Coca cola", 3d);
-        Bevande bevanda5 = new Bevande("Vino", 100d);
-
         Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua");
         Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine");
         Bevande bevanda3 = new Bevande("Sprite", 3d,"Acqua, zucchero, anidride carbonica, acido citrico edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime");
@@ -96,9 +94,7 @@ public class Main {
         menu.addBevanda(bevanda5);
 
         menu.printBevande();
-*/
+
         menu.prezzoMedioMenu(menu);
-        SecondiPiatti.contieneAllergeni(secondo2);
-        SecondiPiatti.contieneAllergeni(secondo3);
     }
 }

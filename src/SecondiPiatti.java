@@ -12,13 +12,20 @@ public class SecondiPiatti extends Portate {
         String [] ingredientiToArray = secondoPiatto.getIngredienti().split(",");
         System.out.println(Utility.RED_UNDERLINED.getFormat()+"La portata "+secondoPiatto.getNome());
 
-        for (String s : Allergeni.allergeniList) {
+       /* for (String s : Allergeni.allergeniList) {
             for (String s1 : ingredientiToArray) {
                 if (s.equalsIgnoreCase(s1)){
                     System.out.println("contiene l'allergene: "+s);
         }
             }
-    }
+    }*/
+        for (Allergeni1 allergeni1 : Allergeni1.values()){
+            for (String ingredienti : ingredientiToArray){
+                if (allergeni1.getAllergeni().equalsIgnoreCase(ingredienti)){
+                    System.out.println("contiene l'allergene: "+allergeni1.getAllergeni());
+                }
+            }
+        }
         System.out.println("\n");
 }
 }

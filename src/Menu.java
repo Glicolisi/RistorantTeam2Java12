@@ -93,33 +93,33 @@ public class Menu {
 
     public void printAntipasti() {
 
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasi: "+ Utility.BLUE.getFormat());
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: "+ Utility.BLUE.getFormat());
         for (Antipasti antipasti : antipastiList) {
             antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
+            antipasti.provenienzeKmZero(antipasti.isKmZero());
         }
         System.out.print("\n");
     }
 
 
 
-    /* public void printBevande() {
-
      public void printBevande() {
-         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande ");
+         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande "+ Utility.PURPLE.getFormat());
 
          for (Bevande bevande : bevandeList) {
-             bevande.printInfo(Utility.PURPLE.getFormat());
+             bevande.printInfo(Utility.PURPLE.getFormat(),Utility.PURPLE_CAPITAL.getFormat());
 
          }
          System.out.print("\n");
      }
- */
+
     public void printPrimi() {
 
         System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: " + Utility.GREEN.getFormat());
         for (PrimiPiatti primiPiatti : primiPiattiList) {
             primiPiatti.printInfo(Utility.GREEN.getFormat(), Utility.GREEN_CAPITAL.getFormat());
         }
+
         System.out.print("\n");
     }
 
@@ -148,6 +148,7 @@ public class Menu {
         menuList.addAll(primiPiattiList);
         menuList.addAll(secondiPiattiList);
         menuList.addAll(dolciList);
+        menuList.addAll(bevandeList);
         double mediaMenu = 0.0;
 
         for (Portate portata : menuList) {
