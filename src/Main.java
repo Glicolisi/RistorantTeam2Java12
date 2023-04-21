@@ -26,14 +26,11 @@ public class Main {
         menu.addAntipasto(antipasto5);
         menu.printAntipasti();
 
-
-
         PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0,"Pasta fresca, ragù di carne,besciamella");
         PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0,"Pasta fresca,pomodoro,guanciale,pecorino");
         PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0,"Pasta fresca,carne macinata,panna");
         PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0,"Pasta fresca,pomodoro,pancetta,vodka");
         PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0,"Pasta fresca,basilico,pinoli,grana padano");
-
 
         menu.addPrimo(primo1);
         menu.addPrimo(primo2);
@@ -63,7 +60,6 @@ public class Main {
         SecondiPiatti.contieneAllergeni(secondo2);
         SecondiPiatti.contieneAllergeni(secondo3);
 
-
         Dolci dolci1 = new Dolci("Tiramisù", 12.5,"Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro");
         Dolci dolci2 = new Dolci("Torta della nonna", 9.0,"Burro,zucchero,uova,latte intero,farina,pinoli");
         Dolci dolci3 = new Dolci("Gelato", 2.0,"Latte condensato, frutta fresca,vaniglia,scaglie di cioccolato ");
@@ -75,17 +71,13 @@ public class Main {
         menu.addDolce(dolci4);
         menu.addDolce(dolci5);
 
-
         menu.printDolci();
-
-
 
         Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua");
         Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine");
         Bevande bevanda3 = new Bevande("Sprite", 3d,"Acqua, zucchero, anidride carbonica, acido citrico edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime");
         Bevande bevanda4 = new Bevande("Coca cola", 3d,"Acqua, anidride carbonica, zucchero, colorante caramello,aromi naturali, caffeina e acido fosforico");
         Bevande bevanda5 = new Bevande("Vino", 100d,"Glicerolo,Acido tartarico,Acido malico,Acido lattico,Acido acetico,Zuccheri");
-
 
         menu.addBevanda(bevanda1);
         menu.addBevanda(bevanda2);
