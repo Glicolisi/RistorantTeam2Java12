@@ -113,17 +113,6 @@ public class Menu {
         System.out.print("\n");
     }
 
-     public void printBevande() {
-         System.out.println(Utility.PURPLE_UNDERLINED.getFormat() + "Bevande "+ Utility.PURPLE.getFormat());
-
-         for (Bevande bevande : bevandeList) {
-             bevande.printInfo(Utility.PURPLE.getFormat(),Utility.PURPLE_CAPITAL.getFormat());
-
-         }
-         System.out.print("\n");
-     }
-
-
     public void printPrimi() {
 
         System.out.println(Utility.GREEN_UNDERLINED.getFormat() + "Primi piatti: " + Utility.GREEN.getFormat());

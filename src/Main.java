@@ -65,6 +65,7 @@ public class Main {
         Dolci dolci3 = new Dolci("Gelato", 2.0,"Latte condensato, frutta fresca,vaniglia,scaglie di cioccolato ");
         Dolci dolci4 = new Dolci("Panna Cotta", 5.0,"Caffè,zucchero,baccello di vaniglia,panna fresco liquida");
         Dolci dolci5 = new Dolci("Macedonia di frutta", 7.0,"Fragole,kiwi,uva,melone,pesca,succo di limone,zucchero semolato");
+
         menu.addDolce(dolci1);
         menu.addDolce(dolci2);
         menu.addDolce(dolci3);
@@ -73,21 +74,11 @@ public class Main {
 
         menu.printDolci();
 
-
-
-
         Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua",false);
         Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine",false);
         Bevande bevanda3 = new Bevande("Sprite", 3d,"Acqua, zucchero, anidride carbonica, acido citrico edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime",false);
         Bevande bevanda4 = new Bevande("Coca cola", 3d,"Acqua, anidride carbonica, zucchero, colorante caramello,aromi naturali, caffeina e acido fosforico",false);
         Bevande bevanda5 = new Bevande("Vino", 100d,"Glicerolo,Acido tartarico,Acido malico,Acido lattico,Acido acetico,Zuccheri",true);
-
-        Bevande bevanda1 = new Bevande("Acqua naturale",1d,"Acqua");
-        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d,"Acqua, bollicine");
-        Bevande bevanda3 = new Bevande("Sprite", 3d,"Acqua, zucchero, anidride carbonica, acido citrico edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime");
-        Bevande bevanda4 = new Bevande("Coca cola", 3d,"Acqua, anidride carbonica, zucchero, colorante caramello,aromi naturali, caffeina e acido fosforico");
-        Bevande bevanda5 = new Bevande("Vino", 100d,"Glicerolo,Acido tartarico,Acido malico,Acido lattico,Acido acetico,Zuccheri");
-
 
         menu.addBevanda(bevanda1);
         menu.addBevanda(bevanda2);
