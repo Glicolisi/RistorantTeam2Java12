@@ -96,6 +96,7 @@ public class Menu {
         System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: "+ Utility.BLUE.getFormat());
         for (Antipasti antipasti : antipastiList) {
             antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
+            antipasti.provenienzeKmZero(antipasti.isKmZero());
         }
         System.out.print("\n");
     }
