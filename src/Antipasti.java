@@ -1,6 +1,5 @@
 public class Antipasti extends Portate {
 
-    //TODO se facciamo la classe padre dobbiamo inserire dei field aggiuntivi ad esempio isKmZero
     private boolean isKmZero;
 
     public Antipasti(String nome, Double prezzo, String ingredienti, boolean isKmZero) {
@@ -23,6 +22,5 @@ public class Antipasti extends Portate {
             System.out.println("Prodotto fuori regione o surgelato");
         }
     }
-
 
 }
