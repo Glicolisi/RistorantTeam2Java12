@@ -12,14 +12,15 @@ public class Main {
         Menu menu = new Menu("Menù del giorno", "onnivoro");
         System.out.println(Utility.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
 
+        //TODO sistemare
 
-        Antipasti antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", true);
+        Portata antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", true);
         Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", false);
         Antipasti antipasto3 = new Antipasti("Frittura di verdure miste", 6.00, "Pastella, Cavolfiori, Zucchine, Melanzane, Carciofi", true);
         Antipasti antipasto4 = new Antipasti("Anelli di cipolla", 5.00, "Pastella, Cipolla", false);
         Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00, "Olive, Ricotta, Salame, Funghi sott'olio", true);
 
-        menu.addAntipasto(antipasto1);
+        menu.addPortata(antipasto1);
         menu.addAntipasto(antipasto2);
         menu.addAntipasto(antipasto3);
         menu.addAntipasto(antipasto4);
@@ -57,8 +58,8 @@ public class Main {
         menu.addSecondo(secondo5);
         menu.printSecondi();
 
-        SecondiPiatti.contieneAllergeni(secondo2);
-        SecondiPiatti.contieneAllergeni(secondo3);
+        secondo1.contieneAllergeni();
+        secondo3.contieneAllergeni();
 
         Dolci dolci1 = new Dolci("Tiramisù", 12.5, "Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro", "senza lattesio");
         Dolci dolci2 = new Dolci("Torta della nonna", 9.0, "Burro,zucchero,uova,latte intero,farina,pinoli", "senza lattesio");

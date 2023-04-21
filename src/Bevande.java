@@ -1,8 +1,4 @@
-import javax.sound.sampled.Port;
-import java.util.HashMap;
-import java.util.Map;
-
-public class Bevande extends Portate {
+public class Bevande extends Portata {
     public boolean isAlcholic;
     public Bevande(String nome, Double prezzo, String ingredienti, boolean isAlcholic) {
         super(nome, prezzo, ingredienti);
@@ -22,6 +18,13 @@ public class Bevande extends Portate {
         }else {
             System.out.println("This item does not contain alchol");
         }
+    }
+
+
+    @Override
+    public void printInfo(String coloreIngredienti, String colorePiatti) {
+        super.printInfo(coloreIngredienti, colorePiatti);
+        //TODO qui stampa l'informazione aggiuntiva
     }
 }
 

@@ -1,5 +1,8 @@
 public enum Allergeni {
 
+
+    //TODO gli enum si scrivono così: AllergeniciEnum
+
     //Allergeni
 
     GLUTINE("glutine"),

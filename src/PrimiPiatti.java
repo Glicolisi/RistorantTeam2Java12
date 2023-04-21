@@ -1,11 +1,14 @@
-import java.util.*;
+public class PrimiPiatti extends Portata {
 
-public class PrimiPiatti extends Portate {
+    //TODO inseriamo un field
 
+    //TODO sistamare
+    private Stagioni stagioni;
     public PrimiPiatti(String nome, Double prezzo, String ingredienti) {
         super(nome, prezzo, ingredienti);
     }
 
+    //TODO mettiamo tutti in classi esterne
     public enum Stagioni{ESTATE,AUTUNNO,INVERNO,PRIMAVERA,FUORI_MENU;}
 
     public void disponibilitàStagionale(Stagioni stagione){

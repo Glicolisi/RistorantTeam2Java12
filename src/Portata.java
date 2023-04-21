@@ -1,9 +1,9 @@
-public class Portate {
+public class Portata {
     private String nome;
     private Double prezzo;
     private String ingredienti;
 
-    public Portate(String nome, Double prezzo, String ingredienti) {
+    public Portata(String nome, Double prezzo, String ingredienti) {
         this.nome = nome;
         this.prezzo = prezzo;
         this.ingredienti = ingredienti;
@@ -34,9 +34,8 @@ public class Portate {
     }
 
     public void printInfo(String coloreIngredienti,String colorePiatti){
-        System.out.println(getNome()+": "+getPrezzo()+" euro");
-
-        System.out.println(colorePiatti+"("+getIngredienti()+")"+coloreIngredienti);
+        System.out.println(nome+": "+prezzo+" euro");
+        System.out.println(colorePiatti+"("+ingredienti+")"+coloreIngredienti);
 
     }
 

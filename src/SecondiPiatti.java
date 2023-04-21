@@ -1,16 +1,13 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
-
-public class SecondiPiatti extends Portate {
+public class SecondiPiatti extends Portata {
+    
+    
+    //TODO field come le altre classi
     public SecondiPiatti(String nome, Double prezzo, String ingredienti) {
         super(nome, prezzo, ingredienti);
     }
-    public static void contieneAllergeni(SecondiPiatti secondoPiatto){
-        String [] ingredientiToArray = secondoPiatto.getIngredienti().split(",");
-        System.out.println(Utility.RED_UNDERLINED.getFormat()+"La portata "+secondoPiatto.getNome());
+    public void contieneAllergeni(){
+        String [] ingredientiToArray = this.getIngredienti().split(",");
+        System.out.println(Utility.RED_UNDERLINED.getFormat()+"La portata "+this.getNome());
 
         for (Allergeni allergeni1 : Allergeni.values()){
             for (String ingredienti : ingredientiToArray){

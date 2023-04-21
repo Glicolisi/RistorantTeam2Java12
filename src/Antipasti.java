@@ -1,4 +1,4 @@
-public class Antipasti extends Portate {
+public class Antipasti extends Portata {
 
     private boolean isKmZero;
 
