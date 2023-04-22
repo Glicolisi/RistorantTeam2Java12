@@ -1,3 +1,5 @@
+package Enums;
+
 public enum Utility {
     //Background
      ANSI_BLACK_BACKGROUND  ("\u001B[40m"),

@@ -1,9 +1,11 @@
+package Enums;
+
 public enum Allergeni {
 
 
     //TODO gli enum si scrivono così: AllergeniciEnum
 
-    //Allergeni
+    //Enums.Allergeni
 
     GLUTINE("glutine"),
     CROSTACEI("crostacei"),
