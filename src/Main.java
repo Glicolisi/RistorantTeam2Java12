@@ -1,4 +1,4 @@
-import Enums.Utility;
+import Enums.UtilityEnum;
 
 
 public class Main {
@@ -8,7 +8,7 @@ public class Main {
         System.out.println("La Taverna dei Programmatori\n");
 
         Menu menu = new Menu("Menù del giorno", "onnivoro");
-        System.out.println(Utility.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
+        System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
 
         //TODO sistemare
 

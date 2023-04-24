@@ -1,4 +1,4 @@
-import Enums.Utility;
+import Enums.UtilityEnum;
 
 import java.util.*;
 
@@ -46,9 +46,9 @@ public class Menu {
 
     public void printAntipasti() {
 
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
+        System.out.println(UtilityEnum.BLUE_UNDERLINED.getFormat() + "Antipasti: " + UtilityEnum.BLUE.getFormat());
         for (Portata antipasti : portataList) {
-            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
+            antipasti.printInfo(UtilityEnum.BLUE.getFormat(), UtilityEnum.BLUE_CAPITAL.getFormat());
             antipasti.provenienzeKmZero(antipasti.isKmZero());
         }
         System.out.print("\n");
@@ -69,13 +69,13 @@ public class Menu {
 
         if (mediaMenu >= 0 && mediaMenu <= 20) {
 
-            System.out.println(Utility.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €\n"));
+            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €\n"));
         }
         if (mediaMenu > 20 && mediaMenu <= 40) {
-            System.out.println(Utility.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€\n"));
+            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€\n"));
         }
         if (mediaMenu > 40) {
-            System.out.println(Utility.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
+            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
         }
 
 

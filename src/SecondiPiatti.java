@@ -1,5 +1,5 @@
-import Enums.Allergeni;
-import Enums.Utility;
+import Enums.AllergeniEnum;
+import Enums.UtilityEnum;
 
 public class SecondiPiatti extends Portata {
     boolean hasFrozenProduct;
@@ -21,9 +21,9 @@ public class SecondiPiatti extends Portata {
 
     public void contieneAllergeni(){
         String [] ingredientiToArray = this.getIngredienti().split(",");
-        System.out.println(Utility.RED_UNDERLINED.getFormat()+"La portata "+this.getNome());
+        System.out.println(UtilityEnum.RED_UNDERLINED.getFormat()+"La portata "+this.getNome());
 
-        for (Allergeni allergeni : Allergeni.values()){
+        for (AllergeniEnum allergeni : AllergeniEnum.values()){
             for (String ingredienti : ingredientiToArray){
                 if (allergeni.getAllergeni().equalsIgnoreCase(ingredienti)){
                     System.out.println("contiene l'allergene: "+allergeni.getAllergeni());

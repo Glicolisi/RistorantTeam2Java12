@@ -1,6 +1,6 @@
 package Enums;
 
-public enum Utility {
+public enum UtilityEnum {
     //Background
      ANSI_BLACK_BACKGROUND  ("\u001B[40m"),
      ANSI_RED_BACKGROUND  ("\u001B[41m"),
@@ -56,7 +56,7 @@ public enum Utility {
 
     private String format;
 
-    Utility(String format) {
+    UtilityEnum(String format) {
         this.format = format;
     }
 
