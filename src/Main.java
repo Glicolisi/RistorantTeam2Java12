@@ -64,11 +64,11 @@ public class Main {
         secondo1.contieneAllergeni();
         secondo3.contieneAllergeni();
 
-        Dolci dolci1 = new Dolci("Tiramisù", 12.5, "Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro", "senza lattesio");
-        Dolci dolci2 = new Dolci("Torta della nonna", 9.0, "Burro,zucchero,uova,latte intero,farina,pinoli", "senza lattesio");
-        Dolci dolci3 = new Dolci("Gelato", 2.0, "Latte condensato, frutta fresca,vaniglia,scaglie di cioccolato ", "senza lattesio");
-        Dolci dolci4 = new Dolci("Panna Cotta", 5.0, "Caffè,zucchero,baccello di vaniglia,panna fresco liquida", "senza lattesio");
-        Dolci dolci5 = new Dolci("Macedonia di frutta", 7.0, "Fragole,kiwi,uva,melone,pesca,succo di limone,zucchero semolato", "senza lattesio");
+        Portata dolci1 = new Dolci("Tiramisù", 12.5, "Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro", "senza lattesio");
+        Portata dolci2 = new Dolci("Torta della nonna", 9.0, "Burro,zucchero,uova,latte intero,farina,pinoli", "senza lattesio");
+        Portata dolci3 = new Dolci("Gelato", 2.0, "Latte condensato, frutta fresca,vaniglia,scaglie di cioccolato ", "senza lattesio");
+        Portata dolci4 = new Dolci("Panna Cotta", 5.0, "Caffè,zucchero,baccello di vaniglia,panna fresco liquida", "senza lattesio");
+        Portata dolci5 = new Dolci("Macedonia di frutta", 7.0, "Fragole,kiwi,uva,melone,pesca,succo di limone,zucchero semolato", "senza lattesio");
 
 
         menu.addPortata(dolci1);
@@ -76,6 +76,7 @@ public class Main {
         menu.addPortata(dolci3);
         menu.addPortata(dolci4);
         menu.addPortata(dolci5);
+       // dolci1.printMenu(menu);
         
 
         Bevande bevanda1 = new Bevande("Acqua naturale", 1d, "Acqua", false);

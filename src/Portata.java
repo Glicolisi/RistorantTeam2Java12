@@ -47,6 +47,9 @@ public class Portata {
             }else if (p instanceof PrimiPiatti){
                 System.out.println("PrimiPiatti: ");
                 System.out.println(p);
+            }else if (p instanceof Dolci){
+                System.out.println("Dolce: ");
+                System.out.println(p);
             }
         }
     }

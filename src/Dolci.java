@@ -6,7 +6,17 @@ public class Dolci extends Portata {
         super(nome, prezzo, ingredienti);
         this.latte=latte;
     }
+    public String lattosio(){return latte;}
+    @Override
+    public void printInfo(String coloreIngredienti, String colorePiatti) {
+        super.printInfo(coloreIngredienti, colorePiatti);
+      //  this.latte.toString();
 
-
+        System.out.print("\n");
+    }
+    @Override
+    public void printMenu(Menu menu) {
+        super.printMenu(menu);
+    }
 }
 
