@@ -1,10 +1,10 @@
+import Enums.UtilityEnum;
+
 import java.util.*;
 
 public class Menu {
-
     private String nome;
     private String tipo;
-
     private ArrayList<Portata> portataList;
 
 
@@ -48,32 +48,28 @@ public class Menu {
 
     //TODO sistemare
 
-    public void prezzoMedioMenu(Menu menu) {
-        List<Portata> menuList = new ArrayList<>();
-        portataList.addAll(getPortataList());
-//        menuList.addAll(primiPiattiList);
-//        menuList.addAll(secondiPiattiList);
-//        menuList.addAll(dolciList);
-//        menuList.addAll(bevandeList);
+
+    public void prezzoMedioMenu() {
+
         double mediaMenu = 0.0;
 
-        for (Portata portata : menuList) {
+        for (Portata portata : portataList) {
             mediaMenu += portata.getPrezzo();
         }
-        mediaMenu = (Math.round(mediaMenu / menuList.size() * 100.0) / 100.0);
+        mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
 
         // Oppure un altro metodo -> double
         //mediaMenu = menuList.stream().mapToDouble(Portata::getPrezzo).sum()/menuList.size();
 
         if (mediaMenu >= 0 && mediaMenu <= 20) {
 
-            System.out.println(Utility.ANSI_RESET.getFormat() + ("Il prezzo medio del " + menu.getNome() + " è: " + mediaMenu + " euro     €\n"));
+            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €\n"));
         }
         if (mediaMenu > 20 && mediaMenu <= 40) {
-            System.out.println(Utility.ANSI_RESET.getFormat() + ("Il prezzo medio del " + menu.getNome() + " è: " + mediaMenu + " euro     €€\n"));
+            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€\n"));
         }
         if (mediaMenu > 40) {
-            System.out.println(Utility.ANSI_RESET.getFormat() + ("Il prezzo medio del " + menu.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
+            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
         }
 
 

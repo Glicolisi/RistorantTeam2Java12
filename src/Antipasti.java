@@ -1,3 +1,5 @@
+import Enums.UtilityEnum;
+
 public class Antipasti extends Portata {
 
     private boolean isKmZero;
@@ -15,7 +17,7 @@ public class Antipasti extends Portata {
         isKmZero = kmZero;
     }
 
-    public void provenienzeKmZero(boolean isKmZero){
+    public void provenienzeKmZero(){
         if (isKmZero){
             System.out.println("Provenienza regionale");
         }else {
@@ -24,14 +26,10 @@ public class Antipasti extends Portata {
     }
 
     @Override
-    public void printInfo(String coloreIngredienti, String colorePiatti, Menu portataList) {
+    public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
-        for (Antipasti antipasti :) {
-            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
-            antipasti.provenienzeKmZero(antipasti.isKmZero());
-        }
-        this.provenienzeKmZero(this.isKmZero());
+        this.provenienzeKmZero();
+
         System.out.print("\n");
     }
 
@@ -45,4 +43,9 @@ public class Antipasti extends Portata {
 //        System.out.print("\n");
 //    }
 
+
+    @Override
+    public void printMenu(Menu menu) {
+        super.printMenu(menu);
+    }
 }

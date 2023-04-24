@@ -1,9 +1,11 @@
-public enum Allergeni {
+package Enums;
+
+public enum AllergeniEnum {
 
 
     //TODO gli enum si scrivono così: AllergeniciEnum
 
-    //Allergeni
+    //Enums.Allergeni
 
     GLUTINE("glutine"),
     CROSTACEI("crostacei"),
@@ -20,9 +22,9 @@ public enum Allergeni {
     LUPINI("lupini"),
     MOLLUSCHI("molluschi");
 
-    private String allergeni;
+    private final String allergeni;
 
-    Allergeni(String allergeni){this.allergeni=allergeni;}
+    AllergeniEnum(String allergeni){this.allergeni=allergeni;}
 
     public String getAllergeni() {
         return allergeni;
