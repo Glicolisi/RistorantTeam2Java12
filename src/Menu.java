@@ -26,13 +26,17 @@ public class Menu {
     public String getTipo() {
         return tipo;
     }
-
     public String setTipo(String tipo) {
         this.tipo = tipo;
         return tipo;
     }
+    public ArrayList<Portata> getPortataList() {
+        return portataList;
+    }
 
-
+    public void setPortataList(ArrayList<Portata> portataList) {
+        this.portataList = portataList;
+    }
 
     public void addPortata(Portata portata) {
         portataList.add(portata);
@@ -44,24 +48,13 @@ public class Menu {
 
     //TODO sistemare
 
-    public void printAntipasti() {
-
-        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
-        for (Portata antipasti : portataList) {
-            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
-            antipasti.provenienzeKmZero(antipasti.isKmZero());
-        }
-        System.out.print("\n");
-    }
-
-
     public void prezzoMedioMenu(Menu menu) {
         List<Portata> menuList = new ArrayList<>();
-        menuList.addAll(antipastiList);
-        menuList.addAll(primiPiattiList);
-        menuList.addAll(secondiPiattiList);
-        menuList.addAll(dolciList);
-        menuList.addAll(bevandeList);
+        portataList.addAll(getPortataList());
+//        menuList.addAll(primiPiattiList);
+//        menuList.addAll(secondiPiattiList);
+//        menuList.addAll(dolciList);
+//        menuList.addAll(bevandeList);
         double mediaMenu = 0.0;
 
         for (Portata portata : menuList) {

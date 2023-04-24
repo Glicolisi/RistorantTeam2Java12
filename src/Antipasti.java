@@ -23,4 +23,26 @@ public class Antipasti extends Portata {
         }
     }
 
+    @Override
+    public void printInfo(String coloreIngredienti, String colorePiatti, Menu portataList) {
+        super.printInfo(coloreIngredienti, colorePiatti);
+        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
+        for (Antipasti antipasti :) {
+            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
+            antipasti.provenienzeKmZero(antipasti.isKmZero());
+        }
+        this.provenienzeKmZero(this.isKmZero());
+        System.out.print("\n");
+    }
+
+    //    public void printAntipasti() {
+//
+//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
+//        for (Portata antipasti : portataList) {
+//            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
+//            antipasti.provenienzeKmZero(antipasti.isKmZero());
+//        }
+//        System.out.print("\n");
+//    }
+
 }
