@@ -1,19 +1,19 @@
+import Enums.StagioniEnum;
 import Enums.UtilityEnum;
 
 public class PrimiPiatti extends Portata {
 
     //TODO inseriamo un field
-
-    //TODO sistamare
-    private Stagioni stagioni;
-    public PrimiPiatti(String nome, Double prezzo, String ingredienti) {
+    StagioniEnum stagione;
+    public PrimiPiatti(String nome, Double prezzo, String ingredienti,StagioniEnum stagione) {
         super(nome, prezzo, ingredienti);
+        this.stagione=stagione;
+    }
+    public StagioniEnum getStagione() {
+        return stagione;
     }
 
-    //TODO mettiamo tutti in classi esterne
-    public enum Stagioni{ESTATE,AUTUNNO,INVERNO,PRIMAVERA,FUORI_MENU;}
-
-    public void disponibilitàStagionale(Stagioni stagione){
+    public void disponibilitàStagionale(){
 
         switch (stagione){
 
@@ -26,6 +26,12 @@ public class PrimiPiatti extends Portata {
         System.out.println("\n");
 
    }
+
+    @Override
+    public void printInfo(String coloreIngredienti, String colorePiatti) {
+        super.printInfo(coloreIngredienti, colorePiatti);
+
+    }
 }
 
 

@@ -26,13 +26,17 @@ public class Menu {
     public String getTipo() {
         return tipo;
     }
-
     public String setTipo(String tipo) {
         this.tipo = tipo;
         return tipo;
     }
+    public ArrayList<Portata> getPortataList() {
+        return portataList;
+    }
 
-
+    public void setPortataList(ArrayList<Portata> portataList) {
+        this.portataList = portataList;
+    }
 
     public void addPortata(Portata portata) {
         portataList.add(portata);
@@ -42,10 +46,9 @@ public class Menu {
         portataList.remove(portata);
     }
 
-    public ArrayList<Portata> getPortataList() {
-        return portataList;
-    }
+
     //TODO sistemare
+
 
     public void printMenu(){
 
@@ -68,6 +71,7 @@ public class Menu {
 
         }
     }
+
 
 
     public void prezzoMedioMenu() {

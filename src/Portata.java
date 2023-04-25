@@ -35,6 +35,8 @@ public class Portata {
         this.ingredienti = ingredienti;
     }
 
+    public void disponibilitàStagionale(){}
+
     public void printInfo(String coloreIngredienti,String colorePiatti){
         System.out.println(colorePiatti+nome+": "+prezzo+" euro");
         System.out.println(coloreIngredienti+"("+ingredienti+")");
@@ -45,4 +47,36 @@ public class Portata {
     }
     public void contieneAllergeni(){};
 
+    public void printMenu(Menu menu){
+        for (Portata p: menu.getPortataList()){
+            if (p instanceof Antipasti){
+                System.out.println("Antipasti: " + "\n");
+                System.out.println(p);
+            }else if (p instanceof PrimiPiatti){
+                System.out.println("PrimiPiatti: ");
+                System.out.println(p);
+            }else if (p instanceof Dolci){
+                System.out.println("Dolce: ");
+                System.out.println(p);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Portata{" +
+                "nome='" + nome + '\'' +
+                ", prezzo=" + prezzo +
+                ", ingredienti='" + ingredienti + '\'' +
+                '}';
+    }
+    //    public void printAntipasti() {
+//
+//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
+//        for (Portata antipasti : portataList) {
+//            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
+//            antipasti.provenienzeKmZero(antipasti.isKmZero());
+//        }
+//        System.out.print("\n");
+//    }
 }
