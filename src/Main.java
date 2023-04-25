@@ -28,8 +28,6 @@ public class Main {
 //        antipasto1.printInfo("\033[0;34m", "\033[0;34m");
 //        ((Antipasti)antipasto1).provenienzeKmZero();
 
-        antipasto1.printMenu(menu);
-
 
         Portata primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", StagioniEnum.ESTATE);
         PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0, "Pasta fresca,pomodoro,guanciale,pecorino",StagioniEnum.INVERNO);
