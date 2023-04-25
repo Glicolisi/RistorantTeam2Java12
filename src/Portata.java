@@ -47,20 +47,7 @@ public class Portata {
     }
     public void contieneAllergeni(){};
 
-    public void printMenu(Menu menu){
-        for (Portata p: menu.getPortataList()){
-            if (p instanceof Antipasti){
-                System.out.println("Antipasti: " + "\n");
-                System.out.println(p);
-            }else if (p instanceof PrimiPiatti){
-                System.out.println("PrimiPiatti: ");
-                System.out.println(p);
-            }else if (p instanceof Dolci){
-                System.out.println("Dolce: ");
-                System.out.println(p);
-            }
-        }
-    }
+
 
     @Override
     public String toString() {
