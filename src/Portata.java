@@ -1,3 +1,5 @@
+import Enums.UtilityEnum;
+
 public class Portata {
     private String nome;
     private Double prezzo;
@@ -34,9 +36,13 @@ public class Portata {
     }
 
     public void printInfo(String coloreIngredienti,String colorePiatti){
-        System.out.println(nome+": "+prezzo+" euro");
-        System.out.println(colorePiatti+"("+ingredienti+")"+coloreIngredienti);
+        System.out.println(colorePiatti+nome+": "+prezzo+" euro");
+        System.out.println(coloreIngredienti+"("+ingredienti+")");
+
+
+
 
     }
+    public void contieneAllergeni(){};
 
 }

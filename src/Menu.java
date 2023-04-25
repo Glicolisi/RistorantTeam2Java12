@@ -42,16 +42,31 @@ public class Menu {
         portataList.remove(portata);
     }
 
+    public ArrayList<Portata> getPortataList() {
+        return portataList;
+    }
     //TODO sistemare
 
-    public void printAntipasti() {
+    public void printMenu(){
 
-        System.out.println(UtilityEnum.BLUE_UNDERLINED.getFormat() + "Antipasti: " + UtilityEnum.BLUE.getFormat());
-        for (Portata antipasti : portataList) {
-            antipasti.printInfo(UtilityEnum.BLUE.getFormat(), UtilityEnum.BLUE_CAPITAL.getFormat());
-            antipasti.provenienzeKmZero(antipasti.isKmZero());
+        for (Portata portata : portataList) {
+            if (portata instanceof Antipasti){
+                System.out.println("\n");
+                portata.printInfo(UtilityEnum.BLUE.getFormat(), UtilityEnum.BLUE_UNDERLINED.getFormat());}
+            if (portata instanceof PrimiPiatti){
+                System.out.println("\n");
+                portata.printInfo(UtilityEnum.PURPLE.getFormat(), UtilityEnum.PURPLE_UNDERLINED.getFormat());};
+            if (portata instanceof SecondiPiatti){
+                System.out.println("\n");
+                portata.printInfo(UtilityEnum.GREEN.getFormat(),UtilityEnum.GREEN_UNDERLINED.getFormat());};
+            if (portata instanceof  Dolci){
+                System.out.println("\n");
+                portata.printInfo(UtilityEnum.YELLOW.getFormat(), UtilityEnum.YELLOW_UNDERLINED.getFormat());};
+            if (portata instanceof Bevande){
+                System.out.println("\n");
+                portata.printInfo(UtilityEnum.CYAN.getFormat(), UtilityEnum.CYAN_UNDERLINED.getFormat());}
+
         }
-        System.out.print("\n");
     }
 
 

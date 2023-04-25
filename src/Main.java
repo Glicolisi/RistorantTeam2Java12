@@ -42,21 +42,20 @@ public class Main {
         primo5.disponibilitàStagionale(PrimiPiatti.Stagioni.INVERNO);
         primo2.disponibilitàStagionale(PrimiPiatti.Stagioni.FUORI_MENU);
 
-        SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio",false);
-        SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0, "crostacei,pesce",false);
-        SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi",false);
-        SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne",false);
-        SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne",false);
+        Portata secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio",false);
+        Portata secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0, "crostacei,pesce",false);
+        Portata secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi",false);
+        Portata secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne",false);
+        Portata secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne",false);
 
         menu.addPortata(secondo1);
         menu.addPortata(secondo2);
         menu.addPortata(secondo3);
         menu.addPortata(secondo4);
         menu.addPortata(secondo5);
+        
+        secondo2.contieneAllergeni();
 
-
-        secondo1.contieneAllergeni();
-        secondo3.contieneAllergeni();
 
         Dolci dolci1 = new Dolci("Tiramisù", 12.5, "Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro", "senza lattesio");
         Dolci dolci2 = new Dolci("Torta della nonna", 9.0, "Burro,zucchero,uova,latte intero,farina,pinoli", "senza lattesio");
@@ -85,7 +84,7 @@ public class Main {
         menu.addPortata(bevanda4);
         menu.addPortata(bevanda5);
 
-        
+        menu.printMenu();
 
         menu.prezzoMedioMenu();
     }

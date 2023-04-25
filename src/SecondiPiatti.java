@@ -30,13 +30,18 @@ public class SecondiPiatti extends Portata {
                 }
             }
         }
+        System.out.println(UtilityEnum.ANSI_RESET.getFormat()+"");
         System.out.println("\n");
+
 }
 
     @Override
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
-        System.out.println("Contiene prodotti surgelati :"+this.hasFrozenProduct);
+        System.out.println("** contiene prodotti surgelati: "+ this.hasFrozenProduct);
+
     }
+
 }
+
 
