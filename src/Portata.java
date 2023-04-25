@@ -33,6 +33,8 @@ public class Portata {
         this.ingredienti = ingredienti;
     }
 
+    public void disponibilitàStagionale(){}
+
     public void printInfo(String coloreIngredienti,String colorePiatti){
         System.out.println(nome+": "+prezzo+" euro");
         System.out.println(colorePiatti+"("+ingredienti+")"+coloreIngredienti);
