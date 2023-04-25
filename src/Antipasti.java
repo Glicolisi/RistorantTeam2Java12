@@ -43,9 +43,4 @@ public class Antipasti extends Portata {
 //        System.out.print("\n");
 //    }
 
-
-    @Override
-    public void printMenu(Menu menu) {
-        super.printMenu(menu);
-    }
 }
