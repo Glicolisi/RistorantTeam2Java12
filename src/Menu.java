@@ -46,30 +46,6 @@ public class Menu {
     }
 
 
-    //TODO sistemare
-
-
-//    public void printMenu(){
-//
-//        for (Portata portata : portataList) {
-//            if (portata instanceof Antipasti){
-//                System.out.println("\n");
-//                portata.printInfo(UtilityEnum.BLUE.getFormat(), UtilityEnum.BLUE_UNDERLINED.getFormat());}
-//            if (portata instanceof PrimiPiatti){
-//                System.out.println("\n");
-//                portata.printInfo(UtilityEnum.PURPLE.getFormat(), UtilityEnum.PURPLE_UNDERLINED.getFormat());};
-//            if (portata instanceof SecondiPiatti){
-//                System.out.println("\n");
-//                portata.printInfo(UtilityEnum.GREEN.getFormat(),UtilityEnum.GREEN_UNDERLINED.getFormat());};
-//            if (portata instanceof  Dolci){
-//                System.out.println("\n");
-//                portata.printInfo(UtilityEnum.YELLOW.getFormat(), UtilityEnum.YELLOW_UNDERLINED.getFormat());};
-//            if (portata instanceof Bevande){
-//                System.out.println("\n");
-//                portata.printInfo(UtilityEnum.CYAN.getFormat(), UtilityEnum.CYAN_UNDERLINED.getFormat());}
-//
-//        }
-//    }
 public void printMenu(){
     System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
     for (Portata portata : portataList) {
@@ -99,12 +75,12 @@ public void printMenu(){
             portata.printInfo(UtilityEnum.CYAN_CAPITAL.getFormat(), UtilityEnum.CYAN.getFormat());}
     }
 
-
 }
 
 
     public void prezzoMedioMenu() {
 
+        System.out.println("\n");
         double mediaMenu = 0.0;
 
         for (Portata portata : portataList) {
