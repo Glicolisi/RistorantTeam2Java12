@@ -82,6 +82,7 @@ public class Menu {
             mediaMenu += portata.getPrezzo();
         }
         mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
+        mediaMenu=Math.round(mediaMenu);
 
         // Oppure un altro metodo -> double
         //mediaMenu = menuList.stream().mapToDouble(Portata::getPrezzo).sum()/menuList.size();
