@@ -27,7 +27,7 @@ public class Bevande extends Portata {
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.isAlcholic();
-        System.out.print("\n");
+//        System.out.print("\n");
     }
 }
 

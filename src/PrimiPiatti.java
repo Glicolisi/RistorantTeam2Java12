@@ -23,13 +23,12 @@ public class PrimiPiatti extends Portata {
             case INVERNO -> System.out.println(UtilityEnum.WHITE_CAPITAL.getFormat()+getNome()+": verdure e alcuni formati di pasta a seconda della disponibilità potranno essere surgelati ");
             default -> System.out.println(UtilityEnum.WHITE_CAPITAL.getFormat()+getNome()+": il piatto è fuori menù");
         }
-        System.out.println("\n");
-
    }
 
     @Override
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
+        disponibilitàStagionale();
 
     }
 }
