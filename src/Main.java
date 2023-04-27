@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         // NOME DEL RISTORANTE
-        System.out.println("La Taverna dei Programmatori\n");
+        System.out.println("La Taverna dei Programmatori\n \uD83D\uDFE2⚪\uD83D\uDD34");
 
         Menu menu = new Menu("Menù del giorno", "onnivoro");
         System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
