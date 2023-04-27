@@ -1,8 +1,9 @@
 public class Bevande extends Portata {
     public boolean isAlcholic;
+
     public Bevande(String nome, Double prezzo, String ingredienti, boolean isAlcholic) {
         super(nome, prezzo, ingredienti);
-        this.isAlcholic=isAlcholic;
+        this.isAlcholic = isAlcholic;
     }
 
     public boolean isAlcholic() {
@@ -12,10 +13,11 @@ public class Bevande extends Portata {
     public void setAlcholic(boolean alcholic) {
         isAlcholic = alcholic;
     }
-    public void checkAlchol(boolean isAlcholic){
-        if (isAlcholic==true) {
+
+    public void checkAlchol() {
+        if (isAlcholic == true) {
             System.out.print("This item contains alchol");
-        }else {
+        } else {
             System.out.println("This item does not contain alchol");
         }
     }
@@ -24,7 +26,8 @@ public class Bevande extends Portata {
     @Override
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
-        //TODO qui stampa l'informazione aggiuntiva
+        this.isAlcholic();
+        System.out.print("\n");
     }
 }
 
