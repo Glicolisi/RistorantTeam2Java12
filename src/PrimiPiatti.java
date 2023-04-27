@@ -30,6 +30,7 @@ public class PrimiPiatti extends Portata {
     @Override
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
+        disponibilitàStagionale();
 
     }
 }
