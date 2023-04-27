@@ -1,6 +1,9 @@
 import Enums.StagioniEnum;
 import Enums.UtilityEnum;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +14,6 @@ public class Main {
         Menu menu = new Menu("Menù del giorno", "onnivoro");
         System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
 
-        //TODO sistemare mettere tutti come portata
 
         Portata antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", true);
         Portata antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", false);
@@ -29,17 +31,23 @@ public class Main {
 //        ((Antipasti)antipasto1).provenienzeKmZero();
 
 
-        Portata primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", StagioniEnum.ESTATE);
-        PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0, "Pasta fresca,pomodoro,guanciale,pecorino", StagioniEnum.INVERNO);
-        PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0, "Pasta fresca,carne macinata,panna", StagioniEnum.AUTUNNO);
-        PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0, "Pasta fresca,pomodoro,pancetta,vodka", StagioniEnum.FUORI_MENU);
-        PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0, "Pasta fresca,basilico,pinoli,grana padano", StagioniEnum.PRIMAVERA);
+
+
+        Portata primo1 =(Portata) new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", StagioniEnum.ESTATE);//Cast esplicito (uppercast)
+        Portata primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0, "Pasta fresca,pomodoro,guanciale,pecorino",StagioniEnum.INVERNO);
+        Portata primo3 = new PrimiPiatti("Tortellini con panna", 14.0, "Pasta fresca,carne macinata,panna",StagioniEnum.AUTUNNO);
+        Portata primo4 = new PrimiPiatti("Pennette alla vodka", 10.0, "Pasta fresca,pomodoro,pancetta,vodka",StagioniEnum.FUORI_MENU);
+        Portata primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0, "Pasta fresca,basilico,pinoli,grana padano",StagioniEnum.PRIMAVERA);
 
         menu.addPortata(primo1);
         menu.addPortata(primo2);
         menu.addPortata(primo3);
         menu.addPortata(primo4);
         menu.addPortata(primo5);
+        ((PrimiPiatti)primo1).disponibilitàStagionale(); //Downcast diretto dell'oggetto con il metodo
+        ((PrimiPiatti)primo2).disponibilitàStagionale();
+        ((PrimiPiatti)primo4).disponibilitàStagionale();
+
 
 
         Portata secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", false);
@@ -47,11 +55,6 @@ public class Main {
         Portata secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi", false);
         Portata secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne", false);
         Portata secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne", false);
-
-
-        primo1.disponibilitàStagionale();
-        primo5.disponibilitàStagionale();
-        primo2.disponibilitàStagionale();
 
 
         menu.addPortata(secondo1);

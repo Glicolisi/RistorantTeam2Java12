@@ -1,4 +1,6 @@
-import Enums.UtilityEnum;
+
+
+
 
 public class Portata {
     private String nome;
@@ -34,8 +36,6 @@ public class Portata {
     public void setIngredienti(String ingredienti) {
         this.ingredienti = ingredienti;
     }
-
-    public void disponibilitàStagionale(){}
 
     public void printInfo(String coloreIngredienti,String colorePiatti){
         System.out.println(colorePiatti+nome+": "+prezzo+" euro");
