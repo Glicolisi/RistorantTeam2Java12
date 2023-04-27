@@ -54,19 +54,19 @@ public class Menu {
 
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti){
-                System.out.println("\n");
+                System.out.print("\n");
                 portata.printInfo(UtilityEnum.BLUE.getFormat(), UtilityEnum.BLUE_UNDERLINED.getFormat());}
             if (portata instanceof PrimiPiatti){
-                System.out.println("\n");
+                System.out.print("\n");
                 portata.printInfo(UtilityEnum.PURPLE.getFormat(), UtilityEnum.PURPLE_UNDERLINED.getFormat());};
             if (portata instanceof SecondiPiatti){
-                System.out.println("\n");
+                System.out.print("\n");
                 portata.printInfo(UtilityEnum.GREEN.getFormat(),UtilityEnum.GREEN_UNDERLINED.getFormat());};
             if (portata instanceof  Dolci){
-                System.out.println("\n");
+                System.out.print("\n");
                 portata.printInfo(UtilityEnum.YELLOW.getFormat(), UtilityEnum.YELLOW_UNDERLINED.getFormat());};
             if (portata instanceof Bevande){
-                System.out.println("\n");
+                System.out.print("\n");
                 portata.printInfo(UtilityEnum.CYAN.getFormat(), UtilityEnum.CYAN_UNDERLINED.getFormat());}
 
         }
