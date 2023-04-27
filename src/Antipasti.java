@@ -30,10 +30,10 @@ public class Antipasti extends Portata {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.provenienzeKmZero();
 
-        System.out.print("\n");
+//        System.out.print("\n");
     }
 
-    //    public void printAntipasti() {
+//        public void printAntipasti() {
 //
 //        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
 //        for (Portata antipasti : portataList) {

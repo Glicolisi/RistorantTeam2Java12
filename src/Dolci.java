@@ -27,7 +27,7 @@ public class Dolci extends Portata {
         super.printInfo(coloreIngredienti, colorePiatti);
       this.conLattosio();
 
-        System.out.print("\n");
+//        System.out.print("\n");
     }
 
 }
