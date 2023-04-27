@@ -29,8 +29,6 @@ public class Antipasti extends Portata {
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.provenienzeKmZero();
-
-//        System.out.print("\n");
     }
 
 //        public void printAntipasti() {
