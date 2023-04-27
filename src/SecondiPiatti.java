@@ -21,7 +21,7 @@ public class SecondiPiatti extends Portata {
 
     public void contieneAllergeni(){
         String [] ingredientiToArray = this.getIngredienti().split(",");
-        System.out.println(UtilityEnum.RED_UNDERLINED.getFormat()+"La portata "+this.getNome());
+        System.out.println(UtilityEnum.RED_UNDERLINED.getFormat()+"# La portata "+this.getNome());
 
         for (AllergeniEnum allergeni : AllergeniEnum.values()){
             for (String ingredienti : ingredientiToArray){

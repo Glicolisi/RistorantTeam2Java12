@@ -41,12 +41,7 @@ public class Portata {
         System.out.println(colorePiatti+nome+": "+prezzo+" euro");
         System.out.println(coloreIngredienti+"("+ingredienti+")");
 
-
-
-
     }
-    public void contieneAllergeni(){};
-
 
 
     @Override

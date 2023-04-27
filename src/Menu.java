@@ -88,7 +88,6 @@ public void printMenu(){
 
     public void prezzoMedioMenu() {
 
-        System.out.println("\n");
         double mediaMenu = 0.0;
 
         for (Portata portata : portataList) {
