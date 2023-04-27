@@ -33,7 +33,7 @@ public class Main {
 
 
 
-        Portata primo1 =(Portata) new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", StagioniEnum.ESTATE);//Cast esplicito (uppercast)
+        Portata primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", StagioniEnum.ESTATE);
         Portata primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0, "Pasta fresca,pomodoro,guanciale,pecorino",StagioniEnum.INVERNO);
         Portata primo3 = new PrimiPiatti("Tortellini con panna", 14.0, "Pasta fresca,carne macinata,panna",StagioniEnum.AUTUNNO);
         Portata primo4 = new PrimiPiatti("Pennette alla vodka", 10.0, "Pasta fresca,pomodoro,pancetta,vodka",StagioniEnum.FUORI_MENU);
@@ -44,10 +44,6 @@ public class Main {
         menu.addPortata(primo3);
         menu.addPortata(primo4);
         menu.addPortata(primo5);
-        ((PrimiPiatti)primo1).disponibilitàStagionale(); //Downcast diretto dell'oggetto con il metodo
-        ((PrimiPiatti)primo2).disponibilitàStagionale();
-        ((PrimiPiatti)primo4).disponibilitàStagionale();
-
 
 
         Portata secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", false);
