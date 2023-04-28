@@ -46,48 +46,54 @@ public class Menu {
     }
 
 
-    public void printMenu(){
+    //TODO sistemare
+
+
+    public void printMenu() {
         System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
                 portata.printInfo(UtilityEnum.BLUE_CAPITAL.getFormat(), UtilityEnum.BLUE.getFormat());
+                }
             }
-        }
         System.out.println(UtilityEnum.PURPLE.getFormat() + "\n" + "Primi: " + "\n");
-        for (Portata portata : portataList){
-            if (portata instanceof PrimiPiatti){
-                portata.printInfo(UtilityEnum.PURPLE_CAPITAL.getFormat(), UtilityEnum.PURPLE.getFormat());};
+        for (Portata portata : portataList) {
+            if (portata instanceof PrimiPiatti) {
+                portata.printInfo(UtilityEnum.PURPLE_CAPITAL.getFormat(), UtilityEnum.PURPLE.getFormat());
+            }
         }
         System.out.println(UtilityEnum.GREEN.getFormat() + "\n" + "Secondi: " + "\n");
-        for (Portata portata : portataList){
-            if (portata instanceof SecondiPiatti){
-                portata.printInfo(UtilityEnum.GREEN_CAPITAL.getFormat(),UtilityEnum.GREEN.getFormat());
-            }
+        for (Portata portata : portataList) {
+                if (portata instanceof SecondiPiatti) {
+                    portata.printInfo(UtilityEnum.GREEN_CAPITAL.getFormat(), UtilityEnum.GREEN.getFormat());
+                }
         }
         System.out.println(UtilityEnum.YELLOW.getFormat() + "\n" + "Dolci: " + "\n");
-        for (Portata portata : portataList){
-            if (portata instanceof  Dolci){
-                portata.printInfo(UtilityEnum.YELLOW_CAPITAL.getFormat(), UtilityEnum.YELLOW.getFormat());};
-        }
+        for (Portata portata : portataList) {
+                if (portata instanceof Dolci) {
+                    portata.printInfo(UtilityEnum.YELLOW_CAPITAL.getFormat(), UtilityEnum.YELLOW.getFormat());
+                }
+                ;
+            }
         System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "Bevande: " + "\n");
-        for (Portata portata : portataList){
-            if (portata instanceof Bevande){
-                portata.printInfo(UtilityEnum.CYAN_CAPITAL.getFormat(), UtilityEnum.CYAN.getFormat());}
-        }
+        for (Portata portata : portataList) {
+                if (portata instanceof Bevande) {
+                    portata.printInfo(UtilityEnum.CYAN_CAPITAL.getFormat(), UtilityEnum.CYAN.getFormat());
+                }
+            }
 
     }
 
 
-    public void prezzoMedioMenu() {
+    public void prezzoMedioMenu () {
 
-        System.out.println("\n");
         double mediaMenu = 0.0;
 
         for (Portata portata : portataList) {
             mediaMenu += portata.getPrezzo();
         }
         mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
-        mediaMenu=Math.round(mediaMenu);
+        mediaMenu = Math.round(mediaMenu);
 
         // Oppure un altro metodo -> double
         //mediaMenu = menuList.stream().mapToDouble(Portata::getPrezzo).sum()/menuList.size();
@@ -107,6 +113,7 @@ public class Menu {
     }
 
 }
+
 
 
 

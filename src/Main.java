@@ -59,11 +59,7 @@ public class Main {
         menu.addPortata(secondo4);
         menu.addPortata(secondo5);
 
-        secondo2.contieneAllergeni();
 
-
-        //secondo1.contieneAllergeni();
-        secondo3.contieneAllergeni();
 
         Portata dolci1 = new Dolci("Tiramisù", 12.5, "Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro", false);
         Portata dolci2 = new Dolci("Torta della nonna", 9.0, "Burro,zucchero,uova,latte intero,farina,pinoli", false);
@@ -98,5 +94,11 @@ public class Main {
 
 
         menu.prezzoMedioMenu();
+
+        //metodo contiene allergeni
+        try{((SecondiPiatti)secondo3).contieneAllergeni();}
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
