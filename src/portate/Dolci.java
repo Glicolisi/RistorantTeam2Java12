@@ -1,6 +1,7 @@
+package portate;
+
 public class Dolci extends Portata {
 
-    //TODO i nomi facciamo parlanti, poi il metodo di stampa deve stampare tutti i field aggiuntivi
     private boolean lattosio;
     public Dolci(String nome, Double prezzo, String ingredienti,boolean lattosio) {
         super(nome, prezzo, ingredienti);
@@ -22,6 +23,8 @@ public class Dolci extends Portata {
             System.out.println("Senza lattosio");
         }
     }
+
+    //TODO passare l'enumerato
     @Override
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);

@@ -1,8 +1,7 @@
-import Enums.StagioniEnum;
-import Enums.UtilityEnum;
-
-import java.util.ArrayList;
-import java.util.List;
+import enumartion.StagioniEnum;
+import enumartion.UtilityEnum;
+import portate.*;
+import ristorante.Menu;
 
 
 public class Main {
@@ -28,16 +27,14 @@ public class Main {
         menu.addPortata(antipasto5);
 
 //        antipasto1.printInfo("\033[0;34m", "\033[0;34m");
-//        ((Antipasti)antipasto1).provenienzeKmZero();
-
-
+//        ((portate.Antipasti)antipasto1).provenienzeKmZero();
 
 
         Portata primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", StagioniEnum.ESTATE);
-        Portata primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0, "Pasta fresca,pomodoro,guanciale,pecorino",StagioniEnum.INVERNO);
-        Portata primo3 = new PrimiPiatti("Tortellini con panna", 14.0, "Pasta fresca,carne macinata,panna",StagioniEnum.AUTUNNO);
-        Portata primo4 = new PrimiPiatti("Pennette alla vodka", 10.0, "Pasta fresca,pomodoro,pancetta,vodka",StagioniEnum.FUORI_MENU);
-        Portata primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0, "Pasta fresca,basilico,pinoli,grana padano",StagioniEnum.PRIMAVERA);
+        Portata primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0, "Pasta fresca,pomodoro,guanciale,pecorino", StagioniEnum.INVERNO);
+        Portata primo3 = new PrimiPiatti("Tortellini con panna", 14.0, "Pasta fresca,carne macinata,panna", StagioniEnum.AUTUNNO);
+        Portata primo4 = new PrimiPiatti("Pennette alla vodka", 10.0, "Pasta fresca,pomodoro,pancetta,vodka", StagioniEnum.FUORI_MENU);
+        Portata primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0, "Pasta fresca,basilico,pinoli,grana padano", StagioniEnum.PRIMAVERA);
 
         menu.addPortata(primo1);
         menu.addPortata(primo2);
@@ -46,11 +43,11 @@ public class Main {
         menu.addPortata(primo5);
 
 
-        Portata secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", false);
-        Portata secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0, "crostacei,pesce", false);
-        Portata secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi", false);
-        Portata secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne", false);
-        Portata secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne", false);
+        SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", false);
+        SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0, "crostacei,pesce", false);
+        SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi", false);
+        SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne", false);
+        SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne", false);
 
 
         menu.addPortata(secondo1);
@@ -58,7 +55,6 @@ public class Main {
         menu.addPortata(secondo3);
         menu.addPortata(secondo4);
         menu.addPortata(secondo5);
-
 
 
         Portata dolci1 = new Dolci("Tiramisù", 12.5, "Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro", false);
@@ -96,8 +92,10 @@ public class Main {
         menu.prezzoMedioMenu();
 
         //metodo contiene allergeni
-        try{((SecondiPiatti)secondo3).contieneAllergeni();}
-        catch (Exception e){
+        //TODO rivedere
+        try {
+           secondo3.contieneAllergeni();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

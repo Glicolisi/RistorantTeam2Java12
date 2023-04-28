@@ -1,5 +1,4 @@
-
-
+package portate;
 
 
 public class Portata {
@@ -37,16 +36,25 @@ public class Portata {
         this.ingredienti = ingredienti;
     }
 
+    //TODO passiamo sempre l'enumerato e poi usiamo
     public void printInfo(String coloreIngredienti,String colorePiatti){
         System.out.println(colorePiatti+nome+": "+prezzo+" euro");
         System.out.println(coloreIngredienti+"("+ingredienti+")");
 
     }
 
+    //TODO rivedere
+    public void printInfo(){
+        System.out.println(nome+": "+prezzo+" euro");
+        System.out.println("("+ingredienti+")");
+
+    }
+
+
 
     @Override
     public String toString() {
-        return "Portata{" +
+        return "portate.Portata{" +
                 "nome='" + nome + '\'' +
                 ", prezzo=" + prezzo +
                 ", ingredienti='" + ingredienti + '\'' +
@@ -54,8 +62,8 @@ public class Portata {
     }
     //    public void printAntipasti() {
 //
-//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
-//        for (Portata antipasti : portataList) {
+//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "portate.Antipasti: " + Utility.BLUE.getFormat());
+//        for (portate.Portata antipasti : portataList) {
 //            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
 //            antipasti.provenienzeKmZero(antipasti.isKmZero());
 //        }

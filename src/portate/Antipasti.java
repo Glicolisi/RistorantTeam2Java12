@@ -1,4 +1,4 @@
-import Enums.UtilityEnum;
+package portate;
 
 public class Antipasti extends Portata {
 
@@ -33,8 +33,8 @@ public class Antipasti extends Portata {
 
 //        public void printAntipasti() {
 //
-//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "Antipasti: " + Utility.BLUE.getFormat());
-//        for (Portata antipasti : portataList) {
+//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "portate.Antipasti: " + Utility.BLUE.getFormat());
+//        for (portate.Portata antipasti : portataList) {
 //            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
 //            antipasti.provenienzeKmZero(antipasti.isKmZero());
 //        }
