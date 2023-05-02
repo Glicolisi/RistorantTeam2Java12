@@ -1,5 +1,7 @@
-import Enums.AllergeniEnum;
-import Enums.UtilityEnum;
+package portate;
+
+import enumartion.AllergeniEnum;
+import enumartion.UtilityEnum;
 
 public class SecondiPiatti extends Portata {
     boolean hasFrozenProduct;

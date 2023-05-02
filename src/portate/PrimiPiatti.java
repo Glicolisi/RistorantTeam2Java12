@@ -1,9 +1,11 @@
-import Enums.StagioniEnum;
-import Enums.UtilityEnum;
+package portate;
+
+import enumartion.StagioniEnum;
+import enumartion.UtilityEnum;
 
 public class PrimiPiatti extends Portata {
 
-    //TODO inseriamo un field
+    //TODO ricordati d'inserire il modificatore di accesso sempre
     StagioniEnum stagione;
     public PrimiPiatti(String nome, Double prezzo, String ingredienti,StagioniEnum stagione) {
         super(nome, prezzo, ingredienti);
@@ -13,6 +15,7 @@ public class PrimiPiatti extends Portata {
         return stagione;
     }
 
+    //TODO se stampa indichiamolo nel nome
     public void disponibilitàStagionale(){
 
         switch (stagione){

@@ -1,3 +1,5 @@
+package portate;
+
 public class Bevande extends Portata {
     public boolean isAlcholic;
 
