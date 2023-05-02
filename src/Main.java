@@ -41,6 +41,7 @@ public class Main {
         menu.addPortata(primo3);
         menu.addPortata(primo4);
         menu.addPortata(primo5);
+<<<<<<< Updated upstream
 
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", false);
@@ -48,6 +49,19 @@ public class Main {
         SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi", false);
         SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne", false);
         SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne", false);
+=======
+
+        ((PrimiPiatti)primo1).disponibilitàStagionale(); //Downcast diretto dell'oggetto con il metodo
+        ((PrimiPiatti)primo2).disponibilitàStagionale();
+        ((PrimiPiatti)primo4).disponibilitàStagionale();
+
+
+        Portata secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", false);
+        Portata secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0, "crostacei,pesce", false);
+        Portata secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi", false);
+        Portata secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne", false);
+        Portata secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne", false);
+>>>>>>> Stashed changes
 
 
         menu.addPortata(secondo1);
