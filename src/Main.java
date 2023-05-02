@@ -10,7 +10,7 @@ public class Main {
         // NOME DEL RISTORANTE
         System.out.println("La Taverna dei Programmatori\n \uD83D\uDFE2⚪\uD83D\uDD34");
 
-        Menu menu = new Menu("Menù del giorno", "onnivoro");
+        Menu menu = new Menu("Menù del giorno", "onnivoro",0);
         System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
 
 
@@ -90,14 +90,6 @@ public class Main {
 
 
         menu.prezzoMedioMenu();
-
-        //metodo contiene allergeni
-        //TODO rivedere
-        try {
-           secondo3.contieneAllergeni();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
     }
