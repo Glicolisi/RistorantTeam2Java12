@@ -104,6 +104,7 @@ public class Menu {
                 portata.printInfo(UtilityEnum.CYAN_CAPITAL.getFormat(), UtilityEnum.CYAN.getFormat());
             }
         }
+
     }
 
 
