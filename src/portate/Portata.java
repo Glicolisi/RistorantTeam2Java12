@@ -41,7 +41,7 @@ public class Portata {
         System.out.println(colorePiatti+nome+": "+prezzo+" euro");
         System.out.println(coloreIngredienti+"("+ingredienti+")");
 
-<<<<<<< Updated upstream:src/portate/Portata.java
+
     }
 
     //TODO rivedere
@@ -49,11 +49,7 @@ public class Portata {
         System.out.println(nome+": "+prezzo+" euro");
         System.out.println("("+ingredienti+")");
 
-=======
->>>>>>> Stashed changes:src/Portata.java
     }
-
-
 
     @Override
     public String toString() {

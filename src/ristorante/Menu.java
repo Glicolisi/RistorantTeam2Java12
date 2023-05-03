@@ -1,5 +1,6 @@
 package ristorante;
 
+import enumartion.MenutypesEnum;
 import enumartion.UtilityEnum;
 import portate.*;
 
@@ -13,18 +14,15 @@ public class Menu {
     private String nome;
 
     //TODO è l'enum tipo : facciamo un enum per il tipo: carnivoro, vegetariano ecc ecc
-    private String tipo;
+    private MenutypesEnum tipo;
     private ArrayList<Portata> portataList;
 
 
-    public Menu(String nome, String tipo, double prezzoMedio) {
+    public Menu(String nome, MenutypesEnum tipo, double prezzoMedio) {
         this.nome = nome;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
         this.prezzoMedio = prezzoMedio;
-        if (prezzoMedio == 0) {
-            this.prezzoMedio = prezzoMedioMenu();
-        }
 
     }
 
@@ -36,18 +34,14 @@ public class Menu {
         this.nome = nome;
     }
 
-    public String getTipo() {
+    public MenutypesEnum getTipo() {
         return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public double getPrezzoMedio() {
         return prezzoMedio;
     }
-
+    // TODO: probabilmente non ci serve un set di Prezzo Medio
     public void setPrezzoMedio(double prezzoMedio) {
         this.prezzoMedio = prezzoMedio;
     }
@@ -136,6 +130,19 @@ public class Menu {
         }
 
         return mediaMenu;
+    }
+
+    public void reimpostaPrezzoMedio(){
+
+       OptionalDouble prezzoMinore=portataList.stream().mapToDouble(p->p.getPrezzo()).min();
+       OptionalDouble prezzoMaggiore=portataList.stream().mapToDouble(p->p.getPrezzo()).max();
+
+       if(prezzoMedio<prezzoMinore.getAsDouble()||prezzoMedio>prezzoMaggiore.getAsDouble()){
+
+           setPrezzoMedio(prezzoMedioMenu());
+
+       }
+
     }
 
 }
