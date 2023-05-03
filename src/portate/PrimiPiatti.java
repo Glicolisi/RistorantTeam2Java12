@@ -5,8 +5,8 @@ import enumartion.UtilityEnum;
 
 public class PrimiPiatti extends Portata {
 
-    //TODO ricordati d'inserire il modificatore di accesso sempre
-    StagioniEnum stagione;
+
+    private StagioniEnum stagione;
     public PrimiPiatti(String nome, Double prezzo, String ingredienti,StagioniEnum stagione) {
         super(nome, prezzo, ingredienti);
         this.stagione=stagione;
@@ -16,7 +16,7 @@ public class PrimiPiatti extends Portata {
     }
 
     //TODO se stampa indichiamolo nel nome
-    public void disponibilitàStagionale(){
+    public void printdisponibilitàStagionale(){
 
         switch (stagione){
 
@@ -31,7 +31,7 @@ public class PrimiPiatti extends Portata {
     @Override
     public void printInfo(String coloreIngredienti, String colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
-        disponibilitàStagionale();
+        printdisponibilitàStagionale();
 
     }
 }

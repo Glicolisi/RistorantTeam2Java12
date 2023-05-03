@@ -1,3 +1,4 @@
+import enumartion.MenutypesEnum;
 import enumartion.StagioniEnum;
 import enumartion.UtilityEnum;
 import portate.*;
@@ -10,7 +11,7 @@ public class Main {
         // NOME DEL RISTORANTE
         System.out.println("La Taverna dei Programmatori\n \uD83D\uDFE2⚪\uD83D\uDD34");
 
-        Menu menu = new Menu("Menù del giorno", "onnivoro",0);
+        Menu menu = new Menu("Menù del giorno", MenutypesEnum.ONNIVORO,0);
         System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
 
 
@@ -43,11 +44,13 @@ public class Main {
         menu.addPortata(primo5);
 
 
+
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", false);
         SecondiPiatti secondo2 = new SecondiPiatti("Grigliata di scampi e gamberi", 16.0, "crostacei,pesce", false);
         SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi", false);
         SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne", false);
         SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne", false);
+
 
 
         menu.addPortata(secondo1);
@@ -90,7 +93,7 @@ public class Main {
 
 
         menu.prezzoMedioMenu();
-
+        menu.reimpostaPrezzoMedio();
 
     }
 

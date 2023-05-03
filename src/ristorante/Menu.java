@@ -1,5 +1,6 @@
 package ristorante;
 
+import enumartion.MenutypesEnum;
 import enumartion.UtilityEnum;
 import portate.*;
 
@@ -13,18 +14,15 @@ public class Menu {
     private String nome;
 
     //TODO è l'enum tipo : facciamo un enum per il tipo: carnivoro, vegetariano ecc ecc
-    private String tipo;
+    private MenutypesEnum tipo;
     private ArrayList<Portata> portataList;
 
 
-    public Menu(String nome, String tipo, double prezzoMedio) {
+    public Menu(String nome, MenutypesEnum tipo, double prezzoMedio) {
         this.nome = nome;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
         this.prezzoMedio = prezzoMedio;
-        if (prezzoMedio == 0) {
-            this.prezzoMedio = prezzoMedioMenu();
-        }
 
     }
 
@@ -36,12 +34,8 @@ public class Menu {
         this.nome = nome;
     }
 
-    public String getTipo() {
+    public MenutypesEnum getTipo() {
         return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public double getPrezzoMedio() {
@@ -73,8 +67,10 @@ public class Menu {
     }
 
 
-    public void printMenu(){
-        System.out.println(UtilityEnum.BLUE.getFormat() + "portate.Antipasti: " + "\n");
+
+    public void printMenu() {
+
+        System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
                 portata.printInfo(UtilityEnum.BLUE_CAPITAL.getFormat(), UtilityEnum.BLUE.getFormat());
@@ -95,16 +91,16 @@ public class Menu {
             }
         }
 
-        System.out.println(UtilityEnum.YELLOW.getFormat() + "\n" + "portate.Dolci: " + "\n");
-        for (Portata portata : portataList){
-            if (portata instanceof  Dolci){
+        System.out.println(UtilityEnum.YELLOW.getFormat() + "\n" + "Dolci: " + "\n");
+        for (Portata portata : portataList) {
+            if (portata instanceof Dolci) {
                 portata.printInfo(UtilityEnum.YELLOW_CAPITAL.getFormat(), UtilityEnum.YELLOW.getFormat());
             }
         }
 
-        System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "portate.Bevande: " + "\n");
-        for (Portata portata : portataList){
-            if (portata instanceof Bevande){
+        System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "Bevande: " + "\n");
+        for (Portata portata : portataList) {
+            if (portata instanceof Bevande) {
                 portata.printInfo(UtilityEnum.CYAN_CAPITAL.getFormat(), UtilityEnum.CYAN.getFormat());
             }
         }
@@ -135,6 +131,19 @@ public class Menu {
         if (mediaMenu > 40) {
             System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
         }
+    }
+
+    public void reimpostaPrezzoMedio(){
+
+       OptionalDouble prezzoMinore=portataList.stream().mapToDouble(p->p.getPrezzo()).min();
+       OptionalDouble prezzoMaggiore=portataList.stream().mapToDouble(p->p.getPrezzo()).max();
+
+       if(prezzoMedio<prezzoMinore.getAsDouble()||prezzoMedio>prezzoMaggiore.getAsDouble()){
+
+           setPrezzoMedio(prezzoMedioMenu());
+
+       }
+
     }
 
 }
