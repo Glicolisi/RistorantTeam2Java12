@@ -41,7 +41,7 @@ public class Menu {
     public double getPrezzoMedio() {
         return prezzoMedio;
     }
-    // TODO: probabilmente non ci serve un set di Prezzo Medio
+
     public void setPrezzoMedio(double prezzoMedio) {
         this.prezzoMedio = prezzoMedio;
     }
@@ -68,6 +68,7 @@ public class Menu {
 
 
     public void printMenu() {
+
         System.out.println(UtilityEnum.BLUE.getFormat() + "portate.Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {

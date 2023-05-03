@@ -1,6 +1,8 @@
 package portate;
 
 
+import java.util.Objects;
+
 public class Portata {
     private String nome;
     private Double prezzo;
@@ -59,13 +61,18 @@ public class Portata {
                 ", ingredienti='" + ingredienti + '\'' +
                 '}';
     }
-    //    public void printAntipasti() {
-//
-//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "portate.Antipasti: " + Utility.BLUE.getFormat());
-//        for (portate.Portata antipasti : portataList) {
-//            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
-//            antipasti.provenienzeKmZero(antipasti.isKmZero());
-//        }
-//        System.out.print("\n");
-//    }
+
+    @Override
+
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Portata portata = (Portata) obj;
+        return nome == portata.getNome() && Objects.equals(nome, portata.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome);
+    }
 }
