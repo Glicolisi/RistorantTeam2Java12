@@ -7,7 +7,7 @@ public class SecondiPiatti extends Portata {
     boolean hasFrozenProduct;
     
     
-    //TODO field come le altre classi
+
     public SecondiPiatti(String nome, Double prezzo, String ingredienti,boolean hasFrozenProduct) {
         super(nome, prezzo, ingredienti);
         this.hasFrozenProduct=hasFrozenProduct;

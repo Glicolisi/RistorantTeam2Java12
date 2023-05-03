@@ -8,7 +8,8 @@ import java.util.*;
 public class Menu {
 
     //TODO prezzo medio in ingresso, e poi facciamo un controllo nel metodo che se non c'è allora lo calcola automaticamente
-    //cuoco,
+    private double prezzoMedio;
+    private String cuoco;
     private String nome;
 
     //TODO è l'enum tipo : facciamo un enum per il tipo: carnivoro, vegetariano ecc ecc
@@ -16,10 +17,15 @@ public class Menu {
     private ArrayList<Portata> portataList;
 
 
-    public Menu(String nome, String tipo) {
+    public Menu(String nome, String tipo, double prezzoMedio) {
         this.nome = nome;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
+        this.prezzoMedio = prezzoMedio;
+        if (prezzoMedio == 0) {
+            this.prezzoMedio = prezzoMedioMenu();
+        }
+
     }
 
     public String getNome() {
@@ -34,15 +40,28 @@ public class Menu {
         return tipo;
     }
 
-    public void setTipo(String tipo) {this.tipo = tipo;}
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public double getPrezzoMedio() {
+        return prezzoMedio;
+    }
+
+    public void setPrezzoMedio(double prezzoMedio) {
+        this.prezzoMedio = prezzoMedio;
+    }
+
+    public String getCuoco() {
+        return cuoco;
+    }
+
+    public void setCuoco(String cuoco) {
+        this.cuoco = cuoco;
+    }
 
     public ArrayList<Portata> getPortataList() {
         return portataList;
-    }
-
-    //TODO ci serve? ragioniamocim su come funzionano le liste
-    public void setPortataList(ArrayList<Portata> portataList) {
-        this.portataList = portataList;
     }
 
     public void addPortata(Portata portata) {
@@ -116,8 +135,6 @@ public class Menu {
         if (mediaMenu > 40) {
             System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
         }
-
-
     }
 
 }
