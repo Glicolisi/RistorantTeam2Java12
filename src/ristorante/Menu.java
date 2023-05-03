@@ -69,7 +69,7 @@ public class Menu {
 
     public void printMenu() {
 
-        System.out.println(UtilityEnum.BLUE.getFormat() + "portate.Antipasti: " + "\n");
+        System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
                 portata.printInfo(UtilityEnum.BLUE_CAPITAL.getFormat(), UtilityEnum.BLUE.getFormat());
@@ -89,14 +89,14 @@ public class Menu {
                 portata.printInfo(UtilityEnum.GREEN_CAPITAL.getFormat(), UtilityEnum.GREEN.getFormat());
             }
         }
-        System.out.println(UtilityEnum.YELLOW.getFormat() + "\n" + "portate.Dolci: " + "\n");
+        System.out.println(UtilityEnum.YELLOW.getFormat() + "\n" + "Dolci: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Dolci) {
                 portata.printInfo(UtilityEnum.YELLOW_CAPITAL.getFormat(), UtilityEnum.YELLOW.getFormat());
             }
             ;
         }
-        System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "portate.Bevande: " + "\n");
+        System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "Bevande: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Bevande) {
                 portata.printInfo(UtilityEnum.CYAN_CAPITAL.getFormat(), UtilityEnum.CYAN.getFormat());
