@@ -107,7 +107,7 @@ public class Menu {
     }
 
 
-    public void prezzoMedioMenu () {
+    public double prezzoMedioMenu () {
 
         System.out.println("\n");
         double mediaMenu = 0.0;
@@ -131,6 +131,8 @@ public class Menu {
         if (mediaMenu > 40) {
             System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
         }
+
+        return mediaMenu;
     }
 
     public void reimpostaPrezzoMedio(){
