@@ -1,5 +1,7 @@
 package portate;
 
+import enumartion.UtilityEnum;
+
 public class Antipasti extends Portata {
 
     private boolean isKmZero;
@@ -26,7 +28,7 @@ public class Antipasti extends Portata {
     }
 
     @Override
-    public void printInfo(String coloreIngredienti, String colorePiatti) {
+    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.provenienzeKmZero();
     }

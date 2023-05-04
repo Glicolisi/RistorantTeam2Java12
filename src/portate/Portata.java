@@ -41,9 +41,9 @@ public class Portata {
     }
 
     //TODO passiamo sempre l'enumerato e poi usiamo
-    public void printInfo(String coloreIngredienti,String colorePiatti){
-        System.out.println(colorePiatti+nome+": "+prezzo+" euro");
-        System.out.println(coloreIngredienti+"("+ingredienti+")");
+    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti){
+        System.out.println(colorePiatti.getFormat()+nome+": "+prezzo+" euro");
+        System.out.println(coloreIngredienti.getFormat()+"("+ingredienti+")");
 
 
     }

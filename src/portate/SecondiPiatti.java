@@ -38,7 +38,7 @@ public class SecondiPiatti extends Portata {
 }
 
     @Override
-    public void printInfo(String coloreIngredienti, String colorePiatti) {
+    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         System.out.println("** contiene prodotti surgelati: "+ this.hasFrozenProduct);
 
