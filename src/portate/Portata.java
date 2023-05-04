@@ -1,6 +1,8 @@
 package portate;
 
 
+import enumartion.UtilityEnum;
+
 import java.util.Objects;
 
 public class Portata {
