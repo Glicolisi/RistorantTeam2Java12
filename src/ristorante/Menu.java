@@ -62,6 +62,7 @@ public class Menu {
         portataList.add(portata);
     }
 
+
     public void removePortata(Portata portata) {
         portataList.remove(portata);
     }
