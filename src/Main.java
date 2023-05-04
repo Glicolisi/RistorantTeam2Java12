@@ -17,6 +17,19 @@ public class Main {
 
         // NOME DEL RISTORANTE
         System.out.println("La Taverna dei Programmatori\n \uD83D\uDFE2⚪\uD83D\uDD34");
+        System.out.println("\n" +
+                "Benvenuto nel nostro ristorante, dove la buona cucina è al centro di tutto ciò che facciamo. Se stai cercando un posto dove gustare piatti gustosi, " +
+                "preparati con ingredienti di alta qualità e serviti in un'atmosfera " +
+                "rilassante e accogliente, allora sei nel posto giusto.\n" +
+                "\n" + "Il nostro chef è un esperto di cucina che porta la sua passione e la sua creatività in ogni piatto che prepara. Il nostro " +
+                "menu offre una vasta gamma di piatti, dai classici ai più innovativi, tutti preparati con cura e attenzione al dettaglio. Siamo " +
+                "particolarmente orgogliosi dei nostri piatti di mare, dove i sapori freschi e deliziosi dei frutti di mare incontrano la maestria culinaria del nostro chef.\n" +
+                "\n" +
+                "Il nostro personale è cordiale e attento, pronto ad assisterti in ogni momento. Il nostro obiettivo è " +
+                "offrire un'esperienza gastronomica completa, in cui ogni dettaglio viene curato con la massima attenzione, dal servizio alla presentazione dei piatti.\n" +
+                "\n" +
+                "Vieni a trovarci e lasciati tentare dai nostri piatti unici e gustosi, dalle specialità della casa alle creazioni del nostro" +
+                " chef. Ti garantiamo che non rimarrai deluso dalla nostra cucina deliziosa e dall'atmosfera accogliente del nostro ristorante.");
 
         Menu menu = new Menu("Menù del giorno", MenutypesEnum.ONNIVORO,0);
         System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menu.getNome() + "\n");
