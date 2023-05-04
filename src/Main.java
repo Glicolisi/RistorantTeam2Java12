@@ -188,10 +188,9 @@ public class Main {
 
         ristoranteProva.printRistorante();
 
-        ristoranteProva.printBundleportata(menu);
+        ristoranteProva.printMenuSorpresa(menu);
 
         ristoranteProva.consegnaJustEat(menu);
-
 
     }
 }
