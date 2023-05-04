@@ -106,7 +106,7 @@ public class Menu {
     }
 
 
-    public double prezzoMedioMenu () {
+    public void printPrezzoMedioMenu() {
 
         System.out.println("\n");
         double mediaMenu = 0.0;
@@ -116,9 +116,6 @@ public class Menu {
         }
         mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
         mediaMenu = Math.round(mediaMenu);
-
-        // Oppure un altro metodo -> double
-        //mediaMenu = menuList.stream().mapToDouble(portate.Portata::getPrezzo).sum()/menuList.size();
 
         if (mediaMenu >= 0 && mediaMenu <= 20) {
 
@@ -130,8 +127,10 @@ public class Menu {
         if (mediaMenu > 40) {
             System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
         }
+    }
 
-        return mediaMenu;
+    public double prezzoMenu(){
+        return portataList.stream().mapToDouble(Portata::getPrezzo).sum()/portataList.size();
     }
 
     public void reimpostaPrezzoMedio(){
@@ -141,7 +140,7 @@ public class Menu {
 
        if(prezzoMedio<prezzoMinore.getAsDouble()||prezzoMedio>prezzoMaggiore.getAsDouble()){
 
-           setPrezzoMedio(prezzoMedioMenu());
+           setPrezzoMedio(prezzoMenu());
 
        }
 

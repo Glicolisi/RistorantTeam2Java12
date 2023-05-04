@@ -99,7 +99,7 @@ public class Main {
         menu.printMenu();
 
 
-        menu.prezzoMedioMenu();
+        menu.printPrezzoMedioMenu();
         menu.reimpostaPrezzoMedio();
 
 
@@ -190,7 +190,7 @@ public class Main {
 
         ristoranteProva.printBundleportata(menu);
 
-        //ristoranteProva.consegnaJustEat(menu);
+        ristoranteProva.consegnaJustEat(menu);
 
 
     }
