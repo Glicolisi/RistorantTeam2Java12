@@ -20,6 +20,7 @@ public class Ristorante {
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.hasJustEat = hasJustEat;
+        this.menuList = new ArrayList<>();
     }
 
     public String getNome() {
@@ -76,7 +77,8 @@ public class Ristorante {
         System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menus.getNome() + "\n");
 
             menus.printMenu();
-            menus.prezzoMedioMenu();
+            // TODO: mi son perso da dove stampa ill prezzo medio
+           // menus.prezzoMedioMenu();
             menus.reimpostaPrezzoMedio();        }
 
     }
@@ -119,12 +121,12 @@ public class Ristorante {
         bundlePortata.add(dolciBundle);
         bundlePortata.add(bevandeBundle);
 
-        System.out.println("Il menù a prezzo fisso di oggi è: "+
-                "\n Antipasto: "+bundlePortata.get(0)+
-                "\n Primo: "+bundlePortata.get(1)+
-                "\n Secondo: "+bundlePortata.get(2)+
-                "\n Dolce: "+bundlePortata.get(3)+
-                "\n Bevanda: "+bundlePortata.get(4));
+        System.out.println("Il menù a prezzo fisso di oggi è:\n "+
+                "\n Antipasto: "+bundlePortata.get(0).getNome()+
+                "\n Primo: "+bundlePortata.get(1).getNome()+
+                "\n Secondo: "+bundlePortata.get(2).getNome()+
+                "\n Dolce: "+bundlePortata.get(3).getNome()+
+                "\n Bevanda: "+bundlePortata.get(4).getNome());
     }
 
     public void consegnaJustEat (Menu menu){
