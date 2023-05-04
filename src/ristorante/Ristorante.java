@@ -78,12 +78,12 @@ public class Ristorante {
 
             menus.printMenu();
             // TODO: mi son perso da dove stampa ill prezzo medio
-           // menus.prezzoMedioMenu();
+            menus.printPrezzoMedioMenu();
             menus.reimpostaPrezzoMedio();        }
 
     }
 
-    public void printBundleportata(Menu menu){
+    public void printMenuSorpresa(Menu menu){
 
         List<Antipasti> antipastiList = menu.getPortataList().stream()
                 .filter(portata -> portata instanceof Antipasti)//dalla PortataList con filter si selezionano solo i tipi Antipasti
@@ -121,12 +121,12 @@ public class Ristorante {
         bundlePortata.add(dolciBundle);
         bundlePortata.add(bevandeBundle);
 
-        System.out.println("Il menù a prezzo fisso di oggi è:\n "+
+        System.out.println("Il menù a sorpresa di oggi è:\n "+
                 "\n Antipasto: "+bundlePortata.get(0).getNome()+
                 "\n Primo: "+bundlePortata.get(1).getNome()+
                 "\n Secondo: "+bundlePortata.get(2).getNome()+
                 "\n Dolce: "+bundlePortata.get(3).getNome()+
-                "\n Bevanda: "+bundlePortata.get(4).getNome());
+                "\n Bevanda: "+bundlePortata.get(4).getNome()+"\n");
     }
 
     public void consegnaJustEat (Menu menu){
