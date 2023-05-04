@@ -1,5 +1,7 @@
 package portate;
 
+import enumartion.UtilityEnum;
+
 public class Bevande extends Portata {
     public boolean isAlcholic;
 
@@ -26,7 +28,7 @@ public class Bevande extends Portata {
 
 
     @Override
-    public void printInfo(String coloreIngredienti, String colorePiatti) {
+    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.isAlcholic();
 //        System.out.print("\n");

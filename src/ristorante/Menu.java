@@ -71,35 +71,35 @@ public class Menu {
         System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
-                portata.printInfo(UtilityEnum.BLUE_CAPITAL.getFormat(), UtilityEnum.BLUE.getFormat());
+                portata.printInfo(UtilityEnum.BLUE_CAPITAL, UtilityEnum.BLUE);
             }
         }
 
         System.out.println(UtilityEnum.PURPLE.getFormat() + "\n" + "Primi: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof PrimiPiatti) {
-                portata.printInfo(UtilityEnum.PURPLE_CAPITAL.getFormat(), UtilityEnum.PURPLE.getFormat());
+                portata.printInfo(UtilityEnum.PURPLE_CAPITAL, UtilityEnum.PURPLE);
             }
         }
 
         System.out.println(UtilityEnum.GREEN.getFormat() + "\n" + "Secondi: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof SecondiPiatti) {
-                portata.printInfo(UtilityEnum.GREEN_CAPITAL.getFormat(), UtilityEnum.GREEN.getFormat());
+                portata.printInfo(UtilityEnum.GREEN_CAPITAL, UtilityEnum.GREEN);
             }
         }
 
         System.out.println(UtilityEnum.YELLOW.getFormat() + "\n" + "Dolci: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Dolci) {
-                portata.printInfo(UtilityEnum.YELLOW_CAPITAL.getFormat(), UtilityEnum.YELLOW.getFormat());
+                portata.printInfo(UtilityEnum.YELLOW_CAPITAL, UtilityEnum.YELLOW);
             }
         }
 
-        System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "Bevande: " + "\n");
+        System.out.println(UtilityEnum.CYAN.getFormat()+ "\n" + "Bevande: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Bevande) {
-                portata.printInfo(UtilityEnum.CYAN_CAPITAL.getFormat(), UtilityEnum.CYAN.getFormat());
+                portata.printInfo(UtilityEnum.CYAN_CAPITAL, UtilityEnum.CYAN);
             }
         }
 
