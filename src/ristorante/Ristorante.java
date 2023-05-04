@@ -133,15 +133,15 @@ public class Ristorante {
 
         if (hasJustEat==true){
 
-            if (menu.prezzoMedioMenu() >= 0 && menu.prezzoMedioMenu() <= 20) {
+            if (menu.prezzoMenu() >= 0 && menu.prezzoMenu() <= 20) {
 
                 System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è gratuito    \n"));
             }
-            if (menu.prezzoMedioMenu() > 20 && menu.prezzoMedioMenu() <= 40) {
-                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMedioMenu()/25 + " euro    \n"));
+            if (menu.prezzoMenu() > 20 && menu.prezzoMenu() <= 40) {
+                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu()/25 + " euro    \n"));
             }
-            if (menu.prezzoMedioMenu() > 40) {
-                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMedioMenu()/15 + " euro    \n"));
+            if (menu.prezzoMenu() > 40) {
+                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu()/15 + " euro    \n"));
             }
 
         }
