@@ -77,9 +77,9 @@ public class Ristorante {
         System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menus.getNome() + "\n");
 
             menus.printMenu();
-            // TODO: mi son perso da dove stampa ill prezzo medio
            // menus.prezzoMedioMenu();
-            menus.reimpostaPrezzoMedio();        }
+            menus.reimpostaPrezzoMedio();
+        }
 
     }
 
