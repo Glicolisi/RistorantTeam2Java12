@@ -1,6 +1,5 @@
-import enumartion.MenutypesEnum;
+import enumartion.TypesEnum;
 import enumartion.StagioniEnum;
-import enumartion.UtilityEnum;
 import portate.*;
 import ristorante.Menu;
 import ristorante.Ristorante;
@@ -18,7 +17,7 @@ public class Main {
 
         Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori","Pizzo Calabro",true);
 
-        Menu menu = new Menu("Menù del giorno", MenutypesEnum.ONNIVORO,0);
+        Menu menu = new Menu("Menù del giorno", TypesEnum.ONNIVORO,0);
 
         Portata antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", true);
         Portata antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", false);
@@ -92,7 +91,7 @@ public class Main {
 
         ristoranteProva.printRistorante();
 
-        ristoranteProva.printMenuSorpresa(menu);
+        ristoranteProva.printMenuSorpresa();
 
         ristoranteProva.consegnaJustEat(menu);
 

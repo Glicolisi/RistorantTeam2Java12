@@ -33,6 +33,8 @@ public class Antipasti extends Portata {
         this.provenienzeKmZero();
     }
 
+    //TODO eliminare
+
 //        public void printAntipasti() {
 //
 //        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "portate.Antipasti: " + Utility.BLUE.getFormat());

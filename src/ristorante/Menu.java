@@ -1,6 +1,6 @@
 package ristorante;
 
-import enumartion.MenutypesEnum;
+import enumartion.TypesEnum;
 import enumartion.UtilityEnum;
 import portate.*;
 
@@ -11,11 +11,11 @@ public class Menu {
     private double prezzoMedio;
     private String cuoco;
     private String nome;
-    private MenutypesEnum tipo;
+    private TypesEnum tipo;
     private ArrayList<Portata> portataList;
 
 
-    public Menu(String nome, MenutypesEnum tipo, double prezzoMedio) {
+    public Menu(String nome, TypesEnum tipo, double prezzoMedio) {
         this.nome = nome;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Menu {
         this.nome = nome;
     }
 
-    public MenutypesEnum getTipo() {
+    public TypesEnum getTipo() {
         return tipo;
     }
 
@@ -65,9 +65,9 @@ public class Menu {
     }
 
 
-
     public void printMenu() {
 
+        //TODO proviamo a rifattorizzare?
         System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
@@ -96,7 +96,7 @@ public class Menu {
             }
         }
 
-        System.out.println(UtilityEnum.CYAN.getFormat()+ "\n" + "Bevande: " + "\n");
+        System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "Bevande: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Bevande) {
                 portata.printInfo(UtilityEnum.CYAN_CAPITAL, UtilityEnum.CYAN);
@@ -114,35 +114,39 @@ public class Menu {
         for (Portata portata : portataList) {
             mediaMenu += portata.getPrezzo();
         }
+
+        //TODO diamo un occhiata
         mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
         mediaMenu = Math.round(mediaMenu);
 
         if (mediaMenu >= 0 && mediaMenu <= 20) {
 
-            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €\n"));
+            System.out.println(formatMediaMenu(mediaMenu, "  €\n"));
         }
         if (mediaMenu > 20 && mediaMenu <= 40) {
-            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€\n"));
+            System.out.println(formatMediaMenu(mediaMenu, "  €€\n"));
         }
         if (mediaMenu > 40) {
-            System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: " + mediaMenu + " euro     €€€\n"));
+            System.out.println(formatMediaMenu(mediaMenu, "  €€€\n"));
         }
     }
 
-    public double prezzoMenu(){
-        return portataList.stream().mapToDouble(Portata::getPrezzo).sum()/portataList.size();
+    private String formatMediaMenu(double mediaMenu, String euroChar) {
+        return UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: euro " + mediaMenu + euroChar);
     }
 
-    public void reimpostaPrezzoMedio(){
+    public double prezzoMenu() {
+        return portataList.stream().mapToDouble(Portata::getPrezzo).sum() / portataList.size();
+    }
 
-       OptionalDouble prezzoMinore=portataList.stream().mapToDouble(p->p.getPrezzo()).min();
-       OptionalDouble prezzoMaggiore=portataList.stream().mapToDouble(p->p.getPrezzo()).max();
+    public void reimpostaPrezzoMedio() {
 
-       if(prezzoMedio<prezzoMinore.getAsDouble()||prezzoMedio>prezzoMaggiore.getAsDouble()){
+        OptionalDouble prezzoMinore = portataList.stream().mapToDouble(p -> p.getPrezzo()).min();
+        OptionalDouble prezzoMaggiore = portataList.stream().mapToDouble(p -> p.getPrezzo()).max();
 
-           setPrezzoMedio(prezzoMenu());
-
-       }
+        if (prezzoMedio < prezzoMinore.getAsDouble() || prezzoMedio > prezzoMaggiore.getAsDouble()) {
+            prezzoMedio = prezzoMenu();
+        }
 
     }
 
