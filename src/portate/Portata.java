@@ -10,6 +10,8 @@ public class Portata {
     private Double prezzo;
     private String ingredienti;
 
+    private TipoPortata tipoPortata;
+
     public Portata(String nome, Double prezzo, String ingredienti) {
         this.nome = nome;
         this.prezzo = prezzo;
@@ -54,6 +56,7 @@ public class Portata {
 
     }
 
+    //TODO se non si usa eliminiamo
     @Override
     public String toString() {
         return "portate.Portata{" +

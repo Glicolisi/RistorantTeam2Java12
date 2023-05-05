@@ -19,7 +19,7 @@ public class Bevande extends Portata {
     }
 
     public void checkAlchol() {
-        if (isAlcholic == true) {
+        if (isAlcholic) {
             System.out.print("This item contains alchol");
         } else {
             System.out.println("This item does not contain alchol");

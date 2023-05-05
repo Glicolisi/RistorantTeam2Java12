@@ -1,6 +1,8 @@
 package enumartion;
 
 public enum UtilityEnum {
+
+    //TODO inserire la descrizione per capire che comando è
     //Background
      ANSI_BLACK_BACKGROUND  ("\u001B[40m"),
      ANSI_RED_BACKGROUND  ("\u001B[41m"),
