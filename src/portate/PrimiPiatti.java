@@ -15,7 +15,6 @@ public class PrimiPiatti extends Portata {
         return stagione;
     }
 
-    //TODO se stampa indichiamolo nel nome
     public void printdisponibilitàStagionale(){
 
         switch (stagione){
