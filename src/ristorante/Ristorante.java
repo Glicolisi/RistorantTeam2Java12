@@ -16,6 +16,8 @@ public class Ristorante {
     private boolean hasJustEat;
     private List<Menu> menuList;
 
+    //TODO inseriamo il tipo
+
     public Ristorante(String nome, String indirizzo, Boolean hasJustEat) {
         this.nome = nome;
         this.indirizzo = indirizzo;
@@ -71,23 +73,32 @@ public class Ristorante {
         menuList.remove(menu);
     }
 
-    public void printRistorante(){
-        for (Menu menus : menuList){
-        System.out.println(nome+"\n"+" \uD83D\uDFE2⚪\uD83D\uDD34");
-        System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menus.getNome() + "\n");
+    public void printRistorante() {
+        for (Menu menus : menuList) {
+            System.out.println(nome + "\n" + " \uD83D\uDFE2⚪\uD83D\uDD34");
+            System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menus.getNome() + "\n");
 
             menus.printMenu();
             menus.printPrezzoMedioMenu();
-            menus.reimpostaPrezzoMedio();        }
+            menus.reimpostaPrezzoMedio();
+        }
 
     }
 
-    public void printMenuSorpresa(Menu menu){
+    public void printMenuSorpresa() {
 
-        List<Antipasti> antipastiList = menu.getPortataList().stream()
-                .filter(portata -> portata instanceof Antipasti)//dalla PortataList con filter si selezionano solo i tipi Antipasti
-                .map(p -> (Antipasti) p)//con map si effettua il downcast alla sottoclasse antipasti
-                .toList();//con toList si popola la lista
+        //TODO passare un menu a sorpresa
+        List<PrimiPiatti> primiPiattiList = new ArrayList<>();
+
+        for (Portata portata: menuList.get(0).getPortataList()) {
+            if (portata instanceof PrimiPiatti){
+                primiPiattiList.add((PrimiPiatti) portata);
+            }
+        }
+
+        List<Antipasti> antipastiList = (List<Antipasti>) menu.getPortataList().stream().filter(portata -> portata instanceof Antipasti);
+
+        //con toList si popola la lista
         List<PrimiPiatti> primiPiattiList = menu.getPortataList().stream()
                 .filter(portata -> portata instanceof PrimiPiatti)
                 .map(p -> (PrimiPiatti) p)
@@ -120,27 +131,28 @@ public class Ristorante {
         bundlePortata.add(dolciBundle);
         bundlePortata.add(bevandeBundle);
 
-        System.out.println("Il menù a sorpresa di oggi è:\n "+
-                "\n Antipasto: "+bundlePortata.get(0).getNome()+
-                "\n Primo: "+bundlePortata.get(1).getNome()+
-                "\n Secondo: "+bundlePortata.get(2).getNome()+
-                "\n Dolce: "+bundlePortata.get(3).getNome()+
-                "\n Bevanda: "+bundlePortata.get(4).getNome()+"\n");
+        System.out.println("Il menù a sorpresa di oggi è:\n " +
+                "\n Antipasto: " + bundlePortata.get(0).getNome() +
+                "\n Primo: " + bundlePortata.get(1).getNome() +
+                "\n Secondo: " + bundlePortata.get(2).getNome() +
+                "\n Dolce: " + bundlePortata.get(3).getNome() +
+                "\n Bevanda: " + bundlePortata.get(4).getNome() + "\n");
     }
 
-    public void consegnaJustEat (Menu menu){
+    //TODO riguardiamo un attimo
+    public void consegnaJustEat(Menu menu) {
 
-        if (hasJustEat==true){
+        if (hasJustEat == true) {
 
             if (menu.prezzoMenu() >= 0 && menu.prezzoMenu() <= 20) {
 
                 System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è gratuito    \n"));
             }
             if (menu.prezzoMenu() > 20 && menu.prezzoMenu() <= 40) {
-                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu()/25 + " euro    \n"));
+                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu() / 25 + " euro    \n"));
             }
             if (menu.prezzoMenu() > 40) {
-                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu()/15 + " euro    \n"));
+                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu() / 15 + " euro    \n"));
             }
 
         }

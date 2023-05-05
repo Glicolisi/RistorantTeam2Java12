@@ -5,11 +5,23 @@ import enumartion.UtilityEnum;
 public class Dolci extends Portata {
 
     private boolean lattosio;
+
+    /**
+     *
+     * @param nome
+     * @param prezzo
+     * @param ingredienti
+     * @param lattosio
+     */
     public Dolci(String nome, Double prezzo, String ingredienti,boolean lattosio) {
         super(nome, prezzo, ingredienti);
         this.lattosio=lattosio;
     }
 
+    /**
+     *
+     * @return se contiene lattioso
+     */
     public boolean isLattosio() {
         return lattosio;
     }
@@ -17,6 +29,10 @@ public class Dolci extends Portata {
     public void setLattosio(boolean lattosio) {
         this.lattosio = lattosio;
     }
+
+    /**
+     *
+     */
 
     public void conLattosio(){
         if (lattosio){
@@ -26,6 +42,13 @@ public class Dolci extends Portata {
         }
     }
 
+    /**
+     *
+     * @param coloreIngredienti
+     * @param colorePiatti
+     *
+     * metodo che stampa le informazioni dei dolci
+     */
     @Override
     public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
