@@ -40,7 +40,7 @@ public class Portata {
         this.ingredienti = ingredienti;
     }
 
-    //TODO passiamo sempre l'enumerato e poi usiamo
+
     public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti){
         System.out.println(colorePiatti.getFormat()+nome+": "+prezzo+" euro");
         System.out.println(coloreIngredienti.getFormat()+"("+ingredienti+")");
@@ -48,8 +48,7 @@ public class Portata {
 
     }
 
-    //TODO rivedere
-    public void printInfo(){
+    public void printInfosemplice(){
         System.out.println(nome+": "+prezzo+" euro");
         System.out.println("("+ingredienti+")");
 
