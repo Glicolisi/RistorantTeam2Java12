@@ -26,7 +26,6 @@ public class Dolci extends Portata {
         }
     }
 
-    //TODO passare l'enumerato
     @Override
     public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);

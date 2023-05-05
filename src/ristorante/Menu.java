@@ -8,12 +8,10 @@ import java.util.*;
 
 public class Menu {
 
-    //TODO prezzo medio in ingresso, e poi facciamo un controllo nel metodo che se non c'è allora lo calcola automaticamente
     private double prezzoMedio;
     private String cuoco;
     private String nome;
 
-    //TODO è l'enum tipo : facciamo un enum per il tipo: carnivoro, vegetariano ecc ecc
     private MenutypesEnum tipo;
     private ArrayList<Portata> portataList;
 
