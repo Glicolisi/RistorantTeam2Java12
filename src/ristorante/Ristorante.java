@@ -84,42 +84,49 @@ public class Ristorante {
 
     }
 
+
     /**
      * Metodo per creare e stampare un menu a sorpresa scegliendo tra i menu del ristorante
      */
 
     public void printMenuSorpresa() {
 
-        //TODO passare un menu a sorpresa
+        /*//TODO passare un menu a sorpresa
         List<PrimiPiatti> primiPiattiList = new ArrayList<>();
 
         for (Portata portata : menuList.get(0).getPortataList()) {
             if (portata instanceof PrimiPiatti) {
                 primiPiattiList.add((PrimiPiatti) portata);
             }
-        }
+        }*/
+        Random random = new Random();
 
-        List<Antipasti> antipastiList = (List<Antipasti>) menu.getPortataList().stream().filter(portata -> portata instanceof Antipasti);
-
-        //con toList si popola la lista
-        List<PrimiPiatti> primiPiattiList = menu.getPortataList().stream()
+        List<Antipasti> antipastiList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
+                .filter(portata -> portata instanceof Antipasti)
+                .map(p -> (Antipasti) p)
+                .toList();
+        List<PrimiPiatti> primiPiattiList =getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof PrimiPiatti)
                 .map(p -> (PrimiPiatti) p)
                 .toList();
-        List<SecondiPiatti> secondiPiattiList = menu.getPortataList().stream()
+        List<SecondiPiatti> secondiPiattiList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof SecondiPiatti)
                 .map(p -> (SecondiPiatti) p)
                 .toList();
-        List<Dolci> dolciList = menu.getPortataList().stream()
+        List<Dolci> dolciList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof Dolci)
                 .map(p -> (Dolci) p)
                 .toList();
-        List<Bevande> bevandeList = menu.getPortataList().stream()
+        List<Bevande> bevandeList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof Bevande)
                 .map(p -> (Bevande) p)
                 .toList();
 
-        Random random = new Random();
 
         List<Portata> bundlePortata = new ArrayList<>();
         Portata antipastoBundle = antipastiList.get(random.nextInt(antipastiList.size()));            //da ogni lista si sceglie un piatto casuale

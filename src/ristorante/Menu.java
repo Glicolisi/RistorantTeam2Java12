@@ -119,7 +119,9 @@ public class Menu {
             mediaMenu += portata.getPrezzo();
         }
 
-        mediaMenu = (Math.round(mediaMenu / portataList.size()));
+
+        mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
+
 
         if (mediaMenu >= 0 && mediaMenu <= 20) {
 
