@@ -6,6 +6,13 @@ public class Antipasti extends Portata {
 
     private boolean isKmZero;
 
+    /**
+     * @param nome
+     * @param prezzo
+     * @param ingredienti
+     * @param isKmZero
+     */
+
     public Antipasti(String nome, Double prezzo, String ingredienti, boolean isKmZero) {
         super(nome, prezzo, ingredienti);
         this.isKmZero = isKmZero;
@@ -19,30 +26,27 @@ public class Antipasti extends Portata {
         isKmZero = kmZero;
     }
 
-    public void provenienzeKmZero(){
-        if (isKmZero){
+    /**
+     * verifica se la portata contiene prodotti a km zero
+     */
+    public void provenienzeKmZero() {
+        if (isKmZero) {
             System.out.println("Provenienza regionale");
-        }else {
+        } else {
             System.out.println("Prodotto fuori regione o surgelato");
         }
     }
 
+    /**
+     * Stampa info portata più field aggiuntivo della sottoclasse
+     *
+     * @param coloreIngredienti
+     * @param colorePiatti
+     */
     @Override
     public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.provenienzeKmZero();
     }
-
-    //TODO eliminare
-
-//        public void printAntipasti() {
-//
-//        System.out.println(Utility.BLUE_UNDERLINED.getFormat() + "portate.Antipasti: " + Utility.BLUE.getFormat());
-//        for (portate.Portata antipasti : portataList) {
-//            antipasti.printInfo(Utility.BLUE.getFormat(), Utility.BLUE_CAPITAL.getFormat());
-//            antipasti.provenienzeKmZero(antipasti.isKmZero());
-//        }
-//        System.out.print("\n");
-//    }
 
 }

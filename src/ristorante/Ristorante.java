@@ -85,13 +85,17 @@ public class Ristorante {
 
     }
 
+    /**
+     * Metodo per creare e stampare un menu a sorpresa scegliendo tra i menu del ristorante
+     */
+
     public void printMenuSorpresa() {
 
         //TODO passare un menu a sorpresa
         List<PrimiPiatti> primiPiattiList = new ArrayList<>();
 
-        for (Portata portata: menuList.get(0).getPortataList()) {
-            if (portata instanceof PrimiPiatti){
+        for (Portata portata : menuList.get(0).getPortataList()) {
+            if (portata instanceof PrimiPiatti) {
                 primiPiattiList.add((PrimiPiatti) portata);
             }
         }
@@ -139,6 +143,11 @@ public class Ristorante {
                 "\n Bevanda: " + bundlePortata.get(4).getNome() + "\n");
     }
 
+    /**
+     * Metodo che verifica se un menu ha la consegna con justeat
+     *
+     * @param menu
+     */
     //TODO riguardiamo un attimo
     public void consegnaJustEat(Menu menu) {
 

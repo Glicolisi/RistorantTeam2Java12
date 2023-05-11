@@ -65,10 +65,11 @@ public class Menu {
         portataList.remove(portata);
     }
 
-
+    /**
+     * Metodo che stampa il menu con diversi colori in base al tipo di portata
+     */
     public void printMenu() {
 
-        //TODO proviamo a rifattorizzare?
         System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
@@ -106,7 +107,9 @@ public class Menu {
 
     }
 
-
+    /**
+     * Metodo che stampa il prezzo medio del menu
+     */
     public void printPrezzoMedioMenu() {
 
         System.out.println("\n");
@@ -116,9 +119,7 @@ public class Menu {
             mediaMenu += portata.getPrezzo();
         }
 
-        //TODO diamo un occhiata
-        mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
-        mediaMenu = Math.round(mediaMenu);
+        mediaMenu = (Math.round(mediaMenu / portataList.size()));
 
         if (mediaMenu >= 0 && mediaMenu <= 20) {
 
@@ -136,10 +137,18 @@ public class Menu {
         return UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: euro " + mediaMenu + euroChar);
     }
 
+    /**
+     * Metodo che calcola il prezzo medio del menu
+     *
+     * @return double prezzo medioMenu
+     */
     public double prezzoMenu() {
         return portataList.stream().mapToDouble(Portata::getPrezzo).sum() / portataList.size();
     }
 
+    /**
+     * Metodo che reimposta il prezzo medio del menu
+     */
     public void reimpostaPrezzoMedio() {
 
         OptionalDouble prezzoMinore = portataList.stream().mapToDouble(p -> p.getPrezzo()).min();

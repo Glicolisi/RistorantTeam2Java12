@@ -7,17 +7,15 @@ import ristorante.Ristorante;
 
 public class Main {
     public static void main(String[] args) {
-      ristoranteProva();
+        ristoranteProva();
     }
 
 
+    public static void ristoranteProva() {
 
+        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", true);
 
-    public static void ristoranteProva(){
-
-        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori","Pizzo Calabro",true);
-
-        Menu menu = new Menu("Menù del giorno", TypesEnum.ONNIVORO,0);
+        Menu menu = new Menu("Menù del giorno", TypesEnum.ONNIVORO, 0);
 
         Portata antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", true);
         Portata antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", false);
@@ -50,7 +48,6 @@ public class Main {
         SecondiPiatti secondo3 = new SecondiPiatti("Impepata di cozze", 12.0, "molluschi", false);
         SecondiPiatti secondo4 = new SecondiPiatti("Filetto di manzo alla tartara", 13.0, "carne", false);
         SecondiPiatti secondo5 = new SecondiPiatti("Nodino di vitello alla griglia", 13.0, "carne", false);
-
 
 
         menu.addPortata(secondo1);

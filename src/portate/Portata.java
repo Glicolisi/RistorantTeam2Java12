@@ -42,28 +42,26 @@ public class Portata {
         this.ingredienti = ingredienti;
     }
 
-
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti){
-        System.out.println(colorePiatti.getFormat()+nome+": "+prezzo+" euro");
-        System.out.println(coloreIngredienti.getFormat()+"("+ingredienti+")");
+    /**
+     * Metodo che stampa le info di una portata a colori
+     *
+     * @param coloreIngredienti
+     * @param colorePiatti
+     */
+    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+        System.out.println(colorePiatti.getFormat() + nome + ": " + prezzo + " euro");
+        System.out.println(coloreIngredienti.getFormat() + "(" + ingredienti + ")");
 
 
     }
 
-    public void printInfosemplice(){
-        System.out.println(nome+": "+prezzo+" euro");
-        System.out.println("("+ingredienti+")");
+    /**
+     * Metodo che stampa le info sulla portata senza colori
+     */
+    public void printInfosemplice() {
+        System.out.println(nome + ": " + prezzo + " euro");
+        System.out.println("(" + ingredienti + ")");
 
-    }
-
-    //TODO se non si usa eliminiamo
-    @Override
-    public String toString() {
-        return "portate.Portata{" +
-                "nome='" + nome + '\'' +
-                ", prezzo=" + prezzo +
-                ", ingredienti='" + ingredienti + '\'' +
-                '}';
     }
 
     @Override

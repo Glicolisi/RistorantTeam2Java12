@@ -44,17 +44,16 @@ public class Dolci extends Portata {
 
     /**
      *
+     * Metodo che stampa le informazioni della portata
      * @param coloreIngredienti
      * @param colorePiatti
      *
-     * metodo che stampa le informazioni dei dolci
      */
     @Override
     public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
       this.conLattosio();
 
-//        System.out.print("\n");
     }
 
 }
