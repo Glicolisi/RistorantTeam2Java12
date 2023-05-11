@@ -1,7 +1,9 @@
 package enumartion;
 
+    /**
+     * Enumerato che contiene gli allergeni
+     */
 public enum AllergeniEnum {
-
 
     GLUTINE("glutine"),
     CROSTACEI("crostacei"),
