@@ -1,6 +1,7 @@
 package portate;
 
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
+import enumartion.TypesPortataEnum;
 
 public class Dolci extends Portata {
 
@@ -11,10 +12,11 @@ public class Dolci extends Portata {
      * @param nome
      * @param prezzo
      * @param ingredienti
+     * @param typesPortataEnum
      * @param lattosio
      */
-    public Dolci(String nome, Double prezzo, String ingredienti,boolean lattosio) {
-        super(nome, prezzo, ingredienti);
+    public Dolci(String nome, Double prezzo, String ingredienti, TypesPortataEnum typesPortataEnum, boolean lattosio) {
+        super(nome, prezzo, ingredienti,typesPortataEnum);
         this.lattosio=lattosio;
     }
 
@@ -50,7 +52,7 @@ public class Dolci extends Portata {
      *
      */
     @Override
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+    public void printInfo(ColorsEnum coloreIngredienti, ColorsEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
       this.conLattosio();
 

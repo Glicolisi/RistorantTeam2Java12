@@ -1,7 +1,7 @@
 package ristorante;
 
-import enumartion.TypesEnum;
-import enumartion.UtilityEnum;
+import enumartion.TypesMenuEnum;
+import enumartion.ColorsEnum;
 import portate.*;
 
 import java.util.*;
@@ -12,11 +12,11 @@ public class Menu {
     private String cuoco;
     private String nome;
 
-    private TypesEnum tipo;
+    private TypesMenuEnum tipo;
     private ArrayList<Portata> portataList;
 
 
-    public Menu(String nome, TypesEnum tipo, double prezzoMedio) {
+    public Menu(String nome, TypesMenuEnum tipo, double prezzoMedio) {
         this.nome = nome;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
@@ -32,7 +32,7 @@ public class Menu {
         this.nome = nome;
     }
 
-    public TypesEnum getTipo() {
+    public TypesMenuEnum getTipo() {
         return tipo;
     }
 
@@ -70,38 +70,38 @@ public class Menu {
      */
     public void printMenu() {
 
-        System.out.println(UtilityEnum.BLUE.getFormat() + "Antipasti: " + "\n");
+        System.out.println(ColorsEnum.BLUE.getFormat() + "Antipasti: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Antipasti) {
-                portata.printInfo(UtilityEnum.BLUE_CAPITAL, UtilityEnum.BLUE);
+                portata.printInfo(ColorsEnum.BLUE_CAPITAL, ColorsEnum.BLUE);
             }
         }
 
-        System.out.println(UtilityEnum.PURPLE.getFormat() + "\n" + "Primi: " + "\n");
+        System.out.println(ColorsEnum.PURPLE.getFormat() + "\n" + "Primi: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof PrimiPiatti) {
-                portata.printInfo(UtilityEnum.PURPLE_CAPITAL, UtilityEnum.PURPLE);
+                portata.printInfo(ColorsEnum.PURPLE_CAPITAL, ColorsEnum.PURPLE);
             }
         }
 
-        System.out.println(UtilityEnum.GREEN.getFormat() + "\n" + "Secondi: " + "\n");
+        System.out.println(ColorsEnum.GREEN.getFormat() + "\n" + "Secondi: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof SecondiPiatti) {
-                portata.printInfo(UtilityEnum.GREEN_CAPITAL, UtilityEnum.GREEN);
+                portata.printInfo(ColorsEnum.GREEN_CAPITAL, ColorsEnum.GREEN);
             }
         }
 
-        System.out.println(UtilityEnum.YELLOW.getFormat() + "\n" + "Dolci: " + "\n");
+        System.out.println(ColorsEnum.YELLOW.getFormat() + "\n" + "Dolci: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Dolci) {
-                portata.printInfo(UtilityEnum.YELLOW_CAPITAL, UtilityEnum.YELLOW);
+                portata.printInfo(ColorsEnum.YELLOW_CAPITAL, ColorsEnum.YELLOW);
             }
         }
 
-        System.out.println(UtilityEnum.CYAN.getFormat() + "\n" + "Bevande: " + "\n");
+        System.out.println(ColorsEnum.CYAN.getFormat() + "\n" + "Bevande: " + "\n");
         for (Portata portata : portataList) {
             if (portata instanceof Bevande) {
-                portata.printInfo(UtilityEnum.CYAN_CAPITAL, UtilityEnum.CYAN);
+                portata.printInfo(ColorsEnum.CYAN_CAPITAL, ColorsEnum.CYAN);
             }
         }
 
@@ -134,7 +134,7 @@ public class Menu {
     }
 
     private String formatMediaMenu(double mediaMenu, String euroChar) {
-        return UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: euro " + mediaMenu + euroChar);
+        return ColorsEnum.ANSI_RESET.getFormat() + ("Il prezzo medio del " + this.getNome() + " è: euro " + mediaMenu + euroChar);
     }
 
     /**

@@ -1,20 +1,23 @@
 package portate;
 
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
+import enumartion.TypesPortataEnum;
 
 public class Antipasti extends Portata {
 
     private boolean isKmZero;
 
     /**
+     *
      * @param nome
      * @param prezzo
      * @param ingredienti
+     * @param typesPortataEnum
      * @param isKmZero
      */
 
-    public Antipasti(String nome, Double prezzo, String ingredienti, boolean isKmZero) {
-        super(nome, prezzo, ingredienti);
+    public Antipasti(String nome, Double prezzo, String ingredienti, TypesPortataEnum typesPortataEnum, boolean isKmZero) {
+        super(nome, prezzo, ingredienti,typesPortataEnum);
         this.isKmZero = isKmZero;
     }
 
@@ -44,7 +47,7 @@ public class Antipasti extends Portata {
      * @param colorePiatti
      */
     @Override
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+    public void printInfo(ColorsEnum coloreIngredienti, ColorsEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.provenienzeKmZero();
     }

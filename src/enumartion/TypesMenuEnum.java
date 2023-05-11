@@ -1,6 +1,6 @@
 package enumartion;
 
-public enum TypesEnum {
+public enum TypesMenuEnum {
 
     //TODO costruttore con descrizione almeno
     ONNIVORO,

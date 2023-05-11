@@ -1,7 +1,8 @@
 package portate;
 
 import enumartion.AllergeniEnum;
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
+import enumartion.TypesPortataEnum;
 
 public class SecondiPiatti extends Portata {
     boolean hasFrozenProduct;
@@ -10,12 +11,13 @@ public class SecondiPiatti extends Portata {
      * @param nome
      * @param prezzo
      * @param ingredienti
+     * @param typesPortataEnum
      * @param hasFrozenProduct
      */
 
 
-    public SecondiPiatti(String nome, Double prezzo, String ingredienti, boolean hasFrozenProduct) {
-        super(nome, prezzo, ingredienti);
+    public SecondiPiatti(String nome, Double prezzo, String ingredienti, TypesPortataEnum typesPortataEnum, boolean hasFrozenProduct) {
+        super(nome, prezzo, ingredienti,typesPortataEnum);
         this.hasFrozenProduct = hasFrozenProduct;
     }
 
@@ -33,7 +35,7 @@ public class SecondiPiatti extends Portata {
     public void contieneAllergeni() {
         String[] ingredientiToArray = this.getIngredienti().split(",");
 
-        System.out.println(UtilityEnum.RED_UNDERLINED.getFormat() + "# La portata " + this.getNome());
+        System.out.println(ColorsEnum.RED_UNDERLINED.getFormat() + "# La portata " + this.getNome());
         for (AllergeniEnum allergeni : AllergeniEnum.values()) {
             for (String ingredienti : ingredientiToArray) {
                 if (allergeni.getAllergeni().equalsIgnoreCase(ingredienti)) {
@@ -41,7 +43,7 @@ public class SecondiPiatti extends Portata {
                 }
             }
         }
-        System.out.println(UtilityEnum.ANSI_RESET.getFormat() + "");
+        System.out.println(ColorsEnum.ANSI_RESET.getFormat() + "");
         System.out.println("\n");
 
     }
@@ -53,7 +55,7 @@ public class SecondiPiatti extends Portata {
      * @param colorePiatti
      */
     @Override
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+    public void printInfo(ColorsEnum coloreIngredienti, ColorsEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         System.out.println("** contiene prodotti surgelati: " + this.hasFrozenProduct);
 

@@ -1,12 +1,11 @@
 package ristorante;
 
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
 import portate.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 public class Ristorante {
 
@@ -76,7 +75,7 @@ public class Ristorante {
     public void printRistorante() {
         for (Menu menus : menuList) {
             System.out.println(nome + "\n" + " \uD83D\uDFE2⚪\uD83D\uDD34");
-            System.out.println(UtilityEnum.PURPLE_BOLD.getFormat() + menus.getNome() + "\n");
+            System.out.println(ColorsEnum.PURPLE_BOLD.getFormat() + menus.getNome() + "\n");
 
             menus.printMenu();
             menus.printPrezzoMedioMenu();
@@ -155,13 +154,13 @@ public class Ristorante {
 
             if (menu.prezzoMenu() >= 0 && menu.prezzoMenu() <= 20) {
 
-                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è gratuito    \n"));
+                System.out.println(ColorsEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è gratuito    \n"));
             }
             if (menu.prezzoMenu() > 20 && menu.prezzoMenu() <= 40) {
-                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu() / 25 + " euro    \n"));
+                System.out.println(ColorsEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu() / 25 + " euro    \n"));
             }
             if (menu.prezzoMenu() > 40) {
-                System.out.println(UtilityEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu() / 15 + " euro    \n"));
+                System.out.println(ColorsEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu() / 15 + " euro    \n"));
             }
 
         }

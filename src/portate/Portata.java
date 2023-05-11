@@ -1,7 +1,8 @@
 package portate;
 
 
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
+import enumartion.TypesPortataEnum;
 
 import java.util.Objects;
 
@@ -10,12 +11,13 @@ public class Portata {
     private Double prezzo;
     private String ingredienti;
 
-    private TipoPortata tipoPortata;
+    private TypesPortataEnum tipoPortata;
 
-    public Portata(String nome, Double prezzo, String ingredienti) {
+    public Portata(String nome, Double prezzo, String ingredienti, TypesPortataEnum tipoPortata) {
         this.nome = nome;
         this.prezzo = prezzo;
         this.ingredienti = ingredienti;
+        this.tipoPortata = tipoPortata;
     }
 
     public String getNome() {
@@ -42,13 +44,21 @@ public class Portata {
         this.ingredienti = ingredienti;
     }
 
+    public TypesPortataEnum getTipoPortata() {
+        return tipoPortata;
+    }
+
+    public void setTipoPortata(TypesPortataEnum tipoPortata) {
+        this.tipoPortata = tipoPortata;
+    }
+
     /**
      * Metodo che stampa le info di una portata a colori
      *
      * @param coloreIngredienti
      * @param colorePiatti
      */
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+    public void printInfo(ColorsEnum coloreIngredienti, ColorsEnum colorePiatti) {
         System.out.println(colorePiatti.getFormat() + nome + ": " + prezzo + " euro");
         System.out.println(coloreIngredienti.getFormat() + "(" + ingredienti + ")");
 

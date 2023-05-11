@@ -1,7 +1,8 @@
 package portate;
 
 import enumartion.StagioniEnum;
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
+import enumartion.TypesPortataEnum;
 
 public class PrimiPiatti extends Portata {
 
@@ -9,13 +10,15 @@ public class PrimiPiatti extends Portata {
     private StagioniEnum stagione;
 
     /**
+     *
      * @param nome
      * @param prezzo
      * @param ingredienti
+     * @param typesPortataEnum
      * @param stagione
      */
-    public PrimiPiatti(String nome, Double prezzo, String ingredienti, StagioniEnum stagione) {
-        super(nome, prezzo, ingredienti);
+    public PrimiPiatti(String nome, Double prezzo, String ingredienti, TypesPortataEnum typesPortataEnum, StagioniEnum stagione) {
+        super(nome, prezzo, ingredienti,typesPortataEnum);
         this.stagione = stagione;
     }
 
@@ -24,22 +27,22 @@ public class PrimiPiatti extends Portata {
     }
 
     /**
-     * Metodo per verificare la disponibiltà stagionale di una portata
+     * Metodo per verificare la disponibilità stagionale di una portata
      */
     public void printdisponibilitàStagionale() {
 
         switch (stagione) {
 
             case ESTATE ->
-                    System.out.println(UtilityEnum.WHITE_CAPITAL.getFormat() + getNome() + ": contiene solo ingredienti freschi");
+                    System.out.println(ColorsEnum.WHITE_CAPITAL.getFormat() + getNome() + ": contiene solo ingredienti freschi");
             case PRIMAVERA ->
-                    System.out.println(UtilityEnum.WHITE_CAPITAL.getFormat() + getNome() + ": gli insaccati sono stagionati da almeno 3 mesi");
+                    System.out.println(ColorsEnum.WHITE_CAPITAL.getFormat() + getNome() + ": gli insaccati sono stagionati da almeno 3 mesi");
             case AUTUNNO ->
-                    System.out.println(UtilityEnum.WHITE_CAPITAL.getFormat() + getNome() + ": alcuni formati di pasta a seconda della disponibilità potranno essere surgelati");
+                    System.out.println(ColorsEnum.WHITE_CAPITAL.getFormat() + getNome() + ": alcuni formati di pasta a seconda della disponibilità potranno essere surgelati");
             case INVERNO ->
-                    System.out.println(UtilityEnum.WHITE_CAPITAL.getFormat() + getNome() + ": verdure e alcuni formati di pasta a seconda della disponibilità potranno essere surgelati ");
+                    System.out.println(ColorsEnum.WHITE_CAPITAL.getFormat() + getNome() + ": verdure e alcuni formati di pasta a seconda della disponibilità potranno essere surgelati ");
             default ->
-                    System.out.println(UtilityEnum.WHITE_CAPITAL.getFormat() + getNome() + ": il piatto è fuori menù");
+                    System.out.println(ColorsEnum.WHITE_CAPITAL.getFormat() + getNome() + ": il piatto è fuori menù");
         }
     }
 
@@ -50,7 +53,7 @@ public class PrimiPiatti extends Portata {
      * @param colorePiatti
      */
     @Override
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+    public void printInfo(ColorsEnum coloreIngredienti, ColorsEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         printdisponibilitàStagionale();
 

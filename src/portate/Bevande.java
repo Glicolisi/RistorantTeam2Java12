@@ -1,6 +1,7 @@
 package portate;
 
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
+import enumartion.TypesPortataEnum;
 
 public class Bevande extends Portata {
     public boolean isAlcholic;
@@ -9,11 +10,12 @@ public class Bevande extends Portata {
      * @param nome
      * @param prezzo
      * @param ingredienti
+     * @param typesPortataEnum
      * @param isAlcholic
      */
 
-    public Bevande(String nome, Double prezzo, String ingredienti, boolean isAlcholic) {
-        super(nome, prezzo, ingredienti);
+    public Bevande(String nome, Double prezzo, String ingredienti, TypesPortataEnum typesPortataEnum, boolean isAlcholic) {
+        super(nome, prezzo, ingredienti,typesPortataEnum);
         this.isAlcholic = isAlcholic;
     }
 
@@ -48,7 +50,7 @@ public class Bevande extends Portata {
      * @param colorePiatti
      */
     @Override
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+    public void printInfo(ColorsEnum coloreIngredienti, ColorsEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.isAlcholic();
 
