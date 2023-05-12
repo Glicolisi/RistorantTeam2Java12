@@ -174,11 +174,10 @@ public class Ristorante {
     }
 
     public void prenotaTavolo(Tavolo tavolo, List<Cliente> clienteList) {
-        if (!tavolo.isPrenotazione()) {
+        if (tavolo.isPrenotazione()) {
 
             if (clienteList.size() <= tavolo.getNumeroMaxClienti()) {
                 tavoloListMap.put(tavolo, clienteList);
-                tavolo.setPrenotazione(true);
             } else {
                 System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");
             }
