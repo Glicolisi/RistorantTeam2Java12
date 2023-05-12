@@ -1,9 +1,12 @@
+import enumartion.PosizioneEnum;
 import enumartion.TypesEnum;
 import enumartion.StagioniEnum;
 import enumartion.TypesPortataEnum;
 import portate.*;
+import ristorante.Cliente;
 import ristorante.Menu;
 import ristorante.Ristorante;
+import ristorante.Tavolo;
 
 
 public class Main {
@@ -86,6 +89,14 @@ public class Main {
         menu.addPortata(bevanda4);
         menu.addPortata(bevanda5);
 
+        Cliente cliente1 = new Cliente("Gianni","Fantoni");
+        Cliente cliente2 = new Cliente("Aldo","Baglio");
+        Cliente cliente3 = new Cliente("Robby","Scansatore");
+
+        Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO,TypesEnum.VEGETARIANO,true,5);
+
+        ristoranteProva.prenotaTavolo(tavoloVegetariano,tavoloVegetariano.getClienteList());
+
         ristoranteProva.addMenu(menu);
 
         ristoranteProva.printRistorante();
@@ -93,6 +104,8 @@ public class Main {
         ristoranteProva.printMenuSorpresa();
 
         ristoranteProva.consegnaJustEat(menu);
+
+
 
     }
 }
