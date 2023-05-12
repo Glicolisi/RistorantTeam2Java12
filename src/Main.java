@@ -95,16 +95,19 @@ public class Main {
 
         Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO,TypesEnum.VEGETARIANO,true,5);
 
-        ristoranteProva.prenotaTavolo(tavoloVegetariano,tavoloVegetariano.getClienteList());
-
         ristoranteProva.addMenu(menu);
+
+        tavoloVegetariano.getClienteList().add(cliente1);
+        tavoloVegetariano.getClienteList().add(cliente2);
+        tavoloVegetariano.getClienteList().add(cliente3);
+
+        ristoranteProva.prenotaTavolo(tavoloVegetariano,tavoloVegetariano.getClienteList());
 
         ristoranteProva.printRistorante();
 
         ristoranteProva.printMenuSorpresa();
 
         ristoranteProva.consegnaJustEat(menu);
-
 
 
     }
