@@ -11,18 +11,18 @@ public class Ristorante {
     private String nome;
     private String indirizzo;
     private Integer voto;
-    private boolean hasJustEat;
+    private boolean JustEat;
     private TypesEnum tipo;
     private List<Menu> menuList;
     private Map<Tavolo,List<Cliente>>tavoloListMap;
 
 
 
-    public Ristorante(String nome, String indirizzo,TypesEnum tipo, Boolean hasJustEat) {
+    public Ristorante(String nome, String indirizzo,TypesEnum tipo, Boolean JustEat) {
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.tipo=tipo;
-        this.hasJustEat = hasJustEat;
+        this.JustEat = JustEat;
         this.menuList = new ArrayList<>();
         this.tavoloListMap=new HashMap<>();
     }
@@ -55,12 +55,12 @@ public class Ristorante {
         this.voto = voto;
     }
 
-    public boolean getHasJustEat() {
-        return hasJustEat;
+    public boolean isJustEat() {
+        return JustEat;
     }
 
-    public void setHasJustEat(boolean hasJustEat) {
-        this.hasJustEat = hasJustEat;
+    public void setJustEat(boolean justEat) {
+        JustEat = justEat;
     }
 
     public List<Menu> getMenuList() {
@@ -69,14 +69,6 @@ public class Ristorante {
 
     public Map<Tavolo, List<Cliente>> getTavoloListMap() {
         return tavoloListMap;
-    }
-
-    public void addTavolo(Tavolo tavolo,List<Cliente>clienteList) {
-        tavoloListMap.put(tavolo,clienteList);
-    }
-
-    public void removeTavolo(Tavolo tavolo) {
-        tavoloListMap.remove(tavolo);
     }
 
     public void addMenu(Menu menu) {
@@ -164,7 +156,7 @@ public class Ristorante {
 
     public void consegnaJustEat(Menu menu) {
 
-        if (hasJustEat == true) {
+        if (isJustEat()) {
 
             if (menu.prezzoMenu() >= 0 && menu.prezzoMenu() <= 20) {
 
@@ -179,7 +171,29 @@ public class Ristorante {
 
         }
 
-
     }
 
+    public void prenotaTavolo(Tavolo tavolo, List<Cliente> clienteList) {
+        if (!tavolo.isPrenotazione()) {
+
+            if (clienteList.size() <= tavolo.getNumeroMaxClienti()) {
+                tavoloListMap.put(tavolo, clienteList);
+                tavolo.setPrenotazione(true);
+            } else {
+                System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");
+            }
+        } else {
+            System.out.println("Il tavolo selezionato è già prenotato.");
+        }
+    }
+
+    public void annullaPrenotazione(Tavolo tavolo) {
+
+        if (tavolo.isPrenotazione()) {
+            tavoloListMap.remove(tavolo);
+            tavolo.setPrenotazione(false);
+        } else {
+            System.out.println("Il tavolo selezionato non è prenotato.");
+        }
+    }
 }
