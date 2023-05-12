@@ -4,9 +4,7 @@ import enumartion.ColorsEnum;
 import enumartion.TypesEnum;
 import portate.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Ristorante {
 
@@ -16,6 +14,7 @@ public class Ristorante {
     private boolean hasJustEat;
     private TypesEnum tipo;
     private List<Menu> menuList;
+    private Map<Tavolo,List<Cliente>>tavoloListMap;
 
 
 
@@ -25,6 +24,7 @@ public class Ristorante {
         this.tipo=tipo;
         this.hasJustEat = hasJustEat;
         this.menuList = new ArrayList<>();
+        this.tavoloListMap=new HashMap<>();
     }
 
     public String getNome() {
@@ -67,8 +67,16 @@ public class Ristorante {
         return menuList;
     }
 
-    public void setMenuList(List<Menu> menuList) {
-        this.menuList = menuList;
+    public Map<Tavolo, List<Cliente>> getTavoloListMap() {
+        return tavoloListMap;
+    }
+
+    public void addTavolo(Tavolo tavolo,List<Cliente>clienteList) {
+        tavoloListMap.put(tavolo,clienteList);
+    }
+
+    public void removeTavolo(Tavolo tavolo) {
+        tavoloListMap.remove(tavolo);
     }
 
     public void addMenu(Menu menu) {
