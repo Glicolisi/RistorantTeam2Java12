@@ -13,6 +13,8 @@ public class Tavolo {
     private TypesEnum tipo;
     private boolean prenotazione;
     private Integer numeroMaxClienti;
+
+    //TODO la lista è nel ristorante
     private List<Cliente> clienteList;
 
     public Tavolo(Integer numero, PosizioneEnum posizione, TypesEnum tipo, boolean prenotazione,Integer numeroMaxClienti) {
@@ -64,11 +66,14 @@ public class Tavolo {
         clienteList.add(cliente);
     }
 
+    //TODO anche questo metodo
 
     public void removeCliente(Cliente cliente) {
         clienteList.remove(cliente);
     }
 
+
+    //TODO lo deve fare il ristorante
 
     public void removeAllCliente() {
 
