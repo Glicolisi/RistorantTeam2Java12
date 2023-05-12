@@ -1,4 +1,4 @@
-import enumartion.TypesMenuEnum;
+import enumartion.TypesEnum;
 import enumartion.StagioniEnum;
 import enumartion.TypesPortataEnum;
 import portate.*;
@@ -15,9 +15,9 @@ public class Main {
 
     public static void ristoranteProva() {
 
-        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", true);
+        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", TypesEnum.ONNIVORO,true);
 
-        Menu menu = new Menu("Menù del giorno", TypesMenuEnum.ONNIVORO, 0);
+        Menu menu = new Menu("Menù del giorno", TypesEnum.ONNIVORO, 0);
 
         Portata antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", TypesPortataEnum.ANTIPASTO,true);
         Portata antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", TypesPortataEnum.ANTIPASTO ,false);

@@ -1,6 +1,7 @@
 package ristorante;
 
 import enumartion.ColorsEnum;
+import enumartion.TypesEnum;
 import portate.*;
 
 import java.util.ArrayList;
@@ -13,13 +14,15 @@ public class Ristorante {
     private String indirizzo;
     private Integer voto;
     private boolean hasJustEat;
+    private TypesEnum tipo;
     private List<Menu> menuList;
 
-    //TODO inseriamo il tipo
 
-    public Ristorante(String nome, String indirizzo, Boolean hasJustEat) {
+
+    public Ristorante(String nome, String indirizzo,TypesEnum tipo, Boolean hasJustEat) {
         this.nome = nome;
         this.indirizzo = indirizzo;
+        this.tipo=tipo;
         this.hasJustEat = hasJustEat;
         this.menuList = new ArrayList<>();
     }
@@ -40,6 +43,10 @@ public class Ristorante {
         this.indirizzo = indirizzo;
     }
 
+    public TypesEnum getTipo() {
+        return tipo;
+    }
+
     public Integer getVoto() {
         return voto;
     }
@@ -48,11 +55,11 @@ public class Ristorante {
         this.voto = voto;
     }
 
-    public Boolean getHasJustEat() {
+    public boolean getHasJustEat() {
         return hasJustEat;
     }
 
-    public void setHasJustEat(Boolean hasJustEat) {
+    public void setHasJustEat(boolean hasJustEat) {
         this.hasJustEat = hasJustEat;
     }
 
@@ -91,14 +98,6 @@ public class Ristorante {
 
     public void printMenuSorpresa() {
 
-        /*//TODO passare un menu a sorpresa
-        List<PrimiPiatti> primiPiattiList = new ArrayList<>();
-
-        for (Portata portata : menuList.get(0).getPortataList()) {
-            if (portata instanceof PrimiPiatti) {
-                primiPiattiList.add((PrimiPiatti) portata);
-            }
-        }*/
         Random random = new Random();
 
         List<Antipasti> antipastiList = getMenuList().get(random.nextInt(getMenuList().size()))
@@ -129,7 +128,7 @@ public class Ristorante {
 
 
         List<Portata> bundlePortata = new ArrayList<>();
-        Portata antipastoBundle = antipastiList.get(random.nextInt(antipastiList.size()));            //da ogni lista si sceglie un piatto casuale
+        Portata antipastoBundle = antipastiList.get(random.nextInt(antipastiList.size()));
         Portata primipiattiBundle = primiPiattiList.get(random.nextInt(primiPiattiList.size()));
         Portata secondipiattiBundle = secondiPiattiList.get(random.nextInt(secondiPiattiList.size()));
         Portata dolciBundle = dolciList.get(random.nextInt(dolciList.size()));
@@ -154,7 +153,7 @@ public class Ristorante {
      *
      * @param menu
      */
-    //TODO riguardiamo un attimo
+
     public void consegnaJustEat(Menu menu) {
 
         if (hasJustEat == true) {
