@@ -1,27 +1,30 @@
 package ristorante;
 
 import enumartion.ColorsEnum;
+import enumartion.TypesEnum;
 import portate.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Ristorante {
 
     private String nome;
     private String indirizzo;
     private Integer voto;
-    private boolean hasJustEat;
+    private boolean JustEat;
+    private TypesEnum tipo;
     private List<Menu> menuList;
+    private Map<Tavolo,List<Cliente>>tavoloListMap;
 
-    //TODO inseriamo il tipo
 
-    public Ristorante(String nome, String indirizzo, Boolean hasJustEat) {
+
+    public Ristorante(String nome, String indirizzo,TypesEnum tipo, Boolean JustEat) {
         this.nome = nome;
         this.indirizzo = indirizzo;
-        this.hasJustEat = hasJustEat;
+        this.tipo=tipo;
+        this.JustEat = JustEat;
         this.menuList = new ArrayList<>();
+        this.tavoloListMap=new HashMap<>();
     }
 
     public String getNome() {
@@ -40,6 +43,10 @@ public class Ristorante {
         this.indirizzo = indirizzo;
     }
 
+    public TypesEnum getTipo() {
+        return tipo;
+    }
+
     public Integer getVoto() {
         return voto;
     }
@@ -48,20 +55,20 @@ public class Ristorante {
         this.voto = voto;
     }
 
-    public Boolean getHasJustEat() {
-        return hasJustEat;
+    public boolean isJustEat() {
+        return JustEat;
     }
 
-    public void setHasJustEat(Boolean hasJustEat) {
-        this.hasJustEat = hasJustEat;
+    public void setJustEat(boolean justEat) {
+        JustEat = justEat;
     }
 
     public List<Menu> getMenuList() {
         return menuList;
     }
 
-    public void setMenuList(List<Menu> menuList) {
-        this.menuList = menuList;
+    public Map<Tavolo, List<Cliente>> getTavoloListMap() {
+        return tavoloListMap;
     }
 
     public void addMenu(Menu menu) {
@@ -84,45 +91,44 @@ public class Ristorante {
 
     }
 
+
     /**
      * Metodo per creare e stampare un menu a sorpresa scegliendo tra i menu del ristorante
      */
 
     public void printMenuSorpresa() {
 
-        //TODO passare un menu a sorpresa
-        List<PrimiPiatti> primiPiattiList = new ArrayList<>();
+        Random random = new Random();
 
-        for (Portata portata : menuList.get(0).getPortataList()) {
-            if (portata instanceof PrimiPiatti) {
-                primiPiattiList.add((PrimiPiatti) portata);
-            }
-        }
-
-        List<Antipasti> antipastiList = (List<Antipasti>) menu.getPortataList().stream().filter(portata -> portata instanceof Antipasti);
-
-        //con toList si popola la lista
-        List<PrimiPiatti> primiPiattiList = menu.getPortataList().stream()
+        List<Antipasti> antipastiList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
+                .filter(portata -> portata instanceof Antipasti)
+                .map(p -> (Antipasti) p)
+                .toList();
+        List<PrimiPiatti> primiPiattiList =getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof PrimiPiatti)
                 .map(p -> (PrimiPiatti) p)
                 .toList();
-        List<SecondiPiatti> secondiPiattiList = menu.getPortataList().stream()
+        List<SecondiPiatti> secondiPiattiList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof SecondiPiatti)
                 .map(p -> (SecondiPiatti) p)
                 .toList();
-        List<Dolci> dolciList = menu.getPortataList().stream()
+        List<Dolci> dolciList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof Dolci)
                 .map(p -> (Dolci) p)
                 .toList();
-        List<Bevande> bevandeList = menu.getPortataList().stream()
+        List<Bevande> bevandeList = getMenuList().get(random.nextInt(getMenuList().size()))
+                .getPortataList().stream()
                 .filter(portata -> portata instanceof Bevande)
                 .map(p -> (Bevande) p)
                 .toList();
 
-        Random random = new Random();
 
         List<Portata> bundlePortata = new ArrayList<>();
-        Portata antipastoBundle = antipastiList.get(random.nextInt(antipastiList.size()));            //da ogni lista si sceglie un piatto casuale
+        Portata antipastoBundle = antipastiList.get(random.nextInt(antipastiList.size()));
         Portata primipiattiBundle = primiPiattiList.get(random.nextInt(primiPiattiList.size()));
         Portata secondipiattiBundle = secondiPiattiList.get(random.nextInt(secondiPiattiList.size()));
         Portata dolciBundle = dolciList.get(random.nextInt(dolciList.size()));
@@ -147,10 +153,10 @@ public class Ristorante {
      *
      * @param menu
      */
-    //TODO riguardiamo un attimo
+
     public void consegnaJustEat(Menu menu) {
 
-        if (hasJustEat == true) {
+        if (isJustEat()) {
 
             if (menu.prezzoMenu() >= 0 && menu.prezzoMenu() <= 20) {
 
@@ -165,7 +171,29 @@ public class Ristorante {
 
         }
 
-
     }
 
+    public void prenotaTavolo(Tavolo tavolo, List<Cliente> clienteList) {
+        if (!tavolo.isPrenotazione()) {
+
+            if (clienteList.size() <= tavolo.getNumeroMaxClienti()) {
+                tavoloListMap.put(tavolo, clienteList);
+                tavolo.setPrenotazione(true);
+            } else {
+                System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");
+            }
+        } else {
+            System.out.println("Il tavolo selezionato è già prenotato.");
+        }
+    }
+
+    public void annullaPrenotazione(Tavolo tavolo) {
+
+        if (tavolo.isPrenotazione()) {
+            tavoloListMap.remove(tavolo);
+            tavolo.setPrenotazione(false);
+        } else {
+            System.out.println("Il tavolo selezionato non è prenotato.");
+        }
+    }
 }

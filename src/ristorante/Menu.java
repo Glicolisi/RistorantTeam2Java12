@@ -1,6 +1,6 @@
 package ristorante;
 
-import enumartion.TypesMenuEnum;
+import enumartion.TypesEnum;
 import enumartion.ColorsEnum;
 import portate.*;
 
@@ -12,11 +12,11 @@ public class Menu {
     private String cuoco;
     private String nome;
 
-    private TypesMenuEnum tipo;
+    private TypesEnum tipo;
     private ArrayList<Portata> portataList;
 
 
-    public Menu(String nome, TypesMenuEnum tipo, double prezzoMedio) {
+    public Menu(String nome, TypesEnum tipo, double prezzoMedio) {
         this.nome = nome;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
@@ -32,7 +32,7 @@ public class Menu {
         this.nome = nome;
     }
 
-    public TypesMenuEnum getTipo() {
+    public TypesEnum getTipo() {
         return tipo;
     }
 
@@ -119,7 +119,9 @@ public class Menu {
             mediaMenu += portata.getPrezzo();
         }
 
-        mediaMenu = (Math.round(mediaMenu / portataList.size()));
+
+        mediaMenu = (Math.round(mediaMenu / portataList.size() * 100.0) / 100.0);
+
 
         if (mediaMenu >= 0 && mediaMenu <= 20) {
 

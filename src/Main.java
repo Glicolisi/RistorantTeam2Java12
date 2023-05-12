@@ -1,9 +1,12 @@
-import enumartion.TypesMenuEnum;
+import enumartion.PosizioneEnum;
+import enumartion.TypesEnum;
 import enumartion.StagioniEnum;
 import enumartion.TypesPortataEnum;
 import portate.*;
+import ristorante.Cliente;
 import ristorante.Menu;
 import ristorante.Ristorante;
+import ristorante.Tavolo;
 
 
 public class Main {
@@ -15,9 +18,9 @@ public class Main {
 
     public static void ristoranteProva() {
 
-        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", true);
+        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", TypesEnum.ONNIVORO,true);
 
-        Menu menu = new Menu("Menù del giorno", TypesMenuEnum.ONNIVORO, 0);
+        Menu menu = new Menu("Menù del giorno", TypesEnum.ONNIVORO, 0);
 
         Portata antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", TypesPortataEnum.ANTIPASTO,true);
         Portata antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", TypesPortataEnum.ANTIPASTO ,false);
@@ -86,6 +89,14 @@ public class Main {
         menu.addPortata(bevanda4);
         menu.addPortata(bevanda5);
 
+        Cliente cliente1 = new Cliente("Gianni","Fantoni");
+        Cliente cliente2 = new Cliente("Aldo","Baglio");
+        Cliente cliente3 = new Cliente("Robby","Scansatore");
+
+        Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO,TypesEnum.VEGETARIANO,true,5);
+
+        ristoranteProva.prenotaTavolo(tavoloVegetariano,tavoloVegetariano.getClienteList());
+
         ristoranteProva.addMenu(menu);
 
         ristoranteProva.printRistorante();
@@ -93,6 +104,8 @@ public class Main {
         ristoranteProva.printMenuSorpresa();
 
         ristoranteProva.consegnaJustEat(menu);
+
+
 
     }
 }
