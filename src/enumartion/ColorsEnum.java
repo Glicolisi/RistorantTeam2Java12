@@ -1,8 +1,7 @@
 package enumartion;
 
-public enum UtilityEnum {
+public enum ColorsEnum {
 
-    //TODO inserire la descrizione per capire che comando è
     //Background
      ANSI_BLACK_BACKGROUND  ("\u001B[40m"),
      ANSI_RED_BACKGROUND  ("\u001B[41m"),
@@ -58,7 +57,7 @@ public enum UtilityEnum {
 
     private String format;
 
-    UtilityEnum(String format) {
+    ColorsEnum(String format) {
         this.format = format;
     }
 

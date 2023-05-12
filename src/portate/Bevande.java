@@ -1,15 +1,29 @@
 package portate;
 
-import enumartion.UtilityEnum;
+import enumartion.ColorsEnum;
+import enumartion.TypesPortataEnum;
 
 public class Bevande extends Portata {
     public boolean isAlcholic;
 
-    public Bevande(String nome, Double prezzo, String ingredienti, boolean isAlcholic) {
-        super(nome, prezzo, ingredienti);
+    /**
+     * @param nome
+     * @param prezzo
+     * @param ingredienti
+     * @param typesPortataEnum
+     * @param isAlcholic
+     */
+
+    public Bevande(String nome, Double prezzo, String ingredienti, TypesPortataEnum typesPortataEnum, boolean isAlcholic) {
+        super(nome, prezzo, ingredienti,typesPortataEnum);
         this.isAlcholic = isAlcholic;
     }
 
+    /**
+     * Metodo per verificare se una bevanda è alcolica
+     *
+     * @return booleano
+     */
     public boolean isAlcholic() {
         return isAlcholic;
     }
@@ -18,6 +32,9 @@ public class Bevande extends Portata {
         isAlcholic = alcholic;
     }
 
+    /**
+     * Metodo per stampare un messaggio se la bevanda è alcolica oppure no
+     */
     public void checkAlchol() {
         if (isAlcholic) {
             System.out.print("This item contains alchol");
@@ -26,12 +43,17 @@ public class Bevande extends Portata {
         }
     }
 
-
+    /**
+     * Stampa info portata più field aggiuntivo della sottoclasse
+     *
+     * @param coloreIngredienti
+     * @param colorePiatti
+     */
     @Override
-    public void printInfo(UtilityEnum coloreIngredienti, UtilityEnum colorePiatti) {
+    public void printInfo(ColorsEnum coloreIngredienti, ColorsEnum colorePiatti) {
         super.printInfo(coloreIngredienti, colorePiatti);
         this.isAlcholic();
-//        System.out.print("\n");
+
     }
 }
 
