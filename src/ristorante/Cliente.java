@@ -8,20 +8,12 @@ public class Cliente {
     private String name;
     private String surname;
     private boolean hasGotFideltyCard;
-
-    //TODO inseriamo il tipo
-
-    //TODO eliminare non si deve fare nel linguaggio ad oggetti
-    private ArrayList<Cliente> clientFideltyList;
-    private ArrayList<Cliente> clientList;
     private long fideltyCardNumber;
 
     public Cliente(String name, String surname) {
         this.name = name;
         this.surname = surname;
         this.hasGotFideltyCard = hasGotFideltyCard;
-        this.clientFideltyList = new ArrayList<>();
-        this.clientList = new ArrayList<>();
         this.fideltyCardNumber = 0;
     }
 
@@ -37,22 +29,17 @@ public class Cliente {
         return fideltyCardNumber;
     }
 
-    public void addClientToClientList(Cliente cliente) {
-        clientList.add(cliente);
-    }
-
-    public void addClientToFideltyList(Cliente cliente) {
-        clientFideltyList.add(cliente);
-        cliente.assignFideltyNumberCard(cliente);
-    }
-
+    /**
+     * Metodo che assegna al cliente una carta fedeltà ad 8 cifre
+     * @param cliente
+     */
     public void assignFideltyNumberCard(Cliente cliente) {
         Random rd = new Random();
-        if (cliente.hasGotFideltyCard == false) {
+        if (!cliente.hasGotFideltyCard) {
             this.fideltyCardNumber = rd.nextLong(99999999);
             hasGotFideltyCard = true;
         }
-        if (cliente.hasGotFideltyCard == true) {
+        if (cliente.hasGotFideltyCard) {
             System.out.println("La fidelty card di questo cliente è la numero " + fideltyCardNumber);
         }
         //Mettiamo un massimo di 8 cifre e lo facciamo essere sempre positivo
@@ -61,18 +48,21 @@ public class Cliente {
         }
     }
 
-    public void findClientByNameAndSurname() {
-        //TODO rivediamo
+    /**
+     * Metodo che cerca un cliente per nome e cognome
+     * @param clientList
+     * @param name
+     * @param surname
+     */
+    public void findClientByNameAndSurname(ArrayList<Cliente> clientList,String name,String surname) {
         for (Cliente cliente : clientList) {
-            String nameTrim = this.name.trim().toLowerCase();
-            String surnameTrim = this.surname.trim().toLowerCase();
             String clientNameTrim = cliente.getName().trim().toLowerCase();
             String clientSurnameTrim = cliente.getSurname().trim().toLowerCase();
-            if (clientNameTrim.equals(nameTrim) && clientSurnameTrim.equals(surnameTrim)) {
+            if (clientNameTrim.equals(cliente.getName()) && clientSurnameTrim.equals(cliente.getSurname())) {
                 System.out.println("Il cliente che stai cercando è " + cliente.getName() +
                         " " + cliente.getSurname() + " e il numero della sua fidelty card è " + fideltyCardNumber);
             } else {
-                System.out.println("Ci dispiace ma non esiste nessun cliente dal nome " + this.name + " " + this.surname);
+                System.out.println("Ci dispiace ma non esiste nessun cliente dal nome " + name + " " + surname);
             }
         }
     }
