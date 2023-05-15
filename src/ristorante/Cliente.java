@@ -7,7 +7,12 @@ import java.util.*;
 public class Cliente {
     private String name;
     private String surname;
+
+    //TODO
+    private Integer numeroPersone;
     private boolean hasGotFideltyCard;
+
+    //TODO usare sempre gli oggetti
     private long fideltyCardNumber;
 
     public Cliente(String name, String surname) {
@@ -33,6 +38,8 @@ public class Cliente {
      * Metodo che assegna al cliente una carta fedeltà ad 8 cifre
      * @param cliente
      */
+
+    //TODO sistemare
     public void assignFideltyNumberCard(Cliente cliente) {
         Random rd = new Random();
         if (!cliente.hasGotFideltyCard) {
@@ -54,6 +61,8 @@ public class Cliente {
      * @param name
      * @param surname
      */
+
+    //TODO spostare in ristorante
     public void findClientByNameAndSurname(ArrayList<Cliente> clientList,String name,String surname) {
         for (Cliente cliente : clientList) {
             String clientNameTrim = cliente.getName().trim().toLowerCase();

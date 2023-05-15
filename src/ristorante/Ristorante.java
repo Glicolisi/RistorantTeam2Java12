@@ -11,10 +11,12 @@ public class Ristorante {
     private String nome;
     private String indirizzo;
     private Integer voto;
+
+    //TODO sempre in minuscolo camel case
     private boolean JustEat;
     private TypesEnum tipo;
     private List<Menu> menuList;
-    private Map<Tavolo,List<Cliente>>tavoloListMap;
+    private Map<Tavolo,Cliente>tavoloListMap;
 
 
 
@@ -67,7 +69,7 @@ public class Ristorante {
         return menuList;
     }
 
-    public Map<Tavolo, List<Cliente>> getTavoloListMap() {
+    public Map<Tavolo, Cliente> getTavoloListMap() {
         return tavoloListMap;
     }
 
@@ -173,11 +175,14 @@ public class Ristorante {
 
     }
 
-    public void prenotaTavolo(Tavolo tavolo, List<Cliente> clienteList) {
+    public void prenotaTavolo(Tavolo tavolo,Cliente cliente) {
         if (tavolo.isPrenotazione()) {
 
-            if (clienteList.size() <= tavolo.getNumeroMaxClienti()) {
-                tavoloListMap.put(tavolo, clienteList);
+            //TODO dobbiamo contrallare che il tavolo che passiamo sia <= del numero di persone che arriva dal cliente
+            //e poi dobbiamo vedere se c'è ancora disponibilità nel ristorante
+            if (cliente.getNumeroPersone() <= tavolo.getCapienzaTavolo) {
+                //TODO dobbiamo verificare che la capienza sia ancora rispettata
+                tavoloListMap.put(tavolo,cliente );
             } else {
                 System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");
             }
