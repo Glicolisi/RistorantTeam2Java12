@@ -101,7 +101,7 @@ public class Main {
         tavoloVegetariano.getClienteList().add(cliente2);
         tavoloVegetariano.getClienteList().add(cliente3);
 
-        ristoranteProva.prenotaTavolo(tavoloVegetariano,tavoloVegetariano.getClienteList());
+        ristoranteProva.prenotaTavolo(tavoloVegetariano,cliente1);
 
         ristoranteProva.printRistorante();
 
