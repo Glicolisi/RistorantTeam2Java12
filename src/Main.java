@@ -97,9 +97,9 @@ public class Main {
 
         ristoranteProva.addMenu(menu);
 
-        ristoranteProva.getClienteList().add(cliente1);
-        ristoranteProva.getClienteList().add(cliente2);
-        ristoranteProva.getClienteList().add(cliente3);
+        ristoranteProva.addCliente(cliente1);
+        ristoranteProva.addCliente(cliente2);
+        ristoranteProva.addCliente(cliente3);
 
         ristoranteProva.prenotaTavolo(tavoloVegetariano,cliente1);
 
