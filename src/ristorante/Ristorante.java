@@ -11,20 +11,22 @@ public class Ristorante {
     private String nome;
     private String indirizzo;
     private Integer voto;
-
-    //TODO sempre in minuscolo camel case
-    private boolean JustEat;
     private TypesEnum tipo;
+    private boolean justEat;
+    private Integer postiMassimi;
     private List<Menu> menuList;
     private Map<Tavolo,Cliente>tavoloListMap;
+    private List<Cliente> clienteList;
 
 
 
-    public Ristorante(String nome, String indirizzo,TypesEnum tipo, Boolean JustEat) {
+    public Ristorante(String nome, String indirizzo,TypesEnum tipo, Boolean justEat, Integer postiMassimi) {
         this.nome = nome;
         this.indirizzo = indirizzo;
-        this.tipo=tipo;
-        this.JustEat = JustEat;
+        this.tipo = tipo;
+        this.justEat = justEat;
+        this.postiMassimi = postiMassimi;
+        this.clienteList = new ArrayList<>();
         this.menuList = new ArrayList<>();
         this.tavoloListMap=new HashMap<>();
     }
@@ -57,16 +59,24 @@ public class Ristorante {
         this.voto = voto;
     }
 
-    public boolean isJustEat() {
-        return JustEat;
+    public boolean isjustEat() {
+        return justEat;
+    }
+
+    public Integer getPostiMassimi() {
+        return postiMassimi;
     }
 
     public void setJustEat(boolean justEat) {
-        JustEat = justEat;
+        this.justEat = justEat;
     }
 
     public List<Menu> getMenuList() {
         return menuList;
+    }
+
+    public List<Cliente> getClienteList() {
+        return clienteList;
     }
 
     public Map<Tavolo, Cliente> getTavoloListMap() {
@@ -158,7 +168,7 @@ public class Ristorante {
 
     public void consegnaJustEat(Menu menu) {
 
-        if (isJustEat()) {
+        if (isjustEat()) {
 
             if (menu.prezzoMenu() >= 0 && menu.prezzoMenu() <= 20) {
 
@@ -175,21 +185,38 @@ public class Ristorante {
 
     }
 
-    public void prenotaTavolo(Tavolo tavolo,Cliente cliente) {
-        if (tavolo.isPrenotazione()) {
+    public void addCliente(Cliente cliente) {
+        clienteList.add(cliente);
+    }
 
-            //TODO dobbiamo contrallare che il tavolo che passiamo sia <= del numero di persone che arriva dal cliente
-            //e poi dobbiamo vedere se c'è ancora disponibilità nel ristorante
-            if (cliente.getNumeroPersone() <= tavolo.getCapienzaTavolo) {
-                //TODO dobbiamo verificare che la capienza sia ancora rispettata
-                tavoloListMap.put(tavolo,cliente );
+    public void removeCliente(Cliente cliente) {
+        clienteList.remove(cliente);
+    }
+
+    public void prenotaTavolo(Tavolo tavolo, Cliente cliente) {
+
+        postiMassimi = -cliente.getNumeroPersone();
+
+        if (postiMassimi >= 0) {
+
+            if (!tavolo.isPrenotazione()) {
+
+                //TODO dobbiamo contrallare che il tavolo che passiamo sia <= del numero di persone che arriva dal cliente
+                //e poi dobbiamo vedere se c'è ancora disponibilità nel ristorante
+                if (cliente.getNumeroPersone() <= tavolo.getNumeroMaxClienti()) {
+                    //TODO dobbiamo verificare che la capienza sia ancora rispettata
+                    tavoloListMap.put(tavolo, cliente);
+                } else {
+                    System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");
+                }
             } else {
-                System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");
+                System.out.println("Il tavolo selezionato è già prenotato.");
             }
         } else {
-            System.out.println("Il tavolo selezionato è già prenotato.");
+            System.out.println("Il ristorante ha raggiunto la massima capienza");
         }
     }
+
 
     public void annullaPrenotazione(Tavolo tavolo) {
 
