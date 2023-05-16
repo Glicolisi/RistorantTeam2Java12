@@ -7,17 +7,16 @@ import java.util.*;
 public class Cliente {
     private String name;
     private String surname;
-
-    //TODO
     private Integer numeroPersone;
     private boolean hasGotFideltyCard;
 
     //TODO usare sempre gli oggetti
     private long fideltyCardNumber;
 
-    public Cliente(String name, String surname) {
+    public Cliente(String name, String surname, Integer numeroPersone) {
         this.name = name;
         this.surname = surname;
+        this.numeroPersone = numeroPersone;
         this.hasGotFideltyCard = hasGotFideltyCard;
         this.fideltyCardNumber = 0;
     }
@@ -28,6 +27,14 @@ public class Cliente {
 
     public String getSurname() {
         return surname;
+    }
+
+    public Integer getNumeroPersone() {
+        return numeroPersone;
+    }
+
+    public void setNumeroPersone(Integer numeroPersone) {
+        this.numeroPersone = numeroPersone;
     }
 
     public long getFideltyCardNumber() {

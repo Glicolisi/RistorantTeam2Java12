@@ -58,15 +58,9 @@ public class Tavolo {
         this.numeroMaxClienti = numeroMaxClienti;
     }
 
-    public List<Cliente> getClienteList() {
-        return clienteList;
-    }
-
     public void addCliente(Cliente cliente) {
         clienteList.add(cliente);
     }
-
-    //TODO anche questo metodo
 
     public void removeCliente(Cliente cliente) {
         clienteList.remove(cliente);
@@ -82,7 +76,5 @@ public class Tavolo {
             clienteList.remove(cliente);
 
         }
-
     }
-
 }

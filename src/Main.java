@@ -18,7 +18,7 @@ public class Main {
 
     public static void ristoranteProva() {
 
-        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", TypesEnum.ONNIVORO,true);
+        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", TypesEnum.ONNIVORO,true,20);
 
         Menu menu = new Menu("Menù del giorno", TypesEnum.ONNIVORO, 0);
 
@@ -89,17 +89,17 @@ public class Main {
         menu.addPortata(bevanda4);
         menu.addPortata(bevanda5);
 
-        Cliente cliente1 = new Cliente("Gianni","Fantoni");
-        Cliente cliente2 = new Cliente("Aldo","Baglio");
-        Cliente cliente3 = new Cliente("Robby","Scansatore");
+        Cliente cliente1 = new Cliente("Gianni","Fantoni",10);
+        Cliente cliente2 = new Cliente("Aldo","Baglio",12);
+        Cliente cliente3 = new Cliente("Robby","Scansatore",1);
 
-        Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO,TypesEnum.VEGETARIANO,true,5);
+        Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO,TypesEnum.VEGETARIANO,false,5);
 
         ristoranteProva.addMenu(menu);
 
-        tavoloVegetariano.getClienteList().add(cliente1);
-        tavoloVegetariano.getClienteList().add(cliente2);
-        tavoloVegetariano.getClienteList().add(cliente3);
+        ristoranteProva.getClienteList().add(cliente1);
+        ristoranteProva.getClienteList().add(cliente2);
+        ristoranteProva.getClienteList().add(cliente3);
 
         ristoranteProva.prenotaTavolo(tavoloVegetariano,cliente1);
 
@@ -108,7 +108,6 @@ public class Main {
         ristoranteProva.printMenuSorpresa();
 
         ristoranteProva.consegnaJustEat(menu);
-
 
     }
 }
