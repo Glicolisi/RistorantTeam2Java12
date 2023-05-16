@@ -227,4 +227,5 @@ public class Ristorante {
             System.out.println("Il tavolo selezionato non è prenotato.");
         }
     }
+    //TODO (Per Salvo o chi vuole provare) creare metodo printPrenotazione e vedere se possibile raggruppare tutti i print dentro printRistorante
 }
