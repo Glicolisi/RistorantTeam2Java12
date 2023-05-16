@@ -195,7 +195,7 @@ public class Ristorante {
 
     public void prenotaTavolo(Tavolo tavolo, Cliente cliente) {
 
-        postiMassimi = -cliente.getNumeroPersone();
+        postiMassimi -= cliente.getNumeroPersone();
 
         if (postiMassimi >= 0) {
 

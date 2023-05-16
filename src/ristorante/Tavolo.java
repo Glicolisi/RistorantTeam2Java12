@@ -13,7 +13,6 @@ public class Tavolo {
     private TypesEnum tipo;
     private boolean prenotazione;
     private Integer numeroMaxClienti;
-    private List<Cliente> clienteList;
 
     public Tavolo(Integer numero, PosizioneEnum posizione, TypesEnum tipo, boolean prenotazione,Integer numeroMaxClienti) {
         this.numero = numero;
@@ -21,7 +20,6 @@ public class Tavolo {
         this.tipo = tipo;
         this.prenotazione = prenotazione;
         this.numeroMaxClienti = numeroMaxClienti;
-        this.clienteList=new ArrayList<>();
     }
 
     public Integer getNumero() {
@@ -55,15 +53,6 @@ public class Tavolo {
     public void setNumeroMaxClienti(Integer numeroMaxClienti) {
         this.numeroMaxClienti = numeroMaxClienti;
     }
-
-    public void addCliente(Cliente cliente) {
-        clienteList.add(cliente);
-    }
-
-    public void removeCliente(Cliente cliente) {
-        clienteList.remove(cliente);
-    }
-
 
 
 }
