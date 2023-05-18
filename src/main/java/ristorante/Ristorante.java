@@ -8,15 +8,15 @@ import java.util.*;
 
 public class Ristorante {
 
+    private final TypesEnum tipo;
+    private final List<Menu> menuList;
+    private final Map<Tavolo, Cliente> tavoloListMap;
+    private final List<Cliente> clienteList;
     private String nome;
     private String indirizzo;
     private Integer voto;
-    private TypesEnum tipo;
     private boolean justEat;
     private Integer postiMassimi;
-    private List<Menu> menuList;
-    private Map<Tavolo, Cliente> tavoloListMap;
-    private List<Cliente> clienteList;
 
 
     public Ristorante(String nome, String indirizzo, TypesEnum tipo, Boolean justEat, Integer postiMassimi) {
@@ -168,9 +168,7 @@ public class Ristorante {
     public void consegnaJustEat(Menu menu) {
 
         if (isjustEat()) {
-
             if (menu.prezzoMenu() >= 0 && menu.prezzoMenu() <= 20) {
-
                 System.out.println(ColorsEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è gratuito    \n"));
             }
             if (menu.prezzoMenu() > 20 && menu.prezzoMenu() <= 40) {
@@ -179,20 +177,10 @@ public class Ristorante {
             if (menu.prezzoMenu() > 40) {
                 System.out.println(ColorsEnum.ANSI_RESET.getFormat() + ("Il prezzo di consegna è: " + menu.prezzoMenu() / 15 + " euro    \n"));
             }
-
         }
 
     }
 
-
-   /* public void prenotaTavolo(Tavolo tavolo,Cliente cliente) {
-        if (tavolo.isPrenotazione()) {
-
-            //TODO dobbiamo contrallare che il tavolo che passiamo sia <= del numero di persone che arriva dal cliente
-            //e poi dobbiamo vedere se c'è ancora disponibilità nel ristorante
-            if (cliente.getNumeroPersone() <= tavolo.getCapienzaTavolo) {
-                //TODO dobbiamo verificare che la capienza sia ancora rispettata
-                tavoloListMap.put(tavolo,cliente );
 
     public void findClientByNameAndSurname(String name, String surname) {
         for (Cliente cliente : clienteList) {
@@ -208,7 +196,6 @@ public class Ristorante {
         }
     }
 
-*/
 
 
     public void addCliente(Cliente cliente) {
@@ -224,13 +211,8 @@ public class Ristorante {
         postiMassimi -= cliente.getNumeroPersone();
 
         if (postiMassimi >= 0) {
-
             if (!tavolo.isPrenotazione()) {
-
-                //TODO dobbiamo contrallare che il tavolo che passiamo sia <= del numero di persone che arriva dal cliente
-                //e poi dobbiamo vedere se c'è ancora disponibilità nel ristorante
                 if (cliente.getNumeroPersone() <= tavolo.getNumeroMaxClienti()) {
-                    //TODO dobbiamo verificare che la capienza sia ancora rispettata
                     tavoloListMap.put(tavolo, cliente);
                 } else {
                     System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");

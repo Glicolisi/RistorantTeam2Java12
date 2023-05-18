@@ -20,7 +20,7 @@ public class Main {
 
     public static void ristoranteProva() {
 
-        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", TypesEnum.ONNIVORO, true);
+        Ristorante ristoranteProva = new Ristorante("La Taverna dei Programmatori", "Pizzo Calabro", TypesEnum.ONNIVORO, true,23);
 
         Menu menu = new Menu("Menù del giorno", TypesEnum.ONNIVORO, 0);
 
@@ -91,17 +91,17 @@ public class Main {
         menu.addPortata(bevanda4);
         menu.addPortata(bevanda5);
 
-        Cliente cliente1 = new Cliente("Gianni", "Fantoni");
-        Cliente cliente2 = new Cliente("Aldo", "Baglio");
-        Cliente cliente3 = new Cliente("Robby", "Scansatore");
+        Cliente cliente1 = new Cliente("Gianni", "Fantoni",10);
+        Cliente cliente2 = new Cliente("Aldo", "Baglio",4);
+        Cliente cliente3 = new Cliente("Robby", "Scansatore",1);
 
         Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO, TypesEnum.VEGETARIANO, true, 5);
 
         ristoranteProva.addMenu(menu);
 
-        tavoloVegetariano.getClienteList().add(cliente1);
-        tavoloVegetariano.getClienteList().add(cliente2);
-        tavoloVegetariano.getClienteList().add(cliente3);
+        ristoranteProva.addCliente(cliente1);
+        ristoranteProva.addCliente(cliente2);
+        ristoranteProva.addCliente(cliente3);
 
         // ristoranteProva.prenotaTavolo(tavoloVegetariano,cliente1);
 
