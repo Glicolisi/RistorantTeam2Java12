@@ -14,16 +14,12 @@ public class Tavolo {
     private boolean prenotazione;
     private Integer numeroMaxClienti;
 
-    //TODO la lista è nel ristorante
-    private List<Cliente> clienteList;
-
     public Tavolo(Integer numero, PosizioneEnum posizione, TypesEnum tipo, boolean prenotazione,Integer numeroMaxClienti) {
         this.numero = numero;
         this.posizione = posizione;
         this.tipo = tipo;
         this.prenotazione = prenotazione;
         this.numeroMaxClienti = numeroMaxClienti;
-        this.clienteList=new ArrayList<>();
     }
 
     public Integer getNumero() {
@@ -58,31 +54,5 @@ public class Tavolo {
         this.numeroMaxClienti = numeroMaxClienti;
     }
 
-    public List<Cliente> getClienteList() {
-        return clienteList;
-    }
-
-    public void addCliente(Cliente cliente) {
-        clienteList.add(cliente);
-    }
-
-    //TODO anche questo metodo
-
-    public void removeCliente(Cliente cliente) {
-        clienteList.remove(cliente);
-    }
-
-
-    //TODO lo deve fare il ristorante
-
-    public void removeAllCliente() {
-
-        for (Cliente cliente : clienteList){
-
-            clienteList.remove(cliente);
-
-        }
-
-    }
 
 }

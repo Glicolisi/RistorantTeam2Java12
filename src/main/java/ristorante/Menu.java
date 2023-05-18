@@ -11,7 +11,6 @@ public class Menu {
     private double prezzoMedio;
     private String cuoco;
     private String nome;
-
     private TypesEnum tipo;
     private ArrayList<Portata> portataList;
 
