@@ -15,12 +15,11 @@ public class Ristorante {
     private boolean justEat;
     private Integer postiMassimi;
     private List<Menu> menuList;
-    private Map<Tavolo,Cliente>tavoloListMap;
+    private Map<Tavolo, Cliente> tavoloListMap;
     private List<Cliente> clienteList;
 
 
-
-    public Ristorante(String nome, String indirizzo,TypesEnum tipo, Boolean justEat, Integer postiMassimi) {
+    public Ristorante(String nome, String indirizzo, TypesEnum tipo, Boolean justEat, Integer postiMassimi) {
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.tipo = tipo;
@@ -28,7 +27,7 @@ public class Ristorante {
         this.postiMassimi = postiMassimi;
         this.clienteList = new ArrayList<>();
         this.menuList = new ArrayList<>();
-        this.tavoloListMap=new HashMap<>();
+        this.tavoloListMap = new HashMap<>();
     }
 
     public String getNome() {
@@ -117,7 +116,7 @@ public class Ristorante {
                 .filter(portata -> portata instanceof Antipasti)
                 .map(p -> (Antipasti) p)
                 .toList();
-        List<PrimiPiatti> primiPiattiList =getMenuList().get(random.nextInt(getMenuList().size()))
+        List<PrimiPiatti> primiPiattiList = getMenuList().get(random.nextInt(getMenuList().size()))
                 .getPortataList().stream()
                 .filter(portata -> portata instanceof PrimiPiatti)
                 .map(p -> (PrimiPiatti) p)
@@ -183,6 +182,19 @@ public class Ristorante {
 
         }
 
+    }
+
+    public void findClientByNameAndSurname(String name, String surname) {
+        for (Cliente cliente : clienteList) {
+            String clientNameTrim = cliente.getName().trim().toLowerCase();
+            String clientSurnameTrim = cliente.getSurname().trim().toLowerCase();           //Ho iterato nella lista tenendo in considerazione i vari errori possibili
+            if (clientNameTrim.equals(cliente.getName()) && clientSurnameTrim.equals(cliente.getSurname())) {
+                System.out.println("Il cliente che stai cercando è " + cliente.getName() +
+                        " " + cliente.getSurname() + " e il numero della sua fidelty card è " + cliente.getFideltyCardNumber());
+            } else {
+                System.out.println("Ci dispiace ma non esiste nessun cliente dal nome " + name + " " + surname);
+            }
+        }
     }
 
     public void addCliente(Cliente cliente) {
