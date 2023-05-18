@@ -95,7 +95,7 @@ public class Main {
         Cliente cliente2 = new Cliente("Aldo", "Baglio",4);
         Cliente cliente3 = new Cliente("Robby", "Scansatore",1);
 
-        Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO, TypesEnum.VEGETARIANO, true, 5);
+        Tavolo tavoloVegetariano = new Tavolo(2, PosizioneEnum.PRIVATO, TypesEnum.VEGETARIANO, false, 5);
 
         ristoranteProva.addMenu(menu);
 
@@ -103,14 +103,9 @@ public class Main {
         ristoranteProva.addCliente(cliente2);
         ristoranteProva.addCliente(cliente3);
 
-        // ristoranteProva.prenotaTavolo(tavoloVegetariano,cliente1);
-
         ristoranteProva.printRistorante();
 
-        ristoranteProva.printMenuSorpresa();
-
-        ristoranteProva.consegnaJustEat(menu);
-
+        ristoranteProva.prenotaTavolo(tavoloVegetariano, cliente1);
 
     }
 

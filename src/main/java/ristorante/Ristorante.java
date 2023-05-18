@@ -9,9 +9,9 @@ import java.util.*;
 public class Ristorante {
 
     private final TypesEnum tipo;
-    private final List<Menu> menuList;
-    private final Map<Tavolo, Cliente> tavoloListMap;
-    private final List<Cliente> clienteList;
+    private List<Menu> menuList;
+    private Map<Tavolo, Cliente> prenotazioniMap;
+    private List<Cliente> clienteList;
     private String nome;
     private String indirizzo;
     private Integer voto;
@@ -27,7 +27,7 @@ public class Ristorante {
         this.postiMassimi = postiMassimi;
         this.clienteList = new ArrayList<>();
         this.menuList = new ArrayList<>();
-        this.tavoloListMap = new HashMap<>();
+        this.prenotazioniMap = new HashMap<>();
     }
 
     public String getNome() {
@@ -79,7 +79,7 @@ public class Ristorante {
     }
 
     public Map<Tavolo, Cliente> getTavoloListMap() {
-        return tavoloListMap;
+        return prenotazioniMap;
     }
 
     public void addMenu(Menu menu) {
@@ -93,11 +93,16 @@ public class Ristorante {
     public void printRistorante() {
         for (Menu menus : menuList) {
             System.out.println(nome + "\n" + " \uD83D\uDFE2⚪\uD83D\uDD34");
+            System.out.println("il numero di posti liberi è " + ColorsEnum.RED.getFormat() +  postiMassimi + "\n");
             System.out.println(ColorsEnum.PURPLE_BOLD.getFormat() + menus.getNome() + "\n");
 
             menus.printMenu();
             menus.printPrezzoMedioMenu();
             menus.reimpostaPrezzoMedio();
+            printMenuSorpresa();
+            consegnaJustEat(menus);
+            printPrenotazione();
+
         }
 
     }
@@ -208,12 +213,13 @@ public class Ristorante {
 
     public void prenotaTavolo(Tavolo tavolo, Cliente cliente) {
 
-        postiMassimi -= cliente.getNumeroPersone();
 
         if (postiMassimi >= 0) {
             if (!tavolo.isPrenotazione()) {
                 if (cliente.getNumeroPersone() <= tavolo.getNumeroMaxClienti()) {
-                    tavoloListMap.put(tavolo, cliente);
+                    postiMassimi -= cliente.getNumeroPersone();
+                    prenotazioniMap.put(tavolo, cliente);
+                    System.out.println("La sua prenotazione è stata accettata.");
                 } else {
                     System.out.println("Il tavolo selezionato non può ospitare il numero di clienti specificato.");
                 }
@@ -230,11 +236,16 @@ public class Ristorante {
     public void annullaPrenotazione(Tavolo tavolo) {
 
         if (tavolo.isPrenotazione()) {
-            tavoloListMap.remove(tavolo);
+            prenotazioniMap.remove(tavolo);
             tavolo.setPrenotazione(false);
         } else {
             System.out.println("Il tavolo selezionato non è prenotato.");
         }
     }
-    //TODO (Per Salvo o chi vuole provare) creare metodo printPrenotazione e vedere se possibile raggruppare tutti i print dentro printRistorante
+
+    public void printPrenotazione(){
+        for(Map.Entry<Tavolo, Cliente> entry: prenotazioniMap.entrySet()){
+            System.out.println("Il tavolo prenotato è il " + entry.getKey().getNumero() + " per il cliente " + entry.getValue().getSurname());
+        }
+    }
 }
