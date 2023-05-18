@@ -175,7 +175,7 @@ public class Ristorante {
 
     }
 
-    public void prenotaTavolo(Tavolo tavolo,Cliente cliente) {
+   /* public void prenotaTavolo(Tavolo tavolo,Cliente cliente) {
         if (tavolo.isPrenotazione()) {
 
             //TODO dobbiamo contrallare che il tavolo che passiamo sia <= del numero di persone che arriva dal cliente
@@ -190,7 +190,7 @@ public class Ristorante {
             System.out.println("Il tavolo selezionato è già prenotato.");
         }
     }
-
+*/
     public void annullaPrenotazione(Tavolo tavolo) {
 
         if (tavolo.isPrenotazione()) {
