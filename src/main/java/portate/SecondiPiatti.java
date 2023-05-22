@@ -21,6 +21,7 @@ public class SecondiPiatti extends Portata {
         this.hasFrozenProduct = hasFrozenProduct;
     }
 
+
     public boolean isHasFrozenProduct() {
         return hasFrozenProduct;
     }
