@@ -9,7 +9,7 @@ public class DaoDolci {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/ristorante"; // jdbc:mysql://localhost:3306/ristorante  jdbc:mysql://localhost:3306/rubricab
     private static final String USER = "root"; // root
-    private static final String PASS = "pasword"; // password
+    private static final String PASS = "pasword"; // pasword
 
     public void createTable(String nomeTabella) {
 
@@ -22,12 +22,12 @@ public class DaoDolci {
 
             String createQuery =
                     "CREATE TABLE IF NOT EXISTS " + nomeTabella +
-                            " ( ID INT NOT NULL AUTO_INCREMENT," +
+                            " ( ID INT AUTO_INCREMENT," +
                             "nome VARCHAR(255)," +
                             "prezzo DOUBLE," +
                             "ingredienti VARCHAR(255)," +
                             "tipoPortata VARCHAR(255),"+
-                            "isLattosio BOOLEAN" +
+                            "isLattosio BOOLEAN," +
                             " PRIMARY KEY (ID)" +
                             " );";
 
@@ -46,6 +46,7 @@ public class DaoDolci {
 
     public void insertDolci(Dolci dolci) {
         Connection conn = null;
+        int isLattosioTO =dolci.isLattosio()?1:0;
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = conn.createStatement();
@@ -56,7 +57,7 @@ public class DaoDolci {
                     dolci.getPrezzo() + "', '" +
                     dolci.getIngredienti() + "', '" +
                     dolci.getTipoPortata() + "', '" +
-                    dolci.isLattosio() + "');";
+                   isLattosioTO + "');";
 
             statement.executeUpdate(insertQuery);
 
