@@ -1,17 +1,19 @@
 package DAO;
 
-import portate.Antipasti;
+import enumartion.TypesPortataEnum;
 import portate.Portata;
+import portate.SecondiPiatti;
 
 import java.sql.*;
 
-public class DaoAntipasti {
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/ristorante"; // jdbc:mysql://localhost:3306/ristorante  jdbc:mysql://localhost:3306/rubricab
-    private static final String USER = "root"; // root
-    private static final String PASS = "password"; // password
+public class DaoSecondiPiatti {
 
-    public void createTable(String nomeTabella) {
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/ristorante";
+    private static final String USER = "root";
+    private static final String PASS = "password";
+
+    public void createTable() {
 
         Connection conn = null;
 
@@ -21,14 +23,14 @@ public class DaoAntipasti {
             Statement statement = conn.createStatement();
 
             String createQuery =
-                    "CREATE TABLE IF NOT EXISTS " + nomeTabella +
-                            " ( ID INTEGER(10) NOT NULL AUTO_INCREMENT," +
-                            "name VARCHAR(255)," +
+                    "CREATE TABLE IF NOT EXISTS secondiPiatti "  +
+                            " ( ID INT AUTO_INCREMENT," +
+                            "nome VARCHAR(255)," +
                             "prezzo DOUBLE," +
                             "ingredienti VARCHAR(255)," +
-                            "tipoPortata VARCHAR(255),"+
-                            "chilometroZero BOOLEAN" +
-                            " PRIMARY KEY (ID)" +
+                            "tipoPortata VARCHAR(255)," +
+                            "hasFrozenProduct TINYINT(1)," +
+                            "PRIMARY KEY (ID) " +
                             " );";
 
 
@@ -44,22 +46,19 @@ public class DaoAntipasti {
         System.out.println("Tabella creata");
     }
 
-    public void insertAntipasti(Antipasti antipasti, String nomeTabella) {
+    public void insertSecondoPiatto(SecondiPiatti secondo) {
         Connection conn = null;
+        int hasFrozenProductToInt = secondo.isHasFrozenProduct() ? 1:0;
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = conn.createStatement();
 
-            String insertQuery = "INSERT INTO " + nomeTabella +
-                    " (name, prezzo, ingredienti,tipoPortata, chilometroZero) VALUES ('" +
-                    antipasti.getNome() + "', '" +
-                    antipasti.getPrezzo() + "', '" +
-                    antipasti.getIngredienti() + "', '" +
-                    antipasti.getTipoPortata() + "', '" +
-                    antipasti.isKmZero() + "');";
+            String insertQuery = "INSERT INTO secondiPiatti" +
+                    " (nome, prezzo, ingredienti,tipoPortata,hasFrozenProduct) VALUES ('" +
+                    secondo.getNome() + "', '" + secondo.getPrezzo() + "', '" + secondo.getIngredienti() + "', '" +
+                    secondo.getTipoPortata() + "', '" + hasFrozenProductToInt + "');";
 
             statement.executeUpdate(insertQuery);
-
 
             statement.close();
 
@@ -68,12 +67,11 @@ public class DaoAntipasti {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Tabella " + nomeTabella + " aggiornata");
+        System.out.println("Insert effettuato con successo");
 
     }
 
-    // copiato da secondiPiatti. chiedere info
-    public void printTable(String nomeTabella) {
+    public void printTable() {
         Statement stmt = null;
         ResultSet rs = null;
         Connection conn = null;
@@ -81,7 +79,7 @@ public class DaoAntipasti {
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM " + nomeTabella + ";");
+            rs = stmt.executeQuery("SELECT * FROM secondiPiatti");
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
 
@@ -98,13 +96,13 @@ public class DaoAntipasti {
                 }
                 System.out.println();
 
-            }
+        }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void updateTable(String colonna, int ID, String nuovoValore, String nomeTabella) {
+    public void updateTable(String colonna, int ID, String nuovoValore) {
 
         Connection conn = null;
         String updateQuery="";
@@ -116,18 +114,18 @@ public class DaoAntipasti {
             switch (colonna){
                 case "prezzo"->{ double myDouble = Double.parseDouble(nuovoValore);
 
-                    updateQuery = "UPDATE " + nomeTabella +
-                            " SET " + colonna + " =" + myDouble +
-                            " WHERE ID = " + ID + " ;"; }
+                updateQuery = "UPDATE secondiPiatti" +
+                        " SET " + colonna + " =" + myDouble +
+                        " WHERE ID = " + ID + " ;"; }
 
                 case "hasFrozenProduct"->{
                     int myInt= Integer.parseInt(nuovoValore);
 
-                    updateQuery="UPDATE " + nomeTabella +
+                    updateQuery="UPDATE secondiPiatti" +
                             " SET " + colonna + " =" + myInt +
                             " WHERE ID = " + ID + " ;";}
 
-                default -> {updateQuery = "UPDATE " + nomeTabella +
+                default -> {updateQuery = "UPDATE secondiPiatti" +
                         " SET " + colonna + " = " +"'"+ nuovoValore+"'" +
                         " WHERE ID = " + ID + " ;";}
             }
@@ -139,10 +137,10 @@ public class DaoAntipasti {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Tabella " + nomeTabella + " aggiornata");
+            System.out.println("Tabella aggiornata");
     }
 
-    public void deleteTableRow(int ID, String nomeTabella) {
+    public void deleteTableRow(int ID) {
         Connection conn = null;
 
         try {
@@ -152,10 +150,10 @@ public class DaoAntipasti {
 
             if (ID == 0) {
 
-                deleteQuery = "DELETE FROM " + nomeTabella + " ;";
+                deleteQuery = "DELETE FROM secondiPiatti ;";
             } else {
 
-                deleteQuery = "DELETE FROM " + nomeTabella +
+                deleteQuery = "DELETE FROM secondiPiatti" +
                         " WHERE ID = " + ID + " ;";
             }
 
@@ -171,3 +169,4 @@ public class DaoAntipasti {
 
     }
 }
+
