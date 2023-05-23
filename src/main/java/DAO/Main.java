@@ -3,6 +3,7 @@ package DAO;
 import enumartion.TypesPortataEnum;
 import portate.Antipasti;
 import portate.Portata;
+import portate.Bevande;
 import portate.SecondiPiatti;
 
 public class Main {
@@ -53,6 +54,24 @@ public class Main {
 
 
         daoSecondiPiatti.printTable();
+
+        DaoBevande daoBevande=new DaoBevande();
+
+        daoBevande.createTable();
+
+        Bevande bevanda1 = new Bevande("Acqua naturale", 1d, "Acqua", TypesPortataEnum.BEVANDA, false);
+        Bevande bevanda2 = new Bevande("Acqua frizzante", 1d, "Acqua, bollicine", TypesPortataEnum.BEVANDA, false);
+        Bevande bevanda3 = new Bevande("Sprite", 3d, "Acqua, zucchero, anidride carbonica, acido citrico edulcoranti acesulfame K, aspartame e neoesperidina DC, correttore di acidità citrato trisodico,lime", TypesPortataEnum.BEVANDA, false);
+        Bevande bevanda4 = new Bevande("Coca cola", 3d, "Acqua, anidride carbonica, zucchero, colorante caramello,aromi naturali, caffeina e acido fosforico", TypesPortataEnum.BEVANDA, false);
+        Bevande bevanda5 = new Bevande("Vino", 100d, "Glicerolo,Acido tartarico,Acido malico,Acido lattico,Acido acetico,Zuccheri", TypesPortataEnum.BEVANDA, true);
+
+        daoBevande.insertBevanda(bevanda1);
+        daoBevande.insertBevanda(bevanda2);
+        daoBevande.insertBevanda(bevanda3);
+        daoBevande.insertBevanda(bevanda4);
+        daoBevande.insertBevanda(bevanda5);
+
+        daoBevande.printTable();
 
     }
 }
