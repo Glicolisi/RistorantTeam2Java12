@@ -9,7 +9,7 @@ public class DaoAntipasti {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/ristorante"; // jdbc:mysql://localhost:3306/ristorante  jdbc:mysql://localhost:3306/rubricab
     private static final String USER = "root"; // root
-    private static final String PASS = "password"; // password
+    private static final String PASS = "salvopelle88"; // password
 
     public void createTable(String nomeTabella) {
 
@@ -22,12 +22,12 @@ public class DaoAntipasti {
 
             String createQuery =
                     "CREATE TABLE IF NOT EXISTS " + nomeTabella +
-                            " ( ID INTEGER(10) NOT NULL AUTO_INCREMENT," +
-                            "name VARCHAR(255)," +
+                            " ( ID INT AUTO_INCREMENT," +
+                            "nome VARCHAR(255)," +
                             "prezzo DOUBLE," +
                             "ingredienti VARCHAR(255)," +
                             "tipoPortata VARCHAR(255),"+
-                            "chilometroZero BOOLEAN" +
+                            "chilometroZero BOOLEAN," +
                             " PRIMARY KEY (ID)" +
                             " );";
 
@@ -44,19 +44,20 @@ public class DaoAntipasti {
         System.out.println("Tabella creata");
     }
 
-    public void insertAntipasti(Antipasti antipasti, String nomeTabella) {
+    public void insertAntipasti(Antipasti antipasto, String nomeTabella) {
         Connection conn = null;
+        int isKmZeroToInt = antipasto.isKmZero() ? 1:0;
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = conn.createStatement();
 
             String insertQuery = "INSERT INTO " + nomeTabella +
-                    " (name, prezzo, ingredienti,tipoPortata, chilometroZero) VALUES ('" +
-                    antipasti.getNome() + "', '" +
-                    antipasti.getPrezzo() + "', '" +
-                    antipasti.getIngredienti() + "', '" +
-                    antipasti.getTipoPortata() + "', '" +
-                    antipasti.isKmZero() + "');";
+                    " (nome, prezzo, ingredienti, tipoPortata, chilometroZero) VALUES ('" +
+                    antipasto.getNome() + "', '" +
+                    antipasto.getPrezzo() + "', '" +
+                    antipasto.getIngredienti() + "', '" +
+                    antipasto.getTipoPortata() + "', '" +
+                    isKmZeroToInt + "');";
 
             statement.executeUpdate(insertQuery);
 
