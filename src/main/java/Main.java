@@ -113,7 +113,9 @@ public class Main {
 
         RistoranteDatabase ristoranteDataBase = new RistoranteDatabase();
 
-        ristoranteDataBase.createTable("antipasti");
+//        ristoranteDataBase.createTable("antipasti");
+
+
 
         Portata antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", TypesPortataEnum.ANTIPASTO, true);
         Portata antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", TypesPortataEnum.ANTIPASTO, false);
