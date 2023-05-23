@@ -4,12 +4,14 @@ import enumartion.StagioniEnum;
 import enumartion.TypesPortataEnum;
 import portate.*;
 
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
 
         DaoAntipasti daoAntipasti = new DaoAntipasti();
         String nomeTabella = "Antipasti";
@@ -28,7 +30,7 @@ public class Main {
         daoAntipasti.insertAntipasti(antipasto4, nomeTabella);
         daoAntipasti.insertAntipasti(antipasto5, nomeTabella);
 
-        daoAntipasti.updateTable("prezzo",1,"5.99", nomeTabella);
+        daoAntipasti.updateTable("prezzo", 1, "5.99", nomeTabella);
 
         daoAntipasti.printTable(nomeTabella);
 
@@ -87,7 +89,7 @@ public class Main {
 
         daoSecondiPiatti.printTable();
 
-        DaoBevande daoBevande=new DaoBevande();
+        DaoBevande daoBevande = new DaoBevande();
 
         daoBevande.createTable();
 
@@ -105,5 +107,24 @@ public class Main {
 
         daoBevande.printTable();
 
+
+        DaoDolci daoDolci = new DaoDolci();
+        String nomeTabell = "Dolci";
+
+        Dolci dolci1 = new Dolci("Tiramisù", 12.5, "Mascarpone,uova,savoiardi,zucchero,caffè,cacao amaro", TypesPortataEnum.DOLCE, false);
+        Dolci dolci2 = new Dolci("Torta della nonna", 9.0, "Burro,zucchero,uova,latte intero,farina,pinoli", TypesPortataEnum.DOLCE, false);
+        Dolci dolci3 = new Dolci("Gelato", 2.0, "Latte condensato, frutta fresca,vaniglia,scaglie di cioccolato ", TypesPortataEnum.DOLCE, false);
+        Dolci dolci4 = new Dolci("Panna Cotta", 5.0, "Caffè,zucchero,baccello di vaniglia,panna fresco liquida", TypesPortataEnum.DOLCE, false);
+        Dolci dolci5 = new Dolci("Macedonia di frutta", 7.0, "Fragole,kiwi,uva,melone,pesca,succo di limone,zucchero semolato", TypesPortataEnum.DOLCE, false);
+
+        daoDolci.createTable(nomeTabell);
+
+        daoDolci.insertDolci(dolci1);
+        daoDolci.insertDolci(dolci2);
+        daoDolci.insertDolci(dolci3);
+        daoDolci.insertDolci(dolci4);
+        daoDolci.insertDolci(dolci5);
+
+        daoDolci.printTable(nomeTabell);
     }
 }
