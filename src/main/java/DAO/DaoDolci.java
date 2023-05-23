@@ -1,4 +1,173 @@
 package DAO;
 
+import portate.Dolci;
+
+import java.sql.*;
+
 public class DaoDolci {
+
+
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/ristorante"; // jdbc:mysql://localhost:3306/ristorante  jdbc:mysql://localhost:3306/rubricab
+    private static final String USER = "root"; // root
+    private static final String PASS = "pasword"; // password
+
+    public void createTable(String nomeTabella) {
+
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            Statement statement = conn.createStatement();
+
+            String createQuery =
+                    "CREATE TABLE IF NOT EXISTS " + nomeTabella +
+                            " ( ID INT NOT NULL AUTO_INCREMENT," +
+                            "nome VARCHAR(255)," +
+                            "prezzo DOUBLE," +
+                            "ingredienti VARCHAR(255)," +
+                            "tipoPortata VARCHAR(255),"+
+                            "isLattosio BOOLEAN" +
+                            " PRIMARY KEY (ID)" +
+                            " );";
+
+
+            statement.executeUpdate(createQuery);
+
+            statement.close();
+
+            conn.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Tabella creata");
+    }
+
+    public void insertDolci(Dolci dolci) {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = conn.createStatement();
+
+            String insertQuery = "INSERT INTO " +
+                    " (name, prezzo, ingredienti,tipoPortata, isLattosio) VALUES ('" +
+                    dolci.getNome() + "', '" +
+                    dolci.getPrezzo() + "', '" +
+                    dolci.getIngredienti() + "', '" +
+                    dolci.getTipoPortata() + "', '" +
+                    dolci.isLattosio() + "');";
+
+            statement.executeUpdate(insertQuery);
+
+
+            statement.close();
+
+            conn.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Tabella " + dolci + " aggiornata");
+
+    }
+
+    // copiato,approfondire
+    public void printTable(String nomeTabella) {
+        Statement stmt = null;
+        ResultSet rs = null;
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM " + nomeTabella + ";");
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            // Stampa i nomi delle colonne
+            for (int i = 1; i <= columnCount; i++) {
+                System.out.print(metaData.getColumnName(i) + "\t");
+            }
+            System.out.println();
+
+            // Stampa i dati delle righe
+            while (rs.next()) {
+                for (int i = 1; i <= columnCount; i++) {
+                    System.out.print(rs.getString(i) + "\t");
+                }
+                System.out.println();
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateTable(String colonna, int ID, String nuovoValore, String nomeTabella) {
+
+        Connection conn = null;
+        String updateQuery="";
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = conn.createStatement();
+
+            switch (colonna){
+                case "prezzo"->{ double myDouble = Double.parseDouble(nuovoValore);
+
+                    updateQuery = "UPDATE " + nomeTabella +
+                            " SET " + colonna + " =" + myDouble +
+                            " WHERE ID = " + ID + " ;"; }
+
+                case "hasFrozenProduct"->{
+                    int myInt= Integer.parseInt(nuovoValore);
+
+                    updateQuery="UPDATE " + nomeTabella +
+                            " SET " + colonna + " =" + myInt +
+                            " WHERE ID = " + ID + " ;";}
+
+                default -> {updateQuery = "UPDATE " + nomeTabella +
+                        " SET " + colonna + " = " +"'"+ nuovoValore+"'" +
+                        " WHERE ID = " + ID + " ;";}
+            }
+
+            statement.executeUpdate(updateQuery);
+            statement.close();
+            conn.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Tabella " + nomeTabella + " aggiornata");
+    }
+
+    public void deleteTableRow(int ID, String nomeTabella) {
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = conn.createStatement();
+            String deleteQuery = "";
+
+            if (ID == 0) {
+
+                deleteQuery = "DELETE FROM " + nomeTabella + " ;";
+            } else {
+
+                deleteQuery = "DELETE FROM " + nomeTabella +
+                        " WHERE ID = " + ID + " ;";
+            }
+
+            statement.executeUpdate(deleteQuery);
+            statement.close();
+            conn.close();
+
+            System.out.println("Delete eseguito con successo");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
