@@ -22,6 +22,8 @@ public class PrimiPiatti extends Portata {
         this.stagione = stagione;
     }
 
+    public void setStagione(StagioniEnum stagioniEnum) {
+    }
     public StagioniEnum getStagione() {
         return stagione;
     }
@@ -46,6 +48,10 @@ public class PrimiPiatti extends Portata {
         }
     }
 
+
+
+
+
     /**
      * Stampa info portata più field specifico della sottoclasse
      *
@@ -58,6 +64,8 @@ public class PrimiPiatti extends Portata {
         printdisponibilitàStagionale();
 
     }
+
+
 }
 
 
