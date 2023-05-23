@@ -1,4 +1,4 @@
-import DAO.PrimiPiattiDAO;
+
 import enumartion.PosizioneEnum;
 import enumartion.TypesEnum;
 import enumartion.StagioniEnum;
@@ -10,17 +10,12 @@ import ristorante.Ristorante;
 import ristorante.Tavolo;
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.List;
-
 
 public class Main {
     public static void main(String[] args) {
 
         ristoranteProva();
-        //ristoranteDatabase();
+
 
     }
 
@@ -115,42 +110,10 @@ public class Main {
         ristoranteProva.prenotaTavolo(tavoloVegetariano, cliente1);
 
     }
-
-
-
-
-    public static void ristoranteDatabase() {
-
-
-        try {
-            Connection connection = PrimiPiattiDAO.getConnection();
-            PrimiPiattiDAO primiPiattiDAO = PrimiPiattiDAO.getInstance(connection);
-
-
-            PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", TypesPortataEnum.PRIMOPIATTO, StagioniEnum.ESTATE);
-
-             //inserimento di un primo piatto nel database
-            primiPiattiDAO.insertPrimiPiatti(primo1);
-
-             //tutti i primi piatti dal database
-            List<PrimiPiatti> primiPiattiList = primiPiattiDAO.getAllPrimiPiatti();
-
-             //aggiornamento di un primo piatto esistente nel database
-            PrimiPiatti primiPiattiToUpdate = primiPiattiList.get(0);
-            primiPiattiToUpdate.setPrezzo(14.99);
-            primiPiattiToUpdate.setStagione(StagioniEnum.INVERNO);
-            primiPiattiDAO.updatePrimiPiatti(primiPiattiToUpdate);
-
-            //eliminazione di un primo piatto dal database
-            primiPiattiDAO.deletePrimiPiatti("Lasagne alla Bolognese");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-        }
-
-    }
-
 }
+
+
+
+
 
 

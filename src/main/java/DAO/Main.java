@@ -1,10 +1,12 @@
 package DAO;
 
+import enumartion.StagioniEnum;
 import enumartion.TypesPortataEnum;
-import portate.Antipasti;
-import portate.Portata;
-import portate.Bevande;
-import portate.SecondiPiatti;
+import portate.*;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,6 +33,43 @@ public class Main {
         daoAntipasti.printTable(nomeTabella);
 
         DaoSecondiPiatti daoSecondiPiatti = new DaoSecondiPiatti();
+
+
+        try {
+            Connection connection = PrimiPiattiDAO.getConnection();
+            PrimiPiattiDAO primiPiattiDAO = PrimiPiattiDAO.getInstance(connection);
+
+
+            PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", TypesPortataEnum.PRIMOPIATTO, StagioniEnum.ESTATE);
+            PrimiPiatti primo2 = new PrimiPiatti("Bucatini alla amatriciana", 11.0, "Pasta fresca,pomodoro,guanciale,pecorino", TypesPortataEnum.PRIMOPIATTO, StagioniEnum.INVERNO);
+            PrimiPiatti primo3 = new PrimiPiatti("Tortellini con panna", 14.0, "Pasta fresca,carne macinata,panna", TypesPortataEnum.PRIMOPIATTO, StagioniEnum.AUTUNNO);
+            PrimiPiatti primo4 = new PrimiPiatti("Pennette alla vodka", 10.0, "Pasta fresca,pomodoro,pancetta,vodka", TypesPortataEnum.PRIMOPIATTO, StagioniEnum.FUORI_MENU);
+            PrimiPiatti primo5 = new PrimiPiatti("Trofie al pesto genovese", 10.0, "Pasta fresca,basilico,pinoli,grana padano", TypesPortataEnum.PRIMOPIATTO, StagioniEnum.PRIMAVERA);
+
+            //inserimento dei un primi piatti nel database
+            primiPiattiDAO.insertPrimiPiatti(primo1);
+            primiPiattiDAO.insertPrimiPiatti(primo2);
+            primiPiattiDAO.insertPrimiPiatti(primo3);
+            primiPiattiDAO.insertPrimiPiatti(primo4);
+            primiPiattiDAO.insertPrimiPiatti(primo5);
+
+
+            //tutti i primi piatti dal database
+            List<PrimiPiatti> primiPiattiList = primiPiattiDAO.getAllPrimiPiatti();
+
+            //aggiornamento di un primo piatto esistente nel database
+            PrimiPiatti primiPiattiToUpdate = primiPiattiList.get(0);
+            primiPiattiToUpdate.setPrezzo(14.99);
+            primiPiattiToUpdate.setStagione(StagioniEnum.INVERNO);
+            primiPiattiDAO.updatePrimiPiatti(primiPiattiToUpdate);
+
+            //eliminazione di un primo piatto dal database
+            primiPiattiDAO.deletePrimiPiatti("Lasagne alla Bolognese");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
 
 
         daoSecondiPiatti.createTable();
