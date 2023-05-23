@@ -1,11 +1,34 @@
 package DAO;
 
 import enumartion.TypesPortataEnum;
+import portate.Antipasti;
+import portate.Portata;
 import portate.Bevande;
 import portate.SecondiPiatti;
 
 public class Main {
     public static void main(String[] args) {
+
+        DaoAntipasti daoAntipasti = new DaoAntipasti();
+        String nomeTabella = "Antipasti";
+
+        daoAntipasti.createTable(nomeTabella);
+
+        Antipasti antipasto1 = new Antipasti("Caprese", 5.00, "Mozzarella fior di latte, Pomodoro", TypesPortataEnum.ANTIPASTO, true);
+        Antipasti antipasto2 = new Antipasti("Tagliere di salumi e formaggi", 10.00, "Prosciutto cotto, Prosciutto crudo, Provola affumicata, Caprino", TypesPortataEnum.ANTIPASTO, false);
+        Antipasti antipasto3 = new Antipasti("Frittura di verdure miste", 6.00, "Pastella, Cavolfiori, Zucchine, Melanzane, Carciofi", TypesPortataEnum.ANTIPASTO, true);
+        Antipasti antipasto4 = new Antipasti("Anelli di cipolla", 5.00, "Pastella, Cipolla", TypesPortataEnum.ANTIPASTO, false);
+        Antipasti antipasto5 = new Antipasti("Antipasto della casa", 7.00, "Olive, Ricotta, Salame, Funghi sott'olio", TypesPortataEnum.ANTIPASTO, true);
+
+        daoAntipasti.insertAntipasti(antipasto1, nomeTabella);
+        daoAntipasti.insertAntipasti(antipasto2, nomeTabella);
+        daoAntipasti.insertAntipasti(antipasto3, nomeTabella);
+        daoAntipasti.insertAntipasti(antipasto4, nomeTabella);
+        daoAntipasti.insertAntipasti(antipasto5, nomeTabella);
+
+        daoAntipasti.updateTable("prezzo",1,"5.99", nomeTabella);
+
+        daoAntipasti.printTable(nomeTabella);
 
         DaoSecondiPiatti daoSecondiPiatti = new DaoSecondiPiatti();
 
