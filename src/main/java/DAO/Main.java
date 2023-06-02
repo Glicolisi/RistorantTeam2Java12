@@ -38,8 +38,8 @@ public class Main {
 
 
         try {
-            Connection connection = PrimiPiattiDAO.getConnection();
-            PrimiPiattiDAO primiPiattiDAO = PrimiPiattiDAO.getInstance(connection);
+
+            PrimiPiattiDAO primiPiattiDAO = new PrimiPiattiDAO();
 
 
             PrimiPiatti primo1 = new PrimiPiatti("Lasagne alla Bolognese", 12.0, "Pasta fresca, ragù di carne,besciamella", TypesPortataEnum.PRIMOPIATTO, StagioniEnum.ESTATE);
