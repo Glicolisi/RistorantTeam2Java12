@@ -34,7 +34,6 @@ public class Main {
 
         daoAntipasti.printTable(nomeTabella);
 
-        DaoSecondiPiatti daoSecondiPiatti = new DaoSecondiPiatti();
 
 
         try {
@@ -73,7 +72,7 @@ public class Main {
 
         }
 
-
+        DaoSecondiPiatti daoSecondiPiatti = new DaoSecondiPiatti();
         daoSecondiPiatti.createTable();
 
         SecondiPiatti secondo1 = new SecondiPiatti("Carpaccio di filetto con rucola e scaglie di parmigiano", 12.00, "carne,verdura,formaggio", TypesPortataEnum.SECONDOPIATTO, false);
@@ -87,11 +86,6 @@ public class Main {
         daoSecondiPiatti.insertSecondoPiatto(secondo3);
         daoSecondiPiatti.insertSecondoPiatto(secondo4);
         daoSecondiPiatti.insertSecondoPiatto(secondo5);
-
-        daoSecondiPiatti.updateTable("prezzo", 1, "9.99");
-        daoSecondiPiatti.updateTable("hasFrozenProduct", 2, "1");
-        daoSecondiPiatti.updateTable("nome", 3, "TEST_UPDATE_NOME");
-
 
         daoSecondiPiatti.printTable();
 

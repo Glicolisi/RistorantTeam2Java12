@@ -46,17 +46,17 @@ public class DaoSecondiPiatti {
         System.out.println("Tabella creata");
     }
 
-    public void insertSecondoPiatto(SecondiPiatti secondo) {
+    public void insertSecondoPiatto(SecondiPiatti secondiPiatti) {
         Connection conn = null;
-        int hasFrozenProductToInt = secondo.isHasFrozenProduct() ? 1:0;
+        int hasFrozenProductToInt = secondiPiatti.isHasFrozenProduct() ? 1:0;
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = conn.createStatement();
 
             String insertQuery = "INSERT INTO secondiPiatti" +
                     " (nome, prezzo, ingredienti,tipoPortata,hasFrozenProduct) VALUES ('" +
-                    secondo.getNome() + "', '" + secondo.getPrezzo() + "', '" + secondo.getIngredienti() + "', '" +
-                    secondo.getTipoPortata() + "', '" + hasFrozenProductToInt + "');";
+                    secondiPiatti.getNome() + "', '" + secondiPiatti.getPrezzo() + "', '" + secondiPiatti.getIngredienti() + "', '" +
+                    secondiPiatti.getTipoPortata() + "', '" + hasFrozenProductToInt + "');";
 
             statement.executeUpdate(insertQuery);
 
@@ -102,33 +102,20 @@ public class DaoSecondiPiatti {
         }
     }
 
-    public void updateTable(String colonna, int ID, String nuovoValore) {
+    public void updateTable(SecondiPiatti secondiPiatti, int ID) {
 
         Connection conn = null;
-        String updateQuery="";
+        int hasFrozenProductToInt = secondiPiatti.isHasFrozenProduct() ? 1:0;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement statement = conn.createStatement();
 
-            switch (colonna){
-                case "prezzo"->{ double myDouble = Double.parseDouble(nuovoValore);
-
-                updateQuery = "UPDATE secondiPiatti" +
-                        " SET " + colonna + " =" + myDouble +
-                        " WHERE ID = " + ID + " ;"; }
-
-                case "hasFrozenProduct"->{
-                    int myInt= Integer.parseInt(nuovoValore);
-
-                    updateQuery="UPDATE secondiPiatti" +
-                            " SET " + colonna + " =" + myInt +
-                            " WHERE ID = " + ID + " ;";}
-
-                default -> {updateQuery = "UPDATE secondiPiatti" +
-                        " SET " + colonna + " = " +"'"+ nuovoValore+"'" +
-                        " WHERE ID = " + ID + " ;";}
-            }
+           String updateQuery= "UPDATE secondipiatti"+
+            " SET nome='"+secondiPiatti.getNome()+"',"+
+            " prezzo= "+secondiPiatti.getPrezzo()+", ingredienti='"+secondiPiatti.getIngredienti()+
+            "', tipoPortata='"+ secondiPiatti.getTipoPortata()+"', hasFrozenProduct= "+hasFrozenProductToInt+
+            " WHERE ID="+ID+";";
 
             statement.executeUpdate(updateQuery);
             statement.close();
